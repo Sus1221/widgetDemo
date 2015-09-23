@@ -7,26 +7,33 @@ console.log("Loader.js working!");
 function loadScript(url, callback) {
 	//"grab" the <head> in index.html
 	var head = document.getElementsByTagName('head')[0];
-	//Create a new <script>
-	var script = document.createElement('script');
-	//Assign values to script
-	script.type = 'text/javascript';
-	script.src = url;
-	//Bind callback function to events
-	script.onreadystatechange = callback;
-	script.onload = callback;
-	//Add <script> to <head>
-	head.appendChild(script);
+		//Create a new <script>
+		var script = document.createElement('script');
+		//Assign values to script
+		script.type = 'text/javascript';
+		script.src = url;
+		//Bind callback function to events
+		script.onreadystatechange = callback;
+		script.onload = callback;
+		//Add <script> to <head>
+		head.appendChild(script);
 }
 
 //Callback after jquery load
 var callbackForLoadjQuery = function() {
-  console.log("callback for loading jquery!");
+  console.log("jQuery loaded");
   if (!$( "#strossleWidget").length) {
 		$("body").append("<div><h1>Hellloo</h1></div>");
   }
 };
+
+//Callback after jqueryUI load
+var callbackForLoadjQueryUI = function() {
+	console.log("jQueryUI loaded");
+};
+
 //Run to load jquery script to page
 loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-
+//Run to load jqueryUI script to page
+loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 
