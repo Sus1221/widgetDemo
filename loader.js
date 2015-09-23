@@ -20,4 +20,4 @@ var callbackForLoadjQuery = function() {
    console.log("callback for loading jquery!");
 };
 
-loadScript("https://rawgit.com/Sus1221/widgetDemo/master/jquery-1.11.3.min.js", callbackForLoadjQuery);
+loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
