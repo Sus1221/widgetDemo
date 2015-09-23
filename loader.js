@@ -42,15 +42,7 @@ var callbackForLoadjQueryUI = function() {
 			containment: "window"
 		});
   }
-};
-
-//Run to load jquery script to page
-loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-//Run to load jqueryUI script to page
-loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
-
-//Whatch for checkbox for large widget to change
-$("#largeWidgetCB").change(function() {
+  $("#largeWidgetCB").change(function() {
     if(this.checked) {
         console.log("Large one checked!");
     }else {
@@ -65,5 +57,14 @@ $("#smallWidgetCB").change(function() {
 		console.log("Small one unchecked!");
 	}
 });
+};
+
+//Run to load jquery script to page
+loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+//Run to load jqueryUI script to page
+loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+
+//Whatch for checkbox for large widget to change
+
 
 
