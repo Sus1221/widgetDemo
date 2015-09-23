@@ -28,7 +28,7 @@ var callbackForLoadjQuery = function() {
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
 	if (!$( "div#strossleWidget").length) {
-		$("body").append("<div style='width:300px;height:300px;background-color: red;' id='strossleWidget'>" +
+		$("body").append("<div style='width:300px;height:300px;background-color: red; z-index:200000;' id='strossleWidget'>" +
 												"<h1>Hellloo</h1>'" +
 											"</div>"
 										);
