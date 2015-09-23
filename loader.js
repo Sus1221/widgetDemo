@@ -27,6 +27,11 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
+	$("body").prepend("<div style='width:75px;height:75px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
+												"<h3>Choose widget</h3>" +
+												"<input type='checkbox' id='largeWidgetCB' value='Large widget'>" +
+												"<input type='checkbox' id='smallWidgetCB' value='Small widget'>" +
+											"</div>");
 	if (!$( "div#strossleWidget").length) {
 		$("body").append("<div style='width:300px;height:300px;background-color: red; z-index:200000;' id='strossleWidget'>" +
 												"<h1>Hellloo</h1>'" +
@@ -43,3 +48,22 @@ var callbackForLoadjQueryUI = function() {
 loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 //Run to load jqueryUI script to page
 loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+
+//Whatch for checkbox for large widget to change
+$("#largeWidgetCB").change(function() {
+    if(this.checked) {
+        console.log("Large one checked!");
+    }else {
+			console.log("Large one unchecked");
+    }
+});
+
+$("#smallWidgetCB").change(function() {
+	if(this.checked) {
+		console.log("Small one checked!");
+	}else {
+		console.log("Small one unchecked!");
+	}
+});
+
+
