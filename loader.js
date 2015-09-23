@@ -22,14 +22,17 @@ function loadScript(url, callback) {
 //Callback after jquery load
 var callbackForLoadjQuery = function() {
   console.log("jQuery loaded");
-  if (!$( "#strossleWidget").length) {
-		$("body").append("<div><h1>Hellloo</h1></div>");
-  }
 };
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
+	if (!$( "#strossleWidget").length) {
+		$("body").append("<div style='width:300px;height:300px;background-color: red;'>" +
+												"<h1>Hellloo</h1>'" +
+											"</div>"
+										);
+  }
 };
 
 //Run to load jquery script to page
