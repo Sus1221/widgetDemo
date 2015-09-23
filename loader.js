@@ -22,8 +22,9 @@ function loadScript(url, callback) {
 //Callback after jquery load
 var callbackForLoadjQuery = function() {
   console.log("callback for loading jquery!");
+  $("body").prepend("<h1>Hellloo</h1>");
 };
 //Run to load jquery script to page
 loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 
-$("body").prepend("<h1>Hellloo</h1>");
+
