@@ -42,6 +42,7 @@ var callbackForLoadjQueryUI = function() {
 			containment: "window"
 		});
   }
+  checkCheckBoxes();
 };
 
 //Run to load jquery script to page
@@ -50,18 +51,16 @@ loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", c
 loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 
 //Whatch for checkbox for large widget to change
-if($("#largeWidgetCB").length) {
+function checkCheckBoxes() {
 	$("#largeWidgetCB").change(function() {
-    if(this.checked) {
-        console.log("Large one checked!");
-    }else {
+		if(this.checked) {
+			console.log("Large one checked!");
+		}else {
 			console.log("Large one unchecked");
-    }
+		}
 	});
-}
 
-//Watch for checkbox for small widget to change
-if($("#smallWidgetCB").length) {
+	//Watch for checkbox for small widget to change
 	$("#smallWidgetCB").change(function() {
 		if(this.checked) {
 			console.log("Small one checked!");
