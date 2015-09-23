@@ -27,11 +27,15 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
-	if (!$( "#strossleWidget").length) {
-		$("body").append("<div style='width:300px;height:300px;background-color: red;'>" +
+	if (!$( "div#strossleWidget").length) {
+		$("body").append("<div style='width:300px;height:300px;background-color: red;' id='strossleWidget'>" +
 												"<h1>Hellloo</h1>'" +
 											"</div>"
 										);
+		//Make it draggable with jQueryUI
+		$("#strossleWidget").draggable({
+			containment: "window"
+		});
   }
 };
 
@@ -39,4 +43,3 @@ var callbackForLoadjQueryUI = function() {
 loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 //Run to load jqueryUI script to page
 loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
-
