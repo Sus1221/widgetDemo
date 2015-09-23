@@ -22,7 +22,9 @@ function loadScript(url, callback) {
 //Callback after jquery load
 var callbackForLoadjQuery = function() {
   console.log("callback for loading jquery!");
-  $("body").append("<div><h1>Hellloo</h1></div>");
+  if (!$( "#strossleWidget").length) {
+		$("body").append("<div><h1>Hellloo</h1></div>");
+  }
 };
 //Run to load jquery script to page
 loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
