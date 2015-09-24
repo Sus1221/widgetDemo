@@ -55,7 +55,7 @@ var callbackForLoadjQueryUI = function() {
 		//Make divs draggable with jQueryUI
 		$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true});
 		$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true});
-		$("#choiceBox").draggable();
+		$("#choiceBox").resizable();
 };
 
 var callbackForLoadCSS = function() {
