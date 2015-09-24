@@ -27,23 +27,22 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
-	$("body").prepend("<div style='width:200px;height:75px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
+	$("body").prepend("<div style='min-width:200px;min-height:75px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
 												"<h3>Choose widget</h3>" +
 												"<label for='largeWidgetCB'>Large Widget</label>" +
 												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked>" +
 												"<label for='smallWidgetCB'>Small widget</label>" +
 												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB' checked>" +
 											"</div>");
-	if (!$( "div#strossleWidget").length) {
-		$("body").append("<div style='width:300px;height:300px;background-color: red; z-index:200000;' id='strossleWidget'>" +
-												"<h1>Hellloo</h1>'" +
+		$("body").append("<div style='width:500px;height:300px;background-color: red; z-index:200000;' id='strossleWidgetLarge'>" +
+											"</div>" +
+											"<div style='width:200px;height:500px;background-color:blue;z-index:2000000' id='strossleWidgetSmall'>" +
 											"</div>"
 										);
 		//Make it draggable with jQueryUI
 		$("#strossleWidget").draggable({
 			containment: "window"
 		});
-  }
 };
 
 //Run to load jquery script to page
