@@ -27,8 +27,8 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
-	$("body").prepend("<div style='min-width:200px;min-height:75px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
-												"<h3>Choose widget</h3>" +
+	$("body").prepend("<div style='min-width:300px;min-height:150px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
+												"<h4>Choose widget</h4>" +
 												"<label for='largeWidgetCB'>Large Widget</label>" +
 												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked>" +
 												"<label for='smallWidgetCB'>Small widget</label>" +
