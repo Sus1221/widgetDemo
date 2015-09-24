@@ -4,9 +4,10 @@
 console.log("Loader.js working!");
 
 //Load javascript to the page
-function loadScript(url, callback) {
+function loadFile(url, callback, type) {
 	//"grab" the <head> in index.html
 	var head = document.getElementsByTagName('head')[0];
+	if(type == "js"){
 		//Create a new <script>
 		var script = document.createElement('script');
 		//Assign values to script
@@ -17,6 +18,18 @@ function loadScript(url, callback) {
 		script.onload = callback;
 		//Add <script> to <head>
 		head.appendChild(script);
+	}else if(type == "css"){
+		//Create a new <link>
+		var link = document.createElement('link');
+		//Assign values to link
+		link.rel = 'stylesheet';
+		link.href = url;
+		//Bind callback function to events
+		link.onreadystatechange = callback;
+		link.onload = callback;
+		//Add <link> to <head>
+		head.appendChild(link);
+	}
 }
 
 //Callback after jquery load
@@ -44,10 +57,16 @@ var callbackForLoadjQueryUI = function() {
 		$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 };
 
+var callbackForLoadCSS = function() {
+	console.log("CSS is loaded!");
+};
+
 //Run to load jquery script to page
-loadScript("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-//Run to load jqueryUI script to page
-loadScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+loadFile("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery, js);
+//Run to load jQueryUI script to page
+loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI, js);
+//Run to load jQueryUI css to page
+loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS, css);
 
 window.setInterval(function(){
   checkCheckBoxes();
