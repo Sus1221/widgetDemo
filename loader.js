@@ -62,11 +62,11 @@ var callbackForLoadCSS = function() {
 };
 
 //Run to load jquery script to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery, js);
+loadFile("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery, "js");
 //Run to load jQueryUI script to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI, js);
+loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI, "js");
 //Run to load jQueryUI css to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS, css);
+loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS, "css");
 
 window.setInterval(function(){
   checkCheckBoxes();
