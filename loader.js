@@ -34,9 +34,9 @@ var callbackForLoadjQueryUI = function() {
 												"<label for='smallWidgetCB'>Small widget</label>" +
 												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB' checked>" +
 											"</div>");
-		$("body").append("<div style='width:500px;height:300px;background-color: red; z-index:200000;' class='stack' id='strossleWidgetLarge'>" +
+		$("body").append("<div style='width:500px;height:300px;background-color: red; z-index:2000000;positon:relative' class='stack' id='strossleWidgetLarge'>" +
 											"</div>" +
-											"<div style='width:200px;height:500px;background-color:blue;z-index:2000000' class='stack' id='strossleWidgetSmall'>" +
+											"<div style='width:200px;height:500px;background-color:blue;z-index:2000000;position:relative' class='stack' id='strossleWidgetSmall'>" +
 											"</div>"
 										);
 		//Make divs draggable with jQueryUI
