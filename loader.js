@@ -40,8 +40,8 @@ var callbackForLoadjQueryUI = function() {
 											"</div>"
 										);
 		//Make divs draggable with jQueryUI
-		$("#strossleWidgetLarge").draggable({scrollSpeed:100, stack: ".drag"});
-		$("#strossleWidgetSmall").draggable({scrollSpeed:100, stack: ".drag"});
+		$("#strossleWidgetLarge").draggable({scrollSpeed:500});
+		$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 };
 
 //Run to load jquery script to page
@@ -58,16 +58,24 @@ function checkCheckBoxes() {
 	$(document).on('change', "#largeWidgetCB", function(){
 		if(this.checked) {
 			console.log("Large one checked!");
+			//Make large widget visible.
+			$("#largeWidgetCB").show();
 		}else {
 			console.log("Large one unchecked");
+			//Make large widget hidden.
+			$("#largeWidgetCB").hide();
 		}
 	});
 	//Watch for checkbox for small widget to change
 	$(document).on('change', "#smallWidgetCB", function(){
 		if(this.checked) {
 			console.log("Small one checked!");
+			//Make small widget visible.
+			$("#smallWidgetCB").show();
 		}else {
 			console.log("Small one unchecked!");
+			//Make small widget hidden.
+			$("#smallWidgetCB").hide();
 		}
 	});
 }
