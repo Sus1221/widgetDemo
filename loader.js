@@ -29,8 +29,10 @@ var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
 	$("body").prepend("<div style='width:200px;height:75px;background-color:white;border:2px solid black;padding:20px;margin:20px;z-index: 100000;float:left'>" +
 												"<h3>Choose widget</h3>" +
-												"<input type='checkbox' id='largeWidgetCB' value='Large widget'>" +
-												"<input type='checkbox' id='smallWidgetCB' value='Small widget'>" +
+												"<label for='largeWidgetCB'>Large Widget</label>" +
+												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked>" +
+												"<label for='smallWidgetCB'>Small widget</label>" +
+												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB' checked>" +
 											"</div>");
 	if (!$( "div#strossleWidget").length) {
 		$("body").append("<div style='width:300px;height:300px;background-color: red; z-index:200000;' id='strossleWidget'>" +
