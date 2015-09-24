@@ -59,11 +59,11 @@ function checkCheckBoxes() {
 		if(this.checked) {
 			console.log("Large one checked!");
 			//Make large widget visible.
-			$("#largeWidgetCB").show();
+			$("#strossleWidgetLarge").show();
 		}else {
 			console.log("Large one unchecked");
 			//Make large widget hidden.
-			$("#largeWidgetCB").hide();
+			$("#strossleWidgetLarge").hide();
 		}
 	});
 	//Watch for checkbox for small widget to change
@@ -71,11 +71,11 @@ function checkCheckBoxes() {
 		if(this.checked) {
 			console.log("Small one checked!");
 			//Make small widget visible.
-			$("#smallWidgetCB").show();
+			$("#strossleWidgetSmall").show();
 		}else {
 			console.log("Small one unchecked!");
 			//Make small widget hidden.
-			$("#smallWidgetCB").hide();
+			$("#strossleWidgetSmall").hide();
 		}
 	});
 }
