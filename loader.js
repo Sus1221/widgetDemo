@@ -40,8 +40,8 @@ var callbackForLoadjQueryUI = function() {
 											"</div>"
 										);
 		//Make divs draggable with jQueryUI
-		$("#strossleWidgetLarge").draggable({containment: "window"});
-		$("#strossleWidgetSmall").draggable({containment: "window"});
+		$("#strossleWidgetLarge").draggable({scrollSpeed:100});
+		$("#strossleWidgetSmall").draggable({scrollSpeed:100});
 };
 
 //Run to load jquery script to page
