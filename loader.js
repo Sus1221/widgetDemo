@@ -4,7 +4,7 @@
 console.log("Loader.js working!");
 
 //Load javascript to the page
-function loadFile(url, callback, type) {
+function loadFile(type, url, callback) {
 	//"grab" the <head> in index.html
 	var head = document.getElementsByTagName('head')[0];
 	if(type == "js"){
@@ -62,11 +62,11 @@ var callbackForLoadCSS = function() {
 };
 
 //Run to load jquery script to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery, "js");
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 //Run to load jQueryUI script to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI, "js");
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 //Run to load jQueryUI css to page
-loadFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS, "css");
+loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
 window.setInterval(function(){
   checkCheckBoxes();
