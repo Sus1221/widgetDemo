@@ -40,7 +40,7 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
-	$("body").prepend("<div style='min-width:300px;min-height:150px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
+	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Choose widget</h4>" +
 												"<label for='largeWidgetCB'>Large Widget</label>" +
 												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked>" +
@@ -53,8 +53,8 @@ var callbackForLoadjQueryUI = function() {
 											"</div>"
 										);
 		//Make divs draggable with jQueryUI
-		$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true});
-		$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true});
+		$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
+		$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 		$("#choiceBox").resizable();
 };
 
