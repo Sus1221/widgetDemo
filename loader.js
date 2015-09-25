@@ -40,22 +40,23 @@ var callbackForLoadjQuery = function() {
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	console.log("jQueryUI loaded");
+	//Add controlBox for widgets
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Choose widget</h4>" +
 												"<label for='largeWidgetCB'>Large Widget</label>" +
-												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked>" +
+												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked><br>" +
 												"<label for='smallWidgetCB'>Small widget</label>" +
 												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB' checked>" +
 											"</div>");
-		$("body").append("<div style='width:500px;height:300px;background-color: red; z-index:2000000;positon:relative' class='stack' id='strossleWidgetLarge'>" +
-											"</div>" +
-											"<div style='width:200px;height:500px;background-color:blue;z-index:2000000;position:relative' class='stack' id='strossleWidgetSmall'>" +
-											"</div>"
-										);
-		//Make divs draggable with jQueryUI
-		$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
-		$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
-		$("#choiceBox").resizable();
+	//Add two widget elements
+	$("body").append("<div style='width:500px;height:300px;background-color:white;z-index:2000000;positon:relative;border:1px solid black' class='stack' id='strossleWidgetLarge'>" +
+										"</div>" +
+										"<div style='width:200px;height:500px;background-color:blue;z-index:2000000;position:relative;border:1px solid black' class='stack' id='strossleWidgetSmall'>" +
+										"</div>");
+	//Make divs draggable with jQueryUI
+	$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
+	$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
+	$("#choiceBox").resizable();
 };
 
 var callbackForLoadCSS = function() {
