@@ -64,13 +64,7 @@ var callbackForLoadjQueryUI = function() {
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
-	$(".allSlides").sortable({
-		axis: "y",
-		revert: true,
-		scroll: false,
-		placeholder: "sortable-placeholder",
-		cursor: "move"
-	});
+	$(".allSlides").sortable();
 };
 
 var callbackForLoadCSS = function() {
