@@ -72,7 +72,7 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 window.setInterval(function(){
   checkCheckBoxes();
-}, 5000);
+}, 10000);
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
