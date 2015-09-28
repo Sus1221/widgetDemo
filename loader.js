@@ -50,14 +50,12 @@ var callbackForLoadjQueryUI = function() {
 											"</div>");
 	//Add two widget elements
 	$("body").append(
-									"<div class='allSlides'>" +
 										"<div style='height:100px;background-color:red;positon:relative;border:1px solid black' id='strossleWidgetLarge'>" +
 										"</div>" +
 										"<div style='height:100px;background-color:blue;position:relative;border:1px solid black' id='strossleWidgetSmall'>" +
 										"</div>" +
 										"<div style='height:100px;background-color:yellow;positon:relative;border:1px solid black' id='extraWidget'>" +
-										"</div>" +
-									"</div>"
+										"</div>"
 									);
 	//Make divs draggable with jQueryUI
 	//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
