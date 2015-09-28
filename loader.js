@@ -57,7 +57,6 @@ var callbackForLoadjQueryUI = function() {
 	$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#choiceBox").resizable();
-	checkCheckBoxes();
 };
 
 var callbackForLoadCSS = function() {
@@ -71,11 +70,12 @@ loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.
 //Run to load jQueryUI css to page
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
-/*window.setInterval(function(){
+window.setInterval(function(){
   checkCheckBoxes();
-}, 5000);*/
+}, 5000);
 
 function checkCheckBoxes() {
+	console.log("checkCheckBoxes is run now!");
 	//Whatch for checkbox for large widget to change
 	$(document).on('change', "#largeWidgetCB", function(){
 		if(this.checked) {
