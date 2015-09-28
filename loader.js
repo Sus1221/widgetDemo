@@ -51,11 +51,11 @@ var callbackForLoadjQueryUI = function() {
 	//Add two widget elements
 	$("body").append(
 									"<div class='allSlides'>" +
-										"<div style='height:100px;background-color:red;positon:relative;border:1px solid black' class='slide' id='strossleWidgetLarge'>" +
+										"<div style='height:100px;background-color:red;positon:relative;border:1px solid black' id='strossleWidgetLarge'>" +
 										"</div>" +
-										"<div style='height:100px;background-color:blue;position:relative;border:1px solid black' class='slide' id='strossleWidgetSmall'>" +
+										"<div style='height:100px;background-color:blue;position:relative;border:1px solid black' id='strossleWidgetSmall'>" +
 										"</div>" +
-										"<div style='height:100px;background-color:yellow;positon:relative;border:1px solid black' class='slide' id='extraWidget'>" +
+										"<div style='height:100px;background-color:yellow;positon:relative;border:1px solid black' id='extraWidget'>" +
 										"</div>" +
 									"</div>"
 									);
@@ -64,7 +64,7 @@ var callbackForLoadjQueryUI = function() {
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
-	$(".allSlides").sortable({
+	$("body > *").sortable({
 		axis: "y",
 		revert: true,
 		scroll: false,
