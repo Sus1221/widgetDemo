@@ -51,7 +51,7 @@ var callbackForLoadjQueryUI = function() {
 	//Add two widget elements
 	$("body").append(
 									"<div class='allSlides'>" +
-										"<div style='height:100px;background-color:white;positon:relative;border:1px solid black' class='slide' id='strossleWidgetLarge'>" +
+										"<div style='height:100px;background-color:red;positon:relative;border:1px solid black' class='slide' id='strossleWidgetLarge'>" +
 										"</div>" +
 										"<div style='height:100px;background-color:blue;position:relative;border:1px solid black' class='slide' id='strossleWidgetSmall'>" +
 										"</div>" +
@@ -60,10 +60,10 @@ var callbackForLoadjQueryUI = function() {
 									"</div>"
 									);
 	//Make divs draggable with jQueryUI
-	$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
-	$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
-	$("#extraWidget").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
-	$("#choiceBox").resizable();
+	//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
+	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
+	//$("#extraWidget").draggable({scrollSpeed:500});
+	//$("#choiceBox").resizable();
 	$(".allSlides").sortable({
 		axis: "y",
 		revert: true,
