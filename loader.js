@@ -69,6 +69,7 @@ var callbackForLoadjQueryUI = function() {
 		placeholder: "sortable-placeholder",
 		cursor: "pointer"
 	});
+	$(".sortable-placeholder").css({"border-left":"5px solid aquamarine"});
 };
 
 var callbackForLoadCSS = function() {
