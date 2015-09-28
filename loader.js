@@ -57,6 +57,7 @@ var callbackForLoadjQueryUI = function() {
 	$("#strossleWidgetLarge").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#choiceBox").resizable();
+	checkCheckBoxes();
 };
 
 var callbackForLoadCSS = function() {
