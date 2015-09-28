@@ -1,9 +1,9 @@
-//Code for inserting this script in bookmarklet url
+//Insert code below in bookmark url-field in browser to run this script on current url
 //javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
 
 console.log("Loader.js working!");
 
-//Load javascript to the page
+//Load files to current page
 function loadFile(type, url, callback) {
 	//"grab" the <head> in index.html
 	var head = document.getElementsByTagName('head')[0];
@@ -70,9 +70,9 @@ loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.
 //Run to load jQueryUI css to page
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
-window.setInterval(function(){
+/*window.setInterval(function(){
   checkCheckBoxes();
-}, 5000);
+}, 5000);*/
 
 function checkCheckBoxes() {
 	//Whatch for checkbox for large widget to change
