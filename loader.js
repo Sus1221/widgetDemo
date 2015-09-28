@@ -64,7 +64,7 @@ var callbackForLoadjQueryUI = function() {
 	$("#strossleWidgetSmall").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#extraWidget").draggable({scrollSpeed:500}).resizable({aspectRatio: true, handles:"n, e, s, w"});
 	$("#choiceBox").resizable();
-	(".allSlides").sortable({
+	$(".allSlides").sortable({
 		axis: "y",
 		revert: true,
 		scroll: false,
