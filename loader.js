@@ -51,11 +51,11 @@ var callbackForLoadjQueryUI = function() {
 	//Add two widget elements
 	$("body").append(
 									"<div class='allSlides'>" +
-										"<div style='height:300px;background-color:white;positon:relative;border:1px solid black' id='strossleWidgetLarge'>" +
+										"<div style='height:100px;background-color:white;positon:relative;border:1px solid black' id='strossleWidgetLarge'>" +
 										"</div>" +
-										"<div style='height:500px;background-color:blue;position:relative;border:1px solid black' class='stack' id='strossleWidgetSmall'>" +
+										"<div style='height:100px;background-color:blue;position:relative;border:1px solid black' class='stack' id='strossleWidgetSmall'>" +
 										"</div>" +
-										"<div style='height:300px;background-color:white;positon:relative;border:1px solid black' class='stack' id='extraWidget'>" +
+										"<div style='height:100px;background-color:yellow;positon:relative;border:1px solid black' class='stack' id='extraWidget'>" +
 										"</div>" +
 									"</div>"
 									);
