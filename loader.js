@@ -70,9 +70,9 @@ loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.
 //Run to load jQueryUI css to page
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
-window.setInterval(function(){
-  checkCheckBoxes();
-}, 10000);
+setTimeout(function(){ 
+    checkCheckBoxes)();
+  },1000);
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
