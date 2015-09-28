@@ -56,18 +56,19 @@ var callbackForLoadjQueryUI = function() {
 										"</div>" +
 										"<div style='height:100px;background-color:yellow;positon:relative;border:1px solid black' id='extraWidget'>" +
 										"</div>"
-									);
-	//Make divs draggable with jQueryUI
-	//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
-	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
-	//$("#extraWidget").draggable({scrollSpeed:500});
-	//$("#choiceBox").resizable();
-	$("body > *").sortable({
-		axis: "y",
-		revert: true,
-		scroll: false,
-		placeholder: "sortable-placeholder",
-		cursor: "move"
+	).then(function() {
+		//Make divs draggable with jQueryUI
+		//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
+		//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
+		//$("#extraWidget").draggable({scrollSpeed:500});
+		//$("#choiceBox").resizable();
+		$("body > *").sortable({
+			axis: "y",
+			revert: true,
+			scroll: false,
+			placeholder: "sortable-placeholder",
+			cursor: "move"
+		});
 	});
 };
 
