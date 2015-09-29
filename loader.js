@@ -72,7 +72,7 @@ var callbackForLoadjQueryUI = function() {
 	});
 
 		$("a").css("color","orange");
-		$("div.ui-sortable-placeholder").css({"background-color": "orange !important","display":"inline-block"});
+		$("div.ui-sortable-placeholder").css({"background-color": "orange !important", "display":"block"});
 	
 };
 
