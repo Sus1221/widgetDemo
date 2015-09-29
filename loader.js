@@ -70,6 +70,7 @@ var callbackForLoadjQueryUI = function() {
 		placeholder: "placeholder",
 		forcePlaceholderSize: true
 	});
+	setPlaceholderCSS();
 };
 
 var callbackForLoadCSS = function() {
