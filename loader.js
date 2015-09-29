@@ -72,7 +72,8 @@ var callbackForLoadjQueryUI = function() {
 		}
 	});
 	$(".ui-sortable-placeholder").css({
-		"border":"1px dotted black",
+		"border":"2px dotted black",
+		"margin":"5px",
 		"visibility":"visible !important"});
 };
 
