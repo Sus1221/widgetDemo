@@ -122,7 +122,7 @@ function checkCheckBoxes() {
 function setPlaceholderCSS() {
 	console.log("setPlaceholderCSS function running");
 	$(".placeholder").css({
-								"background-color": "#f3f3f3",
+								"background-color": "green",
 								"visibility":"visible"
 							});
 }
