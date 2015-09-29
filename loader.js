@@ -68,16 +68,11 @@ var callbackForLoadjQueryUI = function() {
 		scroll: false,
 		cursor: "pointer",
 		placeholder: "ui-sortable-placeholder",
-		forcePlaceholderSize: true,
-		change: function() {
-			addCSS();
-		}
+		forcePlaceholderSize: true
 	});
 
-	function addCSS() {
-		console.log("In addCSS function");
 		$("a").css("color","orange");
-		$("body.ui-sortable-placeholder").css("background-color", "orange");
+		$("body.ui-sortable-placeholder").css({"background-color": "orange !important"});
 	}
 };
 
