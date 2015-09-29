@@ -71,7 +71,7 @@ var callbackForLoadjQueryUI = function() {
 		forcePlaceholderSize: true
 	});
 
-	$(".ui-sortable-placeholder").css("backgroundColor","coral");
+	$(".ui-sortable-placeholder").css("backgroundColor","black");
 };
 
 var callbackForLoadCSS = function() {
