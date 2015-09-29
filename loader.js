@@ -77,7 +77,7 @@ var callbackForLoadjQueryUI = function() {
 	function addCSS() {
 		console.log("In addCSS function");
 		$("a").css("color","orange");
-		$(".ui-sortable-placeholder").css("background-color", "orange");
+		$("body.ui-sortable-placeholder").css("background-color", "orange");
 	}
 };
 
