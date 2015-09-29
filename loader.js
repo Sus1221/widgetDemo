@@ -121,6 +121,12 @@ function checkCheckBoxes() {
 			$("#strossleWidgetSmall").hide();
 		}
 	});
+
+	$(".placeholder").css({
+										"background-color": "#f3f3f3",
+										"visibility":"visible"
+									});
+		$(".placeholder").prepend("<p>hejsan!</p>");
 }
 
 
