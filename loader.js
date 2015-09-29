@@ -73,9 +73,10 @@ var callbackForLoadjQueryUI = function() {
 
 		$("a").css("color","orange");
 		$(".placeholder").css({
-														"background-color": "#f3f3f3",
-														"visibility":"visible"
-													});
+										"background-color": "#f3f3f3",
+										"visibility":"visible"
+									});
+		$(".placeholder").prepend("<p>hejsan!</p>");
 	
 };
 
