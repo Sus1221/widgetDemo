@@ -70,8 +70,6 @@ var callbackForLoadjQueryUI = function() {
 		placeholder: "placeholder",
 		forcePlaceholderSize: true
 	});
-
-	setPlaceholderCSS();
 };
 
 var callbackForLoadCSS = function() {
@@ -87,7 +85,7 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 window.setInterval(function(){
   checkCheckBoxes();
-  //setPlaceholderCSS();
+  setPlaceholderCSS();
 }, 10000);
 
 function checkCheckBoxes() {
