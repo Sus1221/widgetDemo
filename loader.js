@@ -71,10 +71,7 @@ var callbackForLoadjQueryUI = function() {
 		forcePlaceholderSize: true
 	});
 
-	$(".placeholder").css({
-		"border":"2px dotted black",
-		"background-color":"green",
-		"visibility":"visible !important"});
+	$(".placeholder").css("background-color", "darkorchid");
 };
 
 var callbackForLoadCSS = function() {
