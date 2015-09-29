@@ -67,12 +67,15 @@ var callbackForLoadjQueryUI = function() {
 		revert: true,
 		scroll: false,
 		cursor: "pointer",
-		placeholder: "ui-sortable-placeholder",
+		placeholder: "placeholder",
 		forcePlaceholderSize: true
 	});
 
 		$("a").css("color","orange");
-		$("div.ui-sortable-placeholder").css({"background-color": "orange !important", "display":"block"});
+		$(".placeholder").css({
+														"background-color": "#f3f3f3",
+														"visibility":"visible"
+													});
 	
 };
 
