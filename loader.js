@@ -68,10 +68,15 @@ var callbackForLoadjQueryUI = function() {
 		scroll: false,
 		cursor: "pointer",
 		placeholder: "ui-sortable-placeholder",
-		forcePlaceholderSize: true
+		forcePlaceholderSize: true,
+		change: function() {
+			addCSS();
+		}
 	});
 
-	$("a").css("color","orange");
+	function addCSS() {
+		$("a").css("color","orange");
+	}
 };
 
 var callbackForLoadCSS = function() {
