@@ -66,13 +66,14 @@ var callbackForLoadjQueryUI = function() {
 		axis: "y",
 		revert: true,
 		scroll: false,
-		placeholder: "sortable-placeholder",
-		forcePlaceholderSize: true,
-		cursor: "pointer"
+		cursor: "pointer",
+		start: function(e,ui){
+			ui.placeholder.height(ui.item.height());
+		}
 	});
-	$(".sortable-placeholder").css({
-		"border-left":"5px solid aquamarine",
-		"background-color":"orange"});
+	$(".ui-sortable-placeholder").css({
+		"border":"1px dotted black",
+		"visibility":"visible !important"});
 };
 
 var callbackForLoadCSS = function() {
