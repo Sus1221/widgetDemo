@@ -70,14 +70,6 @@ var callbackForLoadjQueryUI = function() {
 		placeholder: "placeholder",
 		forcePlaceholderSize: true
 	});
-
-		$("a").css("color","orange");
-		$(".placeholder").css({
-										"background-color": "#f3f3f3",
-										"visibility":"visible"
-									});
-		$(".placeholder").prepend("<p>hejsan!</p>");
-	
 };
 
 var callbackForLoadCSS = function() {
@@ -89,10 +81,11 @@ loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
 //Run to load jQueryUI script to page
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 //Run to load jQueryUI css to page
-//loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
+loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
 window.setInterval(function(){
   checkCheckBoxes();
+  placeholderCSS();
 }, 10000);
 
 function checkCheckBoxes() {
@@ -122,11 +115,12 @@ function checkCheckBoxes() {
 		}
 	});
 
-	$(".placeholder").css({
-										"background-color": "#f3f3f3",
-										"visibility":"visible"
-									});
-		$(".placeholder").prepend("<p>hejsan!</p>");
+	function placeholderCSS() {
+		$(".placeholder").css({
+									"background-color": "#f3f3f3",
+									"visibility":"visible"
+								});
+	}
 }
 
 
