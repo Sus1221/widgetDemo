@@ -67,11 +67,11 @@ var callbackForLoadjQueryUI = function() {
 		revert: true,
 		scroll: false,
 		cursor: "pointer",
-		placeholder: "placeholder",
+		placeholder: "ui-sortable-placeholder",
 		forcePlaceholderSize: true
 	});
 
-	$(".placeholder").css("background-color", "darkorchid");
+	$(".placeholder").css("background","coral");
 };
 
 var callbackForLoadCSS = function() {
