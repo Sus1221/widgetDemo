@@ -72,9 +72,10 @@ var callbackForLoadjQueryUI = function() {
 
 //get info on element clicked on
 document.addEventListener('click', function(e) {
+	console.log("CLIK");
     e = e || window.event;
     var target = e.target || e.srcElement;
-    console.log("Target", target);   
+    console.log("Target", target);
 }, false);
 
 function makeBodyContentSortable() {
