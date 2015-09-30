@@ -66,7 +66,6 @@ var callbackForLoadjQueryUI = function() {
 		//axis: "y",
 		//revert: true,
 		//scroll: false,
-		cursor: "pointer",
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
@@ -74,10 +73,16 @@ var callbackForLoadjQueryUI = function() {
       }
 	});
 	$("body > *").sortable({
-		cursor: "pointer",
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
+			ui.placeholder.css('background-color', 'green');
+		}
+	});
+	$("body > * > *").sortable({
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
 			ui.placeholder.css('background-color', 'green');
 		}
 	});
