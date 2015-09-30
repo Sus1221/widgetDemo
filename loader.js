@@ -67,8 +67,11 @@ var callbackForLoadjQueryUI = function() {
 		//revert: true,
 		//scroll: false,
 		cursor: "pointer",
-		placeholder: "placeholderClass",
-		forcePlaceholderSize: true
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui){
+         ui.placeholder.css('background-color', 'red');
+      }
 	});
 	setPlaceholderCSS();
 };
@@ -89,7 +92,7 @@ setTimeout(function(){
 }, 5000);
 
 setInterval(function() {
-  setPlaceholderCSS();
+  //setPlaceholderCSS();
   listPlaceholder();
 }, 1000);
 
