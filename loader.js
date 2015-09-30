@@ -70,6 +70,13 @@ var callbackForLoadjQueryUI = function() {
 	//makeBodyContentSortable();
 };
 
+//get info on element clicked on
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
+    console.log("Target", target);   
+}, false);
+
 function makeBodyContentSortable() {
 	$("body").sortable({
 		//axis: "y",
@@ -158,7 +165,4 @@ setTimeout(function(){
 		console.log("placeholder", this);
 	});
 }*/
-$(document).click(function(event) {
-   var lastElementClicked = event.target;
-	console.log("lastElementClicked", lastElementClicked);
-});
+
