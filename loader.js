@@ -133,7 +133,7 @@ function setPlaceholderCSS() {
 }
 
 function listPlaceholder() {
-	$(".placeholderClass").each(function() {
+	$(".placeholder").each(function() {
 		console.log("placeholder", this);
 	});
 }
