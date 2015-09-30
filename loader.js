@@ -74,7 +74,7 @@ var callbackForLoadjQueryUI = function() {
       }
 	});
 	$("body > *").sortable({
-		cursor: pointer,
+		cursor: "pointer",
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
