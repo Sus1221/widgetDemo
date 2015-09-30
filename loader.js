@@ -87,7 +87,7 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 setTimeout(function(){
   checkCheckBoxes();
   setPlaceholderCSS();
-}, 1000);
+}, 5000);
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
@@ -115,7 +115,6 @@ function checkCheckBoxes() {
 			$("#strossleWidgetSmall").hide();
 		}
 	});
-
 }
 
 function setPlaceholderCSS() {
