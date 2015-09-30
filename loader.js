@@ -1,4 +1,4 @@
-//Insert code below in bookmark url-field in browser to run this script on current url
+//Insert code on row below in bookmark url-field in browser to run this script on current url
 //javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
 
 console.log("Loader.js working!");
@@ -93,17 +93,6 @@ var callbackForLoadCSS = function() {
 	console.log("CSS is loaded!");
 };
 
-//Run to load jquery script to page
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-//Run to load jQueryUI script to page
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
-//Run to load jQueryUI css to page
-loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
-
-setTimeout(function(){
-  checkCheckBoxes();
-}, 5000);
-
 /*setInterval(function() {
   //setPlaceholderCSS();
   listPlaceholder();
@@ -137,6 +126,17 @@ function checkCheckBoxes() {
 	});
 }
 
+//Run to load jquery script to page
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+//Run to load jQueryUI script to page
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+//Run to load jQueryUI css to page
+loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
+
+setTimeout(function(){
+  checkCheckBoxes();
+}, 5000);
+
 /*function setPlaceholderCSS() {
 	console.log("setPlaceholderCSS function running");
 	$(".placeholderClass").css({
@@ -150,4 +150,7 @@ function checkCheckBoxes() {
 		console.log("placeholder", this);
 	});
 }*/
-
+$(document).click(function(event) {
+   var lastElementClicked = event.target;
+	console.log("lastElementClicked", lastElementClicked);
+});
