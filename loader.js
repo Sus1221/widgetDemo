@@ -64,19 +64,14 @@ var callbackForLoadjQueryUI = function() {
 	//$("#choiceBox").resizable();
 
 	$( "body" ).selectable();
-
-	
-
 	//makeBodyContentSortable();
 };
 
 //get info on element clicked on
 document.addEventListener('click', function(e) {
-	console.log("CLIK");
-    e = e || window.event;
-    var target = e.target || e.srcElement;
-    console.log("Target", target);
-}, false);
+	console.log("CLIK", e);
+    var target = e.target;
+});
 
 function makeBodyContentSortable() {
 	$("body").sortable({
