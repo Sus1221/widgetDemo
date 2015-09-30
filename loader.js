@@ -86,8 +86,11 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 setTimeout(function(){
   checkCheckBoxes();
-  setPlaceholderCSS();
 }, 5000);
+
+setInterval(function() {
+  setPlaceholderCSS();
+}, 1000);
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
