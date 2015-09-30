@@ -123,10 +123,12 @@ function checkCheckBoxes() {
 
 function setPlaceholderCSS() {
 	console.log("setPlaceholderCSS function running");
-	$(".placeholder").css({
+/*	$(".placeholder").css({
 								"background-color": "green !important",
 								"visibility":"visible"
-							});
+							});*/
+	ui.placeholder.css("visibility", "visible");
+	ui.placeholder.css("background-color", "red");
 }
 
 function listPlaceholder() {
