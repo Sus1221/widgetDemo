@@ -73,6 +73,14 @@ var callbackForLoadjQueryUI = function() {
          ui.placeholder.css('background-color', 'green');
       }
 	});
+	$("body > *").sortable({
+		cursor: pointer,
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui){
+			ui.placeholder.css('background-color', 'green');
+		}
+	});
 	//setPlaceholderCSS();
 };
 
