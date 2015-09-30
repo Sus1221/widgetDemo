@@ -90,6 +90,7 @@ setTimeout(function(){
 
 setInterval(function() {
   setPlaceholderCSS();
+  listPlaceholder();
 }, 1000);
 
 function checkCheckBoxes() {
@@ -128,4 +129,9 @@ function setPlaceholderCSS() {
 							});
 }
 
+function listPlaceholder() {
+	$(".placeholder").each(function() {
+		console.log("placeholder", this);
+	});
+}
 
