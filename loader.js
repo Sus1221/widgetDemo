@@ -64,7 +64,13 @@ var callbackForLoadjQueryUI = function() {
 	//$("#choiceBox").resizable();
 
 	$( "body" ).selectable();
+
 	
+
+	//makeBodyContentSortable();
+};
+
+function makeBodyContentSortable() {
 	$("body").sortable({
 		//axis: "y",
 		//revert: true,
@@ -89,8 +95,7 @@ var callbackForLoadjQueryUI = function() {
 			ui.placeholder.css('background-color', 'green');
 		}
 	});
-	//setPlaceholderCSS();
-};
+}
 
 var callbackForLoadCSS = function() {
 	console.log("CSS is loaded!");
