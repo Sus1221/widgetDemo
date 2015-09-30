@@ -62,16 +62,16 @@ var callbackForLoadjQueryUI = function() {
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
-
 	$( "body" ).selectable();
 	//makeBodyContentSortable();
 };
 
 //get info on element clicked on
-document.addEventListener('click', function(e) {
+window.addEventListener('click', function(e) {
 	console.log("CLIK", e);
     var target = e.target;
 });
+
 
 function makeBodyContentSortable() {
 	$("body").sortable({
