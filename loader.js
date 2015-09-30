@@ -67,10 +67,15 @@ var callbackForLoadjQueryUI = function() {
 };
 
 //get info on element clicked on
-window.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
 	console.log("CLIK", e);
     var target = e.target;
 });
+
+document.addEventListener("click", function(){
+    console.log("Click clock");
+});
+
 
 
 function makeBodyContentSortable() {
@@ -137,10 +142,14 @@ function checkCheckBoxes() {
 	});
 }
 
-//Run to load jquery script to page
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-//Run to load jQueryUI script to page
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+//If needed - load jquery script to page
+if(typeof jQuery == 'undefined'){
+ loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+}
+//If needed - load jQueryUI script to page
+if (typeof jQuery.ui == 'undefined') {
+	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+}
 //Run to load jQueryUI css to page
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
