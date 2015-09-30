@@ -70,10 +70,10 @@ var callbackForLoadjQueryUI = function() {
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
-         ui.placeholder.css('background-color', 'red');
+         ui.placeholder.css('background-color', 'green');
       }
 	});
-	setPlaceholderCSS();
+	//setPlaceholderCSS();
 };
 
 var callbackForLoadCSS = function() {
@@ -91,10 +91,10 @@ setTimeout(function(){
   checkCheckBoxes();
 }, 5000);
 
-setInterval(function() {
+/*setInterval(function() {
   //setPlaceholderCSS();
   listPlaceholder();
-}, 1000);
+}, 10000);*/
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
@@ -124,17 +124,17 @@ function checkCheckBoxes() {
 	});
 }
 
-function setPlaceholderCSS() {
+/*function setPlaceholderCSS() {
 	console.log("setPlaceholderCSS function running");
 	$(".placeholderClass").css({
 								"background-color": "green !important",
 								"visibility":"visible"
 							});
-}
+}*/
 
-function listPlaceholder() {
+/*function listPlaceholder() {
 	$(".placeholder").each(function() {
 		console.log("placeholder", this);
 	});
-}
+}*/
 
