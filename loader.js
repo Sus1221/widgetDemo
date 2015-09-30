@@ -63,11 +63,11 @@ var callbackForLoadjQueryUI = function() {
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
 	$("body").sortable({
-		axis: "y",
-		revert: true,
-		scroll: false,
+		//axis: "y",
+		//revert: true,
+		//scroll: false,
 		cursor: "pointer",
-		placeholder: "placeholder",
+		placeholder: "placeholderClass",
 		forcePlaceholderSize: true
 	});
 	setPlaceholderCSS();
@@ -123,16 +123,14 @@ function checkCheckBoxes() {
 
 function setPlaceholderCSS() {
 	console.log("setPlaceholderCSS function running");
-/*	$(".placeholder").css({
+	$(".placeholderClass").css({
 								"background-color": "green !important",
 								"visibility":"visible"
-							});*/
-	ui.placeholder.css("visibility", "visible");
-	ui.placeholder.css("background-color", "red");
+							});
 }
 
 function listPlaceholder() {
-	$(".placeholder").each(function() {
+	$(".placeholderClass").each(function() {
 		console.log("placeholder", this);
 	});
 }
