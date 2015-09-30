@@ -43,25 +43,28 @@ var callbackForLoadjQueryUI = function() {
 	//Add controlBox for widgets
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Choose widget</h4>" +
-												"<label for='largeWidgetCB'>Large Widget</label>" +
-												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB' checked><br>" +
-												"<label for='smallWidgetCB'>Small widget</label>" +
-												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB' checked>" +
+												"<label for='largeWidgetCB'>Add large Widget</label>" +
+												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB'><br>" +
+												"<label for='smallWidgetCB'>Add small widget</label>" +
+												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB'>" +
 											"</div>");
 	//Add two widget elements
-	$("body").append(
+	/*$("body").append(
 										"<div style='height:100px;background-color:red;border:1px solid black' id='strossleWidgetLarge'>" +
 										"</div>" +
 										"<div style='height:100px;background-color:blue;border:1px solid black' id='strossleWidgetSmall'>" +
 										"</div>" +
 										"<div style='height:100px;background-color:yellow;border:1px solid black' id='extraWidget'>" +
 										"</div>"
-	);
+	);*/
 	//Make divs draggable with jQueryUI
 	//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
+
+	$( "body" ).selectable();
+	
 	$("body").sortable({
 		//axis: "y",
 		//revert: true,
