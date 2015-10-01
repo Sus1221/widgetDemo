@@ -66,16 +66,6 @@ var callbackForLoadjQueryUI = function() {
 	//makeBodyContentSortable();
 };
 
-//get info on element clicked on
-document.addEventListener('click', function(e) {
-	console.log("CLIK", e);
-    var target = e.target;
-});
-
-document.addEventListener("click", function(){
-    console.log("Click clock");
-});
-
 
 
 function makeBodyContentSortable() {
@@ -108,11 +98,6 @@ function makeBodyContentSortable() {
 var callbackForLoadCSS = function() {
 	console.log("CSS is loaded!");
 };
-
-/*setInterval(function() {
-  //setPlaceholderCSS();
-  listPlaceholder();
-}, 10000);*/
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
@@ -154,20 +139,10 @@ if (typeof jQuery.ui == 'undefined') {
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
 setTimeout(function(){
-  checkCheckBoxes();
-}, 5000);
-
-/*function setPlaceholderCSS() {
-	console.log("setPlaceholderCSS function running");
-	$(".placeholderClass").css({
-								"background-color": "green !important",
-								"visibility":"visible"
-							});
-}*/
-
-/*function listPlaceholder() {
-	$(".placeholder").each(function() {
-		console.log("placeholder", this);
+	checkCheckBoxes();
+	//get info on element clicked on
+	document.addEventListener('click', function(e) {
+		console.log("CLIK", e);
+		var target = e.target;
 	});
-}*/
-
+}, 5000);
