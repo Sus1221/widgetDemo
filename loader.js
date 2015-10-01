@@ -146,7 +146,10 @@ function clickInHtml() {
 
 //If needed - load jquery script to page
 if(typeof jQuery == 'undefined'){
+	console.log("loaded JQ");
  loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+}else{
+	console.log("not loaded JQ");
 }
 //If needed - load jQueryUI script to page
 if (typeof jQuery.ui == 'undefined') {
