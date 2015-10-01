@@ -66,10 +66,15 @@ var callbackForLoadjQueryUI = function() {
 	//makeBodyContentSortable();
 };
 
-
+//Grab witch element is checked
 document.addEventListener("click", function(event){
   var targetElement = event.target || event.srcElement;
-  console.log(targetElement);
+  console.log("document", targetElement);
+});
+
+window.addEventListener("click", function(event){
+  var targetElement = event.target || event.srcElement;
+  console.log("window", targetElement);
 });
 
 
@@ -133,6 +138,12 @@ function checkCheckBoxes() {
 	});
 }
 
+function watchForClicks() {
+	$( "body *").on( "click", function() {
+		console.log("This: ",$(this));
+	});
+}
+
 //If needed - load jquery script to page
 if(typeof jQuery == 'undefined'){
  loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
@@ -146,4 +157,5 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 setTimeout(function(){
   checkCheckBoxes();
+  watchForClicks();
 }, 5000);
