@@ -138,10 +138,10 @@ function checkCheckBoxes() {
 	});
 }
 
-function watchForClicks() {
-	$( "body *").on( "click", function() {
-		console.log("This: ",$(this));
-	});
+function clickInHtml() {
+	$("html").click(function() {
+		console.log("click in html");
+	})
 }
 
 //If needed - load jquery script to page
@@ -157,5 +157,5 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 setTimeout(function(){
   checkCheckBoxes();
-  watchForClicks();
+  clickInHtml();
 }, 5000);
