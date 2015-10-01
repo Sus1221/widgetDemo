@@ -141,7 +141,7 @@ function checkCheckBoxes() {
 function clickInHtml() {
 	$("html").click(function() {
 		console.log("click in html");
-	})
+	});
 }
 
 //If needed - load jquery script to page
