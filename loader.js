@@ -67,6 +67,12 @@ var callbackForLoadjQueryUI = function() {
 };
 
 
+document.addEventListener("click", function(event){
+  var targetElement = event.target || event.srcElement;
+  console.log(targetElement);
+});
+
+
 
 function makeBodyContentSortable() {
 	$("body").sortable({
@@ -139,10 +145,5 @@ if (typeof jQuery.ui == 'undefined') {
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
 setTimeout(function(){
-	checkCheckBoxes();
-	//get info on element clicked on
-	document.addEventListener('click', function(e) {
-		console.log("CLIK", e);
-		var target = e.target;
-	});
+  checkCheckBoxes();
 }, 5000);
