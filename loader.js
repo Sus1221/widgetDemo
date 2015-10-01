@@ -144,13 +144,9 @@ function clickInHtml() {
 	});
 }
 
-//If needed - load jquery script to page
-if(typeof jQuery == 'undefined'){
-	console.log("loaded JQ");
- loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-}else{
-	console.log("not loaded JQ");
-}
+
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+
 //If needed - load jQueryUI script to page
 if (typeof jQuery.ui == 'undefined') {
 	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
