@@ -1,8 +1,6 @@
 //Insert code on row below in bookmark url-field in browser to run this script on current url
 //javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
 
-console.log("Loader.js working!");
-
 //Load files to current page
 function loadFile(type, url, callback) {
 	//"grab" the <head> in index.html
@@ -43,7 +41,6 @@ var clickedElement;
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
-	console.log("jQueryUI loaded");
 	//Add controlBox for widgets
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Choose widget</h4>" +
@@ -61,12 +58,10 @@ var callbackForLoadjQueryUI = function() {
 										);
 	$("body").selectable({
 		start: function(event, ui){
-			console.log("event clientX: ", event.clientX, "event client Y", event.clientY);
 			startX = event.clientX;
 			startY = event.clientY;
 		},
 		stop: function(event, ui){
-			console.log("event clientX: ", event.clientX, "event clientY: ", event.clientY);
 			endX = event.clientX;
 			endY = event.clientY;
 			calcDivMeasurements();
@@ -78,7 +73,6 @@ var callbackForLoadjQueryUI = function() {
 function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.srcElement;
-	console.log("Tag clicked: ", clickedElement);
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
 		var checkBoxID = clickedElement.id;
