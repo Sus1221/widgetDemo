@@ -69,7 +69,7 @@ var callbackForLoadjQueryUI = function() {
 		start: function(event, ui){
 			console.log("event clientX: ", event.clientX, "event client Y", event.clientY);
 			startX = event.clientX;
-			startY = ecent.clientY;
+			startY = event.clientY;
 
 		},
 		stop: function(event, ui){
