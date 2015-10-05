@@ -155,7 +155,7 @@ document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichEleme
 
 function whichElement(e){
     var tname;
-    tname = event.srcElement;
+    tname = e.srcElement;
     console.log("You clicked on  ", tname);
 }
 
