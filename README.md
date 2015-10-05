@@ -1,6 +1,6 @@
 # widgetDemo
 Bookmarklet that runs the javascript loader.js in this repository.
-The javascript adds a html-div to current page. The div is drag and droppable.
+The javascript makes it possible for user to create a custom widget-Div with drag'n'drop.  
 
 Potential issues
 1. I found that Facebook.com prohibits this kind of scipt inclusion
