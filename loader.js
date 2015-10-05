@@ -34,6 +34,7 @@ function loadFile(type, url, callback) {
 	}
 }
 
+//Stores measurements from selecable.stop function for widget-div
 var startX = 0;
 var endX = 0;
 var startY = 0;
@@ -45,32 +46,23 @@ var callbackForLoadjQueryUI = function() {
 	//Add controlBox for widgets
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Choose widget</h4>" +
-												"<label for='largeWidgetCB'>Add large Widget</label>" +
-												"<input type='checkbox' name='largeWidgetCB' id='largeWidgetCB'><br>" +
-												"<label for='smallWidgetCB'>Add small widget</label>" +
-												"<input type='checkbox' name='smallWidgetCB' id='smallWidgetCB'>" +
+												"<label for='largeWidget-Show'>Add large Widget</label>" +
+												"<input type='checkbox' name='largeWidget-Show' id='largeWidget-Show'><br>" +
+												"<label for='smallWidget-show'>Add small widget</label>" +
+												"<input type='checkbox' name='smallWidget-show' id='smallWidget-Show'>" +
 											"</div>");
-	//Add two widget elements
-	/*$("body").append(
-										"<div style='height:100px;background-color:red;border:1px solid black' id='strossleWidgetLarge'>" +
-										"</div>" +
-										"<div style='height:100px;background-color:blue;border:1px solid black' id='strossleWidgetSmall'>" +
-										"</div>" +
-										"<div style='height:100px;background-color:yellow;border:1px solid black' id='extraWidget'>" +
-										"</div>"
-	);*/
-	//Make divs draggable with jQueryUI
-	//$("#strossleWidgetLarge").draggable({scrollSpeed:500});
-	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
-	//$("#extraWidget").draggable({scrollSpeed:500});
-	//$("#choiceBox").resizable();
-
+										//Add two widget elements
+										$("body").append(
+											"<div style='height:100px;background-color:red;border:1px solid black' id='largeWidget'>" +
+											"</div>" +
+											"<div style='height:100px;background-color:blue;border:1px solid black' id='smallWidget'>" +
+											"</div>"
+										);
 	$("body").selectable({
 		start: function(event, ui){
 			console.log("event clientX: ", event.clientX, "event client Y", event.clientY);
 			startX = event.clientX;
 			startY = event.clientY;
-
 		},
 		stop: function(event, ui){
 			console.log("event clientX: ", event.clientX, "event clientY: ", event.clientY);
@@ -81,22 +73,13 @@ var callbackForLoadjQueryUI = function() {
 	});
 };
 
+//Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
 	//makeBodyContentSortable();
 }
 
-/*//Grab witch element is clicked
-document.addEventListener("click", function(event){
-  var targetElement = event.target || event.srcElement;
-  console.log("document", targetElement);
-});*/
-
-/*window.addEventListener("click", function(event){
-  var targetElement = event.target || event.srcElement;
-  console.log("window", targetElement);
-});*/
-
+//Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	$("body").sortable({
 		//axis: "y",
@@ -124,6 +107,7 @@ function makeBodyContentSortable() {
 	});
 }
 
+//Watch checkboxes for change
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
 	//Whatch for checkbox for large widget to change
@@ -153,29 +137,28 @@ function checkCheckBoxes() {
 }
 
 function whichElementClicked(event){
-	var tname;
-	tname = event.srcElement;
-	console.log("You clicked on ", tname);
+	var tag = event.srcElement;
+	console.log("You clicked on ", tag);
+
+	if(tag.type == "checkbox"){
+		var checkBoxID = tag.id;
+		console.log("checkBoxID", checkBoxID);
+		var widgetID = checkBoxID.substr(checkBoxID.indexOf("-") +1);
+		console.log("This is the widgetID: ", widgetID);
+	}
 }
 
 
 //EXECUTION 
 /*****************************************************************/
+//load jQuery to site
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
-
-//If needed - load jQueryUI script to page
+//If needed - load jQueryUI script to site
 if (typeof jQuery.ui == 'undefined') {
 	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 }
-//Run to load jQueryUI css to page
+//Load jquery ui's css to site
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css");
 
+//add clickevent to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
-
-setTimeout(function(){
-  checkCheckBoxes();
-}, 5000);
-
-
-
-
