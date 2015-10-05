@@ -138,11 +138,11 @@ function checkCheckBoxes() {
 	});
 }
 
-function clickInHtml() {
+/*function clickInHtml() {
 	$("html").click(function() {
 		console.log("click in html");
 	});
-}
+}*/
 
 
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
@@ -156,5 +156,15 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 setTimeout(function(){
   checkCheckBoxes();
-  clickInHtml();
+  //clickInHtml();
 }, 5000);
+
+//##### starta med denna länk: http://stackoverflow.com/questions/9509231/track-all-clicked-elements-using-javascript
+
+function clickListener(e) {
+	console.log("clickListener e: ", e);
+	var clickedElement = (window.event) ? window.event.srcElement : e.target;
+	console.log("clickedElement", clickedElement);
+}
+
+document.onclick = clickListener;
