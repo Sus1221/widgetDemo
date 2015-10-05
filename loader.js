@@ -76,12 +76,12 @@ var callbackForLoadjQueryUI = function() {
 
 //onmousedown for body
 function whichElementClicked(event){
-	//tag = clicked html element
+	//clickedElement = clicked html element
 	clickedElement = event.srcElement;
-	console.log("Tag clicked: ", tag);
+	console.log("Tag clicked: ", clickedElement);
 	//If checkbox is clicked
-	if(tag.type == "checkbox"){
-		var checkBoxID = tag.id;
+	if(clickedElement.type == "checkbox"){
+		var checkBoxID = clickedElement.id;
 		//remove characters after hyphen
 		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
 		//Toggle visibility of widget
