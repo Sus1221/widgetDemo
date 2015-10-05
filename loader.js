@@ -137,14 +137,13 @@ function checkCheckBoxes() {
 }
 
 function whichElementClicked(event){
+	//tag = clicked html element
 	var tag = event.srcElement;
-	console.log("You clicked on ", tag);
-
 	if(tag.type == "checkbox"){
 		var checkBoxID = tag.id;
-		console.log("checkBoxID", checkBoxID);
 		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
-		console.log("This is the widgetID: ", widgetID);
+		$("#" + widgetID).toggle();
+		console.log("toggled");
 	}
 }
 
