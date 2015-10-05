@@ -161,10 +161,6 @@ setTimeout(function(){
 
 //##### starta med denna länk: http://stackoverflow.com/questions/9509231/track-all-clicked-elements-using-javascript
 
-function clickListener(e) {
-	console.log("clickListener e: ", e);
-	var clickedElement = (window.event) ? window.event.srcElement : e.target;
-	console.log("clickedElement", clickedElement);
-}
-
-document.onclick = clickListener;
+$(document).click(function(e) {
+    console.log("event", e);
+});
