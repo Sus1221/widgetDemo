@@ -86,6 +86,23 @@ function whichElementClicked(event){
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
+	//Width: x
+	//Height: y
+	var divWidth = 0;
+	var divHeight = 0;
+	//Calculate divWidth
+	if(endX > startX){
+		divWidth = endX - startX;
+	}else {
+		divWidth = startX - endX;
+	}
+	//Calculate divHeight
+	if(endY > startY){
+		divHeight = endY - startY;
+	}else {
+		divHeight = startY - endY;
+	}
+	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
 	//makeBodyContentSortable();
 }
