@@ -143,7 +143,7 @@ function whichElementClicked(event){
 	if(tag.type == "checkbox"){
 		var checkBoxID = tag.id;
 		console.log("checkBoxID", checkBoxID);
-		var widgetID = checkBoxID.substr(checkBoxID.indexOf("-") +1);
+		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
 		console.log("This is the widgetID: ", widgetID);
 	}
 }
