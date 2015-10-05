@@ -62,7 +62,14 @@ var callbackForLoadjQueryUI = function() {
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
-	$( "body" ).selectable();
+	$("body").selectable({
+		start: function(event, ui){
+			console.log("event: ", event, "ui: ", ui);
+		},
+		stop: function(event, ui){
+			console.log("event: ", event, "ui: ", ui);
+		}
+	});
 	//makeBodyContentSortable();
 };
 
@@ -136,6 +143,15 @@ function checkCheckBoxes() {
 	});
 }
 
+function whichElementClicked(event){
+	var tname;
+	tname = event.srcElement;
+	console.log("You clicked on ", tname);
+}
+
+
+//EXECUTION 
+/*****************************************************************/
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 
 //If needed - load jQueryUI script to page
@@ -145,17 +161,12 @@ if (typeof jQuery.ui == 'undefined') {
 //Run to load jQueryUI css to page
 loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
 
+document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
+
 setTimeout(function(){
   checkCheckBoxes();
 }, 5000);
 
-//Working on grabbing which html element is clicked
 
-document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElement(event)");
 
-function whichElement(event){
-    var tname;
-    tname = event.srcElement;
-    console.log("You clicked on  ", tname);
-}
 
