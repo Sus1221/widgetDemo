@@ -13,9 +13,11 @@ function loadFile(type, url, callback) {
 		//Assign values to script
 		script.type = 'text/javascript';
 		script.src = url;
-		//Bind callback function to events
-		script.onreadystatechange = callback;
-		script.onload = callback;
+		//Bind ev. callback function to events
+		if(callback){
+			script.onreadystatechange = callback;
+			script.onload = callback;
+		}
 		//Add <script> to <head>
 		head.appendChild(script);
 	}else if(type == "css"){
@@ -32,10 +34,10 @@ function loadFile(type, url, callback) {
 	}
 }
 
-//Callback after jquery load
-var callbackForLoadjQuery = function() {
-  console.log("jQuery loaded");
-};
+var startX = 0;
+var endX = 0;
+var startY = 0;
+var endY = 0;
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
@@ -62,27 +64,38 @@ var callbackForLoadjQueryUI = function() {
 	//$("#strossleWidgetSmall").draggable({scrollSpeed:500});
 	//$("#extraWidget").draggable({scrollSpeed:500});
 	//$("#choiceBox").resizable();
+
 	$("body").selectable({
 		start: function(event, ui){
 			console.log("event clientX: ", event.clientX, "event client Y", event.clientY);
+			startX = event.clientX;
+			startY = ecent.clientY;
+
 		},
 		stop: function(event, ui){
 			console.log("event clientX: ", event.clientX, "event clientY: ", event.clientY);
+			endX = event.clientX;
+			endY = event.clientY;
+			calcDivMeasurements();
 		}
 	});
-	//makeBodyContentSortable();
 };
 
-//Grab witch element is checked
+function calcDivMeasurements() {
+	console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
+	//makeBodyContentSortable();
+}
+
+/*//Grab witch element is clicked
 document.addEventListener("click", function(event){
   var targetElement = event.target || event.srcElement;
   console.log("document", targetElement);
-});
+});*/
 
-window.addEventListener("click", function(event){
+/*window.addEventListener("click", function(event){
   var targetElement = event.target || event.srcElement;
   console.log("window", targetElement);
-});
+});*/
 
 function makeBodyContentSortable() {
 	$("body").sortable({
@@ -110,10 +123,6 @@ function makeBodyContentSortable() {
 		}
 	});
 }
-
-var callbackForLoadCSS = function() {
-	console.log("CSS is loaded!");
-};
 
 function checkCheckBoxes() {
 	console.log("checkCheckBoxes is run now!");
@@ -152,14 +161,14 @@ function whichElementClicked(event){
 
 //EXECUTION 
 /*****************************************************************/
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
 
 //If needed - load jQueryUI script to page
 if (typeof jQuery.ui == 'undefined') {
 	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 }
 //Run to load jQueryUI css to page
-loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadCSS);
+loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css");
 
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
 
