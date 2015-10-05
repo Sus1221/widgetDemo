@@ -64,10 +64,10 @@ var callbackForLoadjQueryUI = function() {
 	//$("#choiceBox").resizable();
 	$("body").selectable({
 		start: function(event, ui){
-			console.log("event: ", event, "ui: ", ui);
+			console.log("event clientX: ", event.clientX, "event client Y", event.clientY);
 		},
 		stop: function(event, ui){
-			console.log("event: ", event, "ui: ", ui);
+			console.log("event clientX: ", event.clientX, "event clientY: ", event.clientY);
 		}
 	});
 	//makeBodyContentSortable();
