@@ -151,11 +151,11 @@ setTimeout(function(){
 
 //Working on grabbing which html element is clicked
 
-document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElement(e)");
+document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElement(event)");
 
-function whichElement(e){
+function whichElement(event){
     var tname;
-    tname = e.srcElement;
+    tname = event.srcElement;
     console.log("You clicked on  ", tname);
 }
 
