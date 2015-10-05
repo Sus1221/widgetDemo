@@ -77,8 +77,6 @@ window.addEventListener("click", function(event){
   console.log("window", targetElement);
 });
 
-
-
 function makeBodyContentSortable() {
 	$("body").sortable({
 		//axis: "y",
@@ -138,13 +136,6 @@ function checkCheckBoxes() {
 	});
 }
 
-/*function clickInHtml() {
-	$("html").click(function() {
-		console.log("click in html");
-	});
-}*/
-
-
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 
 //If needed - load jQueryUI script to page
@@ -156,11 +147,15 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 setTimeout(function(){
   checkCheckBoxes();
-  //clickInHtml();
 }, 5000);
 
-//##### starta med denna länk: http://stackoverflow.com/questions/9509231/track-all-clicked-elements-using-javascript
+//Working on grabbing which html element is clicked
 
-$(document).click(function(e) {
-    console.log("event", e);
-});
+document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElement(e)");
+
+function whichElement(e){
+    var tname;
+    tname = event.srcElement;
+    console.log("You clicked on  ", tname);
+}
+
