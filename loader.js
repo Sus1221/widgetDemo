@@ -39,6 +39,7 @@ var startX = 0;
 var endX = 0;
 var startY = 0;
 var endY = 0;
+var clickedElement;
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
@@ -73,9 +74,25 @@ var callbackForLoadjQueryUI = function() {
 	});
 };
 
+//onmousedown for body
+function whichElementClicked(event){
+	//tag = clicked html element
+	clickedElement = event.srcElement;
+	console.log("Tag clicked: ", tag);
+	//If checkbox is clicked
+	if(tag.type == "checkbox"){
+		var checkBoxID = tag.id;
+		//remove characters after hyphen
+		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
+		//Toggle visibility of widget
+		$("#" + widgetID).toggle();
+	}
+}
+
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
+	console.log("clickedElement: ", clickedElement);
 	//makeBodyContentSortable();
 }
 
@@ -107,45 +124,7 @@ function makeBodyContentSortable() {
 	});
 }
 
-//Watch checkboxes for change
-function checkCheckBoxes() {
-	console.log("checkCheckBoxes is run now!");
-	//Whatch for checkbox for large widget to change
-	$(document).on('change', "#largeWidgetCB", function(){
-		if(this.checked) {
-			console.log("Large one checked!");
-			//Make large widget visible.
-			$("#strossleWidgetLarge").show();
-		}else {
-			console.log("Large one unchecked");
-			//Make large widget hidden.
-			$("#strossleWidgetLarge").hide();
-		}
-	});
-	//Watch for checkbox for small widget to change
-	$(document).on('change', "#smallWidgetCB", function(){
-		if(this.checked) {
-			console.log("Small one checked!");
-			//Make small widget visible.
-			$("#strossleWidgetSmall").show();
-		}else {
-			console.log("Small one unchecked!");
-			//Make small widget hidden.
-			$("#strossleWidgetSmall").hide();
-		}
-	});
-}
 
-function whichElementClicked(event){
-	//tag = clicked html element
-	var tag = event.srcElement;
-	if(tag.type == "checkbox"){
-		var checkBoxID = tag.id;
-		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
-		$("#" + widgetID).toggle();
-		console.log("toggled");
-	}
-}
 
 
 //EXECUTION 
