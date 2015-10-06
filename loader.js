@@ -82,6 +82,7 @@ function whichElementClicked(event){
 		$("#" + widgetID).toggle();
 	}
 	console.log("className: ", clickedElement.className);
+	console.log("typeof:", typeof clickedElement.className);
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
 	}
