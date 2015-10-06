@@ -104,7 +104,7 @@ function calcDivMeasurements() {
 	}
 	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
-	$("<div><h1>Hallau</h1></div>").insertBefore(clickedElement);
+	$("<div style='border:1px solid black; width:" + divWidth + "px;height:"+ divHeight +"px;z-index:200000000'></div>").insertBefore(clickedElement);
 	//makeBodyContentSortable();
 }
 
