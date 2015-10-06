@@ -83,8 +83,13 @@ function whichElementClicked(event){
 	}
 	console.log("className: ", clickedElement.className);
 	console.log("typeof:", typeof clickedElement.className);
+	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
+		//remove widget div
+		$(clickedElement).closest().remove(function() {
+			console.log("Element remved");
+		});
 	}
 }
 
@@ -143,11 +148,6 @@ function makeBodyContentSortable() {
 		}
 	});
 }
-
-$(".XtoRemoveStrossleWidgetDiv").on("click", function() {
-	console.log("clicked1");
-});
-
 
 //EXECUTION 
 /*****************************************************************/
