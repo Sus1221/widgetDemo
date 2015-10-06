@@ -87,8 +87,8 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
 		//remove widget div
-		$(clickedElement).closest().remove();
-		console.log("Element remved");
+		$(clickedElement).parent().remove();
+		console.log("Element removed");
 	}
 }
 
