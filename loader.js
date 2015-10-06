@@ -87,6 +87,10 @@ function whichElementClicked(event){
 	}
 }
 
+$(".XtoRemoveStrossleWidgetDiv").on("click", function(){
+    console.log("Clikked");
+});
+
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	//console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
