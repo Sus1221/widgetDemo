@@ -87,8 +87,8 @@ function whichElementClicked(event){
 	}
 }
 
-$(".XtoRemoveStrossleWidgetDiv").on("click", function(){
-    console.log("Clikked");
+$(document).on('click','.XtoRemoveStrossleWidgetDiv',function(){
+	console.log("Clickedd!");
 });
 
 //Calculate users desired measurements for widget-<div>
