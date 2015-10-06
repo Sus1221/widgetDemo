@@ -85,7 +85,7 @@ function whichElementClicked(event){
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
-	console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
+	//console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
 	//Width: x
 	//Height: y
 	var divWidth = 0;
@@ -104,6 +104,7 @@ function calcDivMeasurements() {
 	}
 	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
+	$("<div><h1>Hallau</h1></div>").insertBefore(clickedElement);
 	//makeBodyContentSortable();
 }
 
