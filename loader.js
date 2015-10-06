@@ -106,7 +106,7 @@ function calcDivMeasurements() {
 	console.log("clickedElement: ", clickedElement);
 	if(divHeight > 50 && divWidth > 50) {
 		console.log("inside if making div!");
-		$("<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px'>X</h3></div>").insertBefore(clickedElement);
+		$("<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px'>&#10006;</h3></div>").insertBefore(clickedElement);
 	}
 	//makeBodyContentSortable();
 }
