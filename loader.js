@@ -81,6 +81,7 @@ function whichElementClicked(event){
 		//Toggle visibility of widget
 		$("#" + widgetID).toggle();
 	}
+	console.log("className: ", clickedElement.className);
 }
 
 //Calculate users desired measurements for widget-<div>
@@ -110,10 +111,6 @@ function calcDivMeasurements() {
 	}
 	//makeBodyContentSortable();
 }
-
-$(".XtoRemoveStrossleWidgetDiv").on("click", function() {
-	console.log("Clicked on X to remove parent div");
-});
 
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
