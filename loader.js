@@ -111,7 +111,7 @@ function calcDivMeasurements() {
 	//makeBodyContentSortable();
 }
 
-$(".XtoRemoveStrossleWidgetDiv").click(function() {
+$(".XtoRemoveStrossleWidgetDiv").on("click", function() {
 	console.log("Clicked on X to remove parent div");
 });
 
