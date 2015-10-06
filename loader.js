@@ -104,9 +104,13 @@ function calcDivMeasurements() {
 	}
 	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
-	$("<div style='border:1px solid black; width:" + divWidth + "px;height:"+ divHeight +"px;z-index:200000000'></div>").insertBefore(clickedElement);
+	$("<div style='border:1px solid black; outline:1px solid darkgray; width:" + divWidth + "px;height:"+ divHeight +"px;z-index:200000000'><h3>style='position:absolute;top:2px;right:2px' class:'XtoRemoveStrossleWidgetDiv'>X</h3></div>").insertBefore(clickedElement);
 	//makeBodyContentSortable();
 }
+
+$(".XtoRemoveStrossleWidgetDiv").click(function() {
+	console.log("Clicked on X to remove parent div");
+});
 
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
