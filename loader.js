@@ -144,7 +144,9 @@ function makeBodyContentSortable() {
 	});
 }
 
-
+$(".XtoRemoveStrossleWidgetDiv").on("click", function() {
+	console.log("clicked1");
+});
 
 
 //EXECUTION 
