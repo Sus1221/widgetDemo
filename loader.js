@@ -82,14 +82,10 @@ function whichElementClicked(event){
 		$("#" + widgetID).toggle();
 	}
 	console.log("className: ", clickedElement.className);
-	if(clickedElement.className == "XtoRemoveStrossleWidgetDiv"){
-		console.log("It's the right class name X");
+	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
+		console.log("It's the right class name, it is X");
 	}
 }
-
-$(document).on('click','.XtoRemoveStrossleWidgetDiv',function(){
-	console.log("Clickedd!");
-});
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
