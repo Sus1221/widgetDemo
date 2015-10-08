@@ -113,9 +113,17 @@ function calcDivMeasurements() {
 	}
 	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
+	console.log("typeof clicked Element: ", typeof clickedElement);
 	if(divHeight > 50 && divWidth > 50) {
 		console.log("inside if making div!");
-		$("<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>").insertBefore(clickedElement);
+		/*if(clickedElement == body){
+			//prepend div to body
+			console.log("The clicked div is body!");
+		}else{
+			//insert div before clickedElement
+			console.log("The clicked div is not body");
+			$("<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>").insertBefore(clickedElement);
+		}*/
 	}else{
 		console.log("Div measurements too small!");
 	}
