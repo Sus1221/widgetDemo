@@ -116,8 +116,8 @@ function calcDivMeasurements() {
 	if(divHeight > 50 && divWidth > 50) {
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
 		var stringifiedClObj = JSON.stringify(clickedElement);
-		console.log("clicked element tagname", clickedElement.tagName.toUpperCase());
-		if(clickedElement.tagName.toUpperCase() == "body"){
+		console.log("clicked element tagname", clickedElement.tagName);
+		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			console.log("The clicked div is body!");
 			//prepend div to body
 			$("body").prepend(divToAdd);
