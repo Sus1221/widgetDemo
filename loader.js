@@ -117,16 +117,16 @@ function calcDivMeasurements() {
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
-			console.log("$('body').prepend(divToAdd);");
+			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
 			$(divToAdd).insertBefore(clickedElement);
-			console.log("$(divToAdd).insertBefore(clickedElement);");
+			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
 	}else{
 		console.log("Div measurements too small!");
 	}
-	//makeBodyContentSortable();
+	makeBodyContentSortable();
 }
 
 //Makes <body> and some of its descendants sortable
