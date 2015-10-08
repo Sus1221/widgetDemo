@@ -72,7 +72,7 @@ var callbackForLoadjQueryUI = function() {
 //onmousedown for body
 function whichElementClicked(event){
 	//clickedElement = clicked html element
-	clickedElement = event.srcElement;
+	clickedElement = event.target;
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
 		var checkBoxID = clickedElement.id;
@@ -113,8 +113,6 @@ function calcDivMeasurements() {
 	}
 	console.log("divWidth: ", divWidth, "divHeight", divHeight);
 	console.log("clickedElement: ", clickedElement);
-	console.log("clicked element name", clickedElement.name);
-	console.log("clickedelement type", clickedElement.type);
 	if(divHeight > 50 && divWidth > 50) {
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
 		if(clickedElement == $("body")){
