@@ -115,13 +115,13 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
 		var stringifiedClObj = JSON.stringify(clickedElement);
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
-			console.log("The clicked div is body!");
 			//prepend div to body
 			$("body").prepend(divToAdd);
+			console.log("$('body').prepend(divToAdd);");
 		}else{
 			//insert div before the clickedElement
-			console.log("The clicked div is not body");
 			$(divToAdd).insertBefore(clickedElement);
+			console.log("$(divToAdd).insertBefore(clickedElement);");
 		}
 	}else{
 		console.log("Div measurements too small!");
