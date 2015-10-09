@@ -44,7 +44,7 @@ var callbackForLoadjQueryUI = function() {
 	//Add controlBox for sortable()
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<h4>Check if you want to drag'n'drop your div</h4>" +
-												"<input type='checkbox' name='largeWidget-Show' id='largeWidget-Show'><br>" +
+												"<input type='checkbox' name='drag-n-drop-cb' id='drag-n-drop-cb'><br>" +
 											"</div>");
 };
 
@@ -54,7 +54,7 @@ function whichElementClicked(event){
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
 	console.log("clicked element value", clickedElement.value);
-	console.log("$(clickedElement).val(): ", $(clickedElement).val());
+	console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
 		//Make these three sortable
