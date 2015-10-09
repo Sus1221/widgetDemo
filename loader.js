@@ -41,48 +41,28 @@ var clickedElement;
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
-	//Add controlBox for widgets
-/*	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
-												"<h4>Choose widget</h4>" +
-												"<label for='largeWidget-Show'>Add large Widget</label>" +
+	//Add controlBox for sortable()
+	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
+												"<h4>Check if you want to drag'n'drop your div</h4>" +
 												"<input type='checkbox' name='largeWidget-Show' id='largeWidget-Show'><br>" +
-												"<label for='smallWidget-show'>Add small widget</label>" +
-												"<input type='checkbox' name='smallWidget-show' id='smallWidget-Show'>" +
 											"</div>");
-										//Add two widget elements
-										$("body").append(
-											"<div style='height:100px;background-color:red;border:1px solid black' id='largeWidget'>" +
-											"</div>" +
-											"<div style='height:100px;background-color:blue;border:1px solid black' id='smallWidget'>" +
-											"</div>"
-										);*/
-	$("body").selectable({
-		start: function(event, ui){
-			startX = event.clientX;
-			startY = event.clientY;
-		},
-		stop: function(event, ui){
-			endX = event.clientX;
-			endY = event.clientY;
-			calcDivMeasurements();
-		}
-	});
 };
 
 //onmousedown for body
 function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
+	console.log("clickedElement", clickedElement);
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
-		var checkBoxID = clickedElement.id;
-		//remove characters after hyphen
-		var widgetID = checkBoxID.substr(0,checkBoxID.indexOf("-"));
-		//Toggle visibility of widget
-		$("#" + widgetID).toggle();
+		//Make these three sortable
+		/*if(clickedElement == checked){
+			makeBodyContentSortable();
+		}else{
+			makeBodyContentUnsortable();
+		}*/
+	
 	}
-	console.log("className: ", clickedElement.className);
-	console.log("typeof:", typeof clickedElement.className);
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
@@ -113,7 +93,6 @@ function calcDivMeasurements() {
 	}
 	if(divHeight > 50 && divWidth > 50) {
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
-		var stringifiedClObj = JSON.stringify(clickedElement);
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
@@ -126,15 +105,11 @@ function calcDivMeasurements() {
 	}else{
 		console.log("Div measurements too small!");
 	}
-	makeBodyContentSortable();
 }
 
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	$("body").sortable({
-		//axis: "y",
-		//revert: true,
-		//scroll: false,
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
@@ -155,6 +130,13 @@ function makeBodyContentSortable() {
 			ui.placeholder.css('background-color', 'green');
 		}
 	});
+}
+
+function makeBodyContentUnsortable(){
+	//make everything made sortable in makeBodyContentSortable UNsortable
+	$("body").sortable("disable");
+	$("body > *").sortable("disable");
+	$("body > * > *").sortable("disable");
 }
 
 //EXECUTION 
