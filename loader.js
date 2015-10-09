@@ -54,6 +54,7 @@ function whichElementClicked(event){
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
 	console.log("clicked element value", clickedElement.value);
+	console.log("$(clickedElement).val(): ", $(clickedElement).val());
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
 		//Make these three sortable
