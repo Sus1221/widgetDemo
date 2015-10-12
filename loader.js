@@ -94,8 +94,8 @@ function calcDivMeasurements() {
 function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
-	console.log("clickedElement", clickedElement);
-	console.log("clickedElement.type", clickedElement.type);
+	//console.log("clickedElement", clickedElement);
+	//console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "radio"){
 		console.log("it it a radiobutton");
 		manageUserFunctions(event);
@@ -111,7 +111,7 @@ function whichElementClicked(event){
 
 function manageUserFunctions(event){
 	console.log("start of manageUserFunctions function");
-	console.log("Event", event);
+	console.log("manageUserFunctions-function Event-inparameter: ", event);
 	//Make body selectable/unselectable/sortable/unsortable 
 	//according to users choice in radiobuttons
 	if($("#createElements").is(':checked')){
