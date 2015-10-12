@@ -46,6 +46,17 @@ var callbackForLoadjQueryUI = function() {
 												"<h4>Check if you want to drag'n'drop your div</h4>" +
 												"<input type='checkbox' name='drag-n-drop-cb' id='drag-n-drop-cb'><br>" +
 											"</div>");
+	$("body").selectable({
+		start: function(event, ui){
+			startX = event.clientX;
+			startY = event.clientY;
+		},
+		stop: function(event, ui){
+			endX = event.clientX;
+			endY = event.clientY;
+			calcDivMeasurements();
+		}
+	});
 };
 
 //onmousedown for body
