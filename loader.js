@@ -32,7 +32,7 @@ function loadFile(type, url, callback) {
 	}
 }
 
-//Stores measurements from selecable.stop function for widget-div
+//Stores measurements from selectable.stop function for widget-div
 var startX = 0;
 var endX = 0;
 var startY = 0;
@@ -55,6 +55,7 @@ function whichElementClicked(event){
 	console.log("clickedElement", clickedElement);
 	console.log("clicked element value", clickedElement.value);
 	console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
+	console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
 		//Make these three sortable
@@ -63,7 +64,6 @@ function whichElementClicked(event){
 		}else{
 			makeBodyContentUnsortable();
 		}*/
-	
 	}
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
