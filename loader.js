@@ -41,10 +41,14 @@ var clickedElement;
 
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
-	//Add controlBox for sortable()
+	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
-												"<h4>Check if you want to drag'n'drop your div</h4>" +
-												"<input type='checkbox' name='drag-n-drop-cb' id='drag-n-drop-cb'><br>" +
+												"<form>" +
+													"<label for='createElements'>Create Elements</label>" +
+													"<input type='radio' name='createElements' id='createElements'><br>" +
+													"<label for='sortElements'>Drag n drop</label>" +
+													"<input type='radio' name='sortElements' id='sortElements'><br>" +
+												"</form>" +
 											"</div>");
 	$("body").selectable({
 		start: function(event, ui){
