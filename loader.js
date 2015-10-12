@@ -98,10 +98,7 @@ function whichElementClicked(event){
 	console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "radio"){
 		console.log("it it a radiobutton");
-		setTimeout(function() {
-			manageUserFunctions(event);
-		}, 4000);
-		
+		manageUserFunctions(event);
 	}
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
