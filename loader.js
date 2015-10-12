@@ -97,7 +97,7 @@ function whichElementClicked(event){
 	//console.log("clickedElement", clickedElement);
 	//console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "radio"){
-		console.log("it it a radiobutton");
+		console.log("it is a radiobutton");
 		setTimeout(function() { manageUserFunctions(event); }, 1000);
 	}
 
@@ -126,7 +126,7 @@ function manageUserFunctions(event){
 		//disable selectable
 		makeBodyUnselectable();
 		//make elements sortable
-		//makeBodyContentSortable();
+		makeBodyContentSortable();
 	}
 }
 
