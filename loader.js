@@ -45,7 +45,7 @@ var callbackForLoadjQueryUI = function() {
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<form>" +
 														"<label for='createElements'> Create Elements</label>" +
-														"<input type='radio' name='chooseFunction' id='createElements'><br>" +
+														"<input type='radio' name='chooseFunction' id='createElements' checked><br>" +
 														"<label for='sortElements'> Drag n drop</label>" +
 														"<input type='radio' name='chooseFunction' id='sortElements'><br>" +
 												"</form>" +
@@ -111,6 +111,7 @@ function whichElementClicked(event){
 
 function manageUserFunctions(event){
 	console.log("start of manageUserFunctions function");
+	console.log("Event", event);
 	//Make body selectable/unseectable/sortable/unsortable 
 	//according to users choice in radiobuttons
 }
