@@ -120,11 +120,12 @@ function manageUserFunctions(event){
 		makeBodyContentUnsortable();
 		//make elements selectable
 		makeBodySelectable();
-	}else {
+	}else if($("#sortElements").is(":checked")){
+		console.log("sortElements is checked");
 		//disable selectable
-		makeBodyUnselectable();
+		//makeBodyUnselectable();
 		//make elements sortable
-		makeBodyContentSortable();
+		//makeBodyContentSortable();
 	}
 }
 
