@@ -53,19 +53,6 @@ function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
-	console.log("clicked element value", clickedElement.value);
-	console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
-	console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));
-	//If checkbox is clicked
-	if(clickedElement.type == "checkbox"){
-		console.log("Clicked element is checkbox");
-		//Make these three sortable
-		/*if(clickedElement == checked){
-			makeBodyContentSortable();
-		}else{
-			makeBodyContentUnsortable();
-		}*/
-	}
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
@@ -141,6 +128,20 @@ function makeBodyContentUnsortable(){
 	$("body > *").sortable("disable");
 	$("body > * > *").sortable("disable");
 }
+
+/*console.log("clicked element value", clickedElement.value);
+console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
+console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));*/
+//If checkbox is clicked
+$('#drag-n-drop-cb').bind('change', function(){
+	if($("#drag-n-drop-cb").is(':checked')){
+		console.log("cb is checked!");
+			//makeBodyContentSortable();		
+	}else{
+		console.log("cb is not checked");
+		//makeBodyContentUnsortable();
+	}
+});
 
 //EXECUTION 
 /*****************************************************************/
