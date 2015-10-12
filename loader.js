@@ -53,6 +53,9 @@ function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
+	if(clickedElement.type == "checkbox"){
+		console.log("it it a checkbox");
+	}
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
