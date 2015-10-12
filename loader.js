@@ -44,42 +44,15 @@ var callbackForLoadjQueryUI = function() {
 	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
 												"<form>" +
-														"<label for='createElements'>Create Elements</label>" +
+														"<label for='createElements'> Create Elements</label>" +
 														"<input type='radio' name='chooseFunction' id='createElements'><br>" +
-														"<label for='sortElements'>Drag n drop</label>" +
+														"<label for='sortElements'> Drag n drop</label>" +
 														"<input type='radio' name='chooseFunction' id='sortElements'><br>" +
 												"</form>" +
 											"</div>");
-	$("body").selectable({
-		start: function(event, ui){
-			startX = event.clientX;
-			startY = event.clientY;
-		},
-		stop: function(event, ui){
-			endX = event.clientX;
-			endY = event.clientY;
-			calcDivMeasurements();
-		}
-	});
+	//Make body selectable so user is able to create a widget div
+	makeBodySelectable();
 };
-
-//onmousedown for body
-function whichElementClicked(event){
-	//clickedElement = clicked html element
-	clickedElement = event.target;
-	console.log("clickedElement", clickedElement);
-	console.log("clickedElement.type", clickedElement.type);
-	if(clickedElement.type == "checkbox"){
-		console.log("it it a checkbox");
-	}
-	//If X (remove) on widget is clicked
-	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
-		console.log("It's the right class name, it is X");
-		//remove widget div
-		$(clickedElement).parent().remove();
-		console.log("Element removed");
-	}
-}
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
@@ -117,6 +90,50 @@ function calcDivMeasurements() {
 	}
 }
 
+//onmousedown for body
+function whichElementClicked(event){
+	//clickedElement = clicked html element
+	clickedElement = event.target;
+	console.log("clickedElement", clickedElement);
+	console.log("clickedElement.type", clickedElement.type);
+	if(clickedElement.type == "radio"){
+		console.log("it it a radiobutton");
+		manageUserFunctions(event);
+	}
+	//If X (remove) on widget is clicked
+	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
+		console.log("It's the right class name, it is X");
+		//remove widget div
+		$(clickedElement).parent().remove();
+		console.log("Element removed");
+	}
+}
+
+function manageUserFunctions(event){
+	console.log("start of manageUserFunctions function");
+	//Make body selectable/unseectable/sortable/unsortable 
+	//according to users choice in radiobuttons
+}
+
+//Makes <body> "selectable" - makes it possible for  user to create custom <div>
+function makeBodySelectable() {
+	$("body").selectable({
+		start: function(event, ui){
+			startX = event.clientX;
+			startY = event.clientY;
+		},
+		stop: function(event, ui){
+			endX = event.clientX;
+			endY = event.clientY;
+			calcDivMeasurements();
+		}
+	});
+}
+
+function makeBodyUnselectable() {
+
+}
+
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	$("body").sortable({
@@ -142,6 +159,7 @@ function makeBodyContentSortable() {
 	});
 }
 
+//Makes <body> and some of its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	//make everything made sortable in makeBodyContentSortable UNsortable
 	$("body").sortable("disable");
@@ -153,7 +171,7 @@ function makeBodyContentUnsortable(){
 console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
 console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));*/
 //If checkbox is clicked
-$('#drag-n-drop-cb').on('click', function(){
+/*$('#drag-n-drop-cb').on('click', function(){
 	if($("#drag-n-drop-cb").is(':checked')){
 		console.log("cb is checked!");
 			//makeBodyContentSortable();		
@@ -161,7 +179,7 @@ $('#drag-n-drop-cb').on('click', function(){
 		console.log("cb is not checked");
 		//makeBodyContentUnsortable();
 	}
-});
+});*/
 
 //EXECUTION 
 /*****************************************************************/
@@ -176,3 +194,4 @@ loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sm
 
 //add clickevent to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
+
