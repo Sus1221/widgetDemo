@@ -42,7 +42,7 @@ var clickedElement;
 //Callback after jqueryUI load
 var callbackForLoadjQueryUI = function() {
 	//Add controlBox for sortable()/selectable()
-	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000;position:fixed;top:0' id='choiceBox'>" +
+	$("body").prepend("<div style='min-width:200px;min-height:100px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0' id='choiceBox'>" +
 												"<form>" +
 														"<label for='createElements'> Create Elements</label>" +
 														"<input type='radio' name='chooseFunction' id='createElements' checked><br>" +
