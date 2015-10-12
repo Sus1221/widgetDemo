@@ -112,8 +112,20 @@ function whichElementClicked(event){
 function manageUserFunctions(event){
 	console.log("start of manageUserFunctions function");
 	console.log("Event", event);
-	//Make body selectable/unseectable/sortable/unsortable 
+	//Make body selectable/unselectable/sortable/unsortable 
 	//according to users choice in radiobuttons
+	if($("#createElements").is(':checked')){
+		console.log("createElements is checked");
+		//disable sortable
+		makeBodyContentUnsortable();
+		//make elements selectable
+		makeBodySelectable();
+	}else {
+		//disable selectable
+		makeBodyUnselectable();
+		//make elements sortable
+		makeBodyContentSortable();
+	}
 }
 
 //Makes <body> "selectable" - makes it possible for  user to create custom <div>
