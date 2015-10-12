@@ -58,6 +58,7 @@ function whichElementClicked(event){
 	console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));
 	//If checkbox is clicked
 	if(clickedElement.type == "checkbox"){
+		console.log("Clicked element is checkbox");
 		//Make these three sortable
 		/*if(clickedElement == checked){
 			makeBodyContentSortable();
