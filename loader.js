@@ -128,7 +128,7 @@ function manageUserFunctions(event){
 		//make elements sortable
 		makeBodyContentSortable();
 	}
-} 
+}
 
 //Makes <body> "selectable" - makes it possible for  user to create custom <div>
 function makeBodySelectable() {
