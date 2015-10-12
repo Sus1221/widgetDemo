@@ -53,6 +53,7 @@ function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
+	console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "checkbox"){
 		console.log("it it a checkbox");
 	}
