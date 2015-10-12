@@ -176,9 +176,9 @@ function makeBodyContentSortable() {
 //Makes <body> and some of its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	//make everything made sortable in makeBodyContentSortable UNsortable
-	$("body").sortable("disable");
-	$("body > *").sortable("disable");
-	$("body > * > *").sortable("disable");
+	$("body").sortable("destroy");
+	$("body > *").sortable("destroy");
+	$("body > * > *").sortable("destroy");
 }
 
 /*console.log("clicked element value", clickedElement.value);
