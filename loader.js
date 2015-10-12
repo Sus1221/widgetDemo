@@ -125,7 +125,7 @@ function manageUserFunctions(event){
 		//disable selectable
 		makeBodyUnselectable();
 		//make elements sortable
-		makeBodyContentSortable();
+		//makeBodyContentSortable();
 	}
 }
 
