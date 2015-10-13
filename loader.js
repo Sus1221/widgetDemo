@@ -146,7 +146,8 @@ function makeBodySelectable() {
 }
 
 function makeBodyUnselectable() {
-	$( "body" ).selectable( "option", "disabled", true);
+	//$( "body" ).selectable( "option", "disabled", true);
+	$("body").selectable("destroy");
 }
 
 //Makes <body> and some of its descendants sortable
