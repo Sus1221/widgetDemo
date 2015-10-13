@@ -155,7 +155,7 @@ function makeBodyUnselectable() {
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	console.log("body now sortable");
-	/*$("body").sortable({
+	$("body").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
@@ -189,14 +189,15 @@ function makeBodyContentSortable() {
 		start: function(event, ui) {
 			ui.placeholder.css('background-color', 'orange');
 		}
-	});*/
-	$("body *").sortable({
+	});
+	$("body > * > * > * > * > *").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui) {
-			ui.placeholder.css("background-color", "black");
+			ui.placeholder.css('background-color', 'orange');
 		}
 	});
+	
 }
 
 //Makes <body> and some of its descendants NOT sortable
@@ -208,6 +209,7 @@ function makeBodyContentUnsortable(){
 	$("body > * > *").sortable("destroy");
 	$("body > * > * > *").sortable("destroy");
 	$("body > * > * > * > *").sortable("destroy");
+	$("body > * > * > * > * > *").sortable("destroy");
 }
 
 /*console.log("clicked element value", clickedElement.value);
