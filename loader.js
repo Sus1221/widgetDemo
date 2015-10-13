@@ -177,10 +177,17 @@ function makeBodyContentSortable() {
 		}
 	});
 	$("body > * > * > *").sortable({
-		placeholder:"placeholder",
+		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui) {
 			ui.placeholder.css('background-color', "red");
+		}
+	});
+	$("body > * > * > * > *").sortable({
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
+			ui.placeholder.css('background-color', 'orange');
 		}
 	});
 }
@@ -192,6 +199,8 @@ function makeBodyContentUnsortable(){
 	$("body").sortable("destroy");
 	$("body > *").sortable("destroy");
 	$("body > * > *").sortable("destroy");
+	$("body > * > * > *").sortable("destroy");
+	$("body > * > * > * > *").sortable("destroy");
 }
 
 /*console.log("clicked element value", clickedElement.value);
