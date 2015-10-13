@@ -155,7 +155,7 @@ function makeBodyUnselectable() {
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	console.log("body now sortable");
-	$("body").sortable({
+	/*$("body").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
@@ -224,8 +224,14 @@ function makeBodyContentSortable() {
 		start: function(event, ui) {
 			ui.placeholder.css('background-color', 'yellow');
 		}
+	});*/
+	$("body *").sortable({
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
+			ui.placeholder.css('background-color', 'blue');
+		}
 	});
-	
 }
 
 //Makes <body> and some of its descendants NOT sortable
