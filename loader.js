@@ -238,8 +238,8 @@ function makeBodyContentSortable() {
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	//make everything made sortable in makeBodyContentSortable UNsortable
-	$("body").sortable("destroy");
-	$("body > *").sortable("destroy");
+	$("body *").sortable("destroy");
+	/*$("body > *").sortable("destroy");
 	$("body > * > *").sortable("destroy");
 	$("body > * > * > *").sortable("destroy");
 	$("body > * > * > * > *").sortable("destroy");
@@ -247,7 +247,7 @@ function makeBodyContentUnsortable(){
 	$("body > * > * > * > * > * > *").sortable("destroy");
 	$("body > * > * > * > * > * > * > *").sortable("destroy");
 	$("body > * > * > * > * > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > * > * > * > * > *").sortable("destroy");
+	$("body > * > * > * > * > * > * > * > * > *").sortable("destroy");*/
 
 
 }
