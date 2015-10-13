@@ -166,14 +166,21 @@ function makeBodyContentSortable() {
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui){
-			ui.placeholder.css('background-color', 'green');
+			ui.placeholder.css('background-color', 'blue');
 		}
 	});
 	$("body > * > *").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'green');
+			ui.placeholder.css('background-color', 'pink');
+		}
+	});
+	$("body > * > * > *").sortable({
+		placeholder:"placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
+			ui.placeholder.css('background-color', "red");
 		}
 	});
 }
