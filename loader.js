@@ -211,6 +211,20 @@ function makeBodyContentSortable() {
 			ui.placeholder.css('background-color', 'yellow');
 		}
 	});
+	$("body > * > * > * > * > * > * > * > *").sortable({
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
+			ui.placeholder.css('background-color', 'yellow');
+		}
+	});
+	$("body > * > * > * > * > * > * > * > * > *").sortable({
+		placeholder: "placeholder",
+		forcePlaceholderSize: true,
+		start: function(event, ui) {
+			ui.placeholder.css('background-color', 'yellow');
+		}
+	});
 	
 }
 
@@ -226,6 +240,10 @@ function makeBodyContentUnsortable(){
 	$("body > * > * > * > * > *").sortable("destroy");
 	$("body > * > * > * > * > * > *").sortable("destroy");
 	$("body > * > * > * > * > * > * > *").sortable("destroy");
+	$("body > * > * > * > * > * > * > * > *").sortable("destroy");
+	$("body > * > * > * > * > * > * > * > * > *").sortable("destroy");
+
+
 }
 
 /*console.log("clicked element value", clickedElement.value);
