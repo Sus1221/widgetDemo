@@ -143,7 +143,7 @@ function manageUserFunctions(event){
 //Makes <body> "selectable" - makes it possible for  user to create custom <div>
 function makeBodySelectable() {
 	console.log("body now selectable");
-	$("body").selectable({
+	$("html").selectable({
 		start: function(event, ui){
 			startX = event.clientX;
 			startY = event.clientY;
@@ -159,7 +159,7 @@ function makeBodySelectable() {
 function makeBodyUnselectable() {
 	console.log("body now NOT selectable");
 	//$( "body" ).selectable( "option", "disabled", true);
-	$("body").selectable("destroy");
+	$("hmtl").selectable("destroy");
 }
 
 //Makes <body> and some of its descendants sortable
