@@ -67,7 +67,8 @@ function callbackForLoadSprinkle(){
 function addWidgetContent(){
 	console.log("addWidgetContent run!");
 	//for .widgetDiv without child .widgetContent, add child .widgetContent
-	$(".widgetDiv:not(:has(>.widgetContent))").append("<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>");
+	//<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>
+	$("div.widgetDiv:not(:has(>.widgetContent))").append("<h1>HEJ</h1>");
 }
 
 //Calculate users desired measurements for widget-<div>
