@@ -61,7 +61,7 @@ function callbackForLoadjQueryUI() {
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
 	//Line under this made real widget content show at end of body!
-	$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
+	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
@@ -166,7 +166,7 @@ function makeBodyUnselectable() {
 function makeBodyContentSortable() {
 	console.log("body now sortable");
 	
-	$("body *").sortable({
+	$("html *").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
 		start: function(event, ui) {
@@ -179,7 +179,7 @@ function makeBodyContentSortable() {
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	//make everything made sortable in makeBodyContentSortable UNsortable
-	$("body *").sortable("destroy");
+	$("html *").sortable("destroy");
 }
 
 //EXECUTION 
