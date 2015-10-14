@@ -164,76 +164,7 @@ function makeBodyUnselectable() {
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	console.log("body now sortable");
-	/*$("body").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui){
-         ui.placeholder.css('background-color', 'green');
-      }
-	});
-	$("body > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui){
-			ui.placeholder.css('background-color', 'blue');
-		}
-	});
-	$("body > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'pink');
-		}
-	});
-	$("body > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', "red");
-		}
-	});
-	$("body > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'orange');
-		}
-	});
-	$("body > * > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'yellow');
-		}
-	});
-	$("body > * > * > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'yellow');
-		}
-	});
-	$("body > * > * > * > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'yellow');
-		}
-	});
-	$("body > * > * > * > * > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'yellow');
-		}
-	});
-	$("body > * > * > * > * > * > * > * > * > *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'yellow');
-		}
-	});*/
+	
 	$("body *").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
@@ -248,32 +179,7 @@ function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	//make everything made sortable in makeBodyContentSortable UNsortable
 	$("body *").sortable("destroy");
-	/*$("body > *").sortable("destroy");
-	$("body > * > *").sortable("destroy");
-	$("body > * > * > *").sortable("destroy");
-	$("body > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > * > * > * > *").sortable("destroy");
-	$("body > * > * > * > * > * > * > * > * > *").sortable("destroy");*/
-
-
 }
-
-/*console.log("clicked element value", clickedElement.value);
-console.log("$('#drag-n-drop-cb').val() ", $("#drag-n-drop-cb").val());
-console.log("is checked?!", $("#drag-n-drop-cb").is(':checked'));*/
-//If checkbox is clicked
-/*$('#drag-n-drop-cb').on('click', function(){
-	if($("#drag-n-drop-cb").is(':checked')){
-		console.log("cb is checked!");
-			//makeBodyContentSortable();		
-	}else{
-		console.log("cb is not checked");
-		//makeBodyContentUnsortable();
-	}
-});*/
 
 //EXECUTION 
 /*****************************************************************/
