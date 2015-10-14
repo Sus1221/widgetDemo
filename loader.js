@@ -42,6 +42,7 @@ var endX = 0;
 var startY = 0;
 var endY = 0;
 var clickedElement;
+var sprinkleLoaded = false;
 
 //Callback after jqueryUI load
 function callbackForLoadjQueryUI() {
@@ -60,15 +61,9 @@ function callbackForLoadjQueryUI() {
 
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
+	sprinkleLoaded = true;
+	//Line under this made real widget content show at end of body!
 	//$(".widgetDiv").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-	setInterval(addWidgetContent, 5000);
-}
-
-function addWidgetContent(){
-	console.log("addWidgetContent run!");
-	//for .widgetDiv without child .widgetContent, add child .widgetContent
-	//<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>
-	$(".widgetDiv:not(:has(>.widgetContent))").append("<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
@@ -93,6 +88,7 @@ function calcDivMeasurements() {
 	if(divHeight > 50 && divWidth > 50) {
 		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000' class='widgetDiv'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
+		checkForSprinkleLoad();
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
@@ -104,6 +100,15 @@ function calcDivMeasurements() {
 		}
 	}else{
 		console.log("Div measurements too small!");
+	}
+}
+
+function checkForSprinkleLoad(){
+	if(sprinkleLoaded){
+		return;
+	}
+	else {
+		setTimeout(checkForSprinkleLoad, 1000);
 	}
 }
 
