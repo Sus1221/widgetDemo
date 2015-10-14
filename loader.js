@@ -60,7 +60,7 @@ function callbackForLoadjQueryUI() {
 
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
-	$(".XtoRemoveStrossleWidgetDiv").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
+	$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
