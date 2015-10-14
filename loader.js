@@ -61,7 +61,7 @@ function callbackForLoadjQueryUI() {
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
 	//Line under this made real widget content show at end of body!
-	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
+	$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
@@ -95,7 +95,6 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 	}else{
 		console.log("Div measurements too small!");
 	}
