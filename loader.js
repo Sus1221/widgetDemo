@@ -89,6 +89,7 @@ function calcDivMeasurements() {
 		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000' class='widgetDiv'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3></div>";
 		checkForSprinkleLoad();
+		divToAdd.append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
@@ -105,9 +106,11 @@ function calcDivMeasurements() {
 
 function checkForSprinkleLoad(){
 	if(sprinkleLoaded){
+		console.log("loaded");
 		return;
 	}
 	else {
+		console.log("not loaded");
 		setTimeout(checkForSprinkleLoad, 1000);
 	}
 }
