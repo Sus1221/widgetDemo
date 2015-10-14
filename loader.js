@@ -61,7 +61,7 @@ function callbackForLoadjQueryUI() {
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
 	//$(".widgetDiv").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-	setTimeout( addWidgetContent, 3000);
+	setTimeout(addWidgetContent, 2000);
 }
 
 function addWidgetContent(){
