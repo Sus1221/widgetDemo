@@ -61,14 +61,14 @@ function callbackForLoadjQueryUI() {
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle console.log");
 	//$(".widgetDiv").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-	setInterval(addWidgetContent, 2000);
+	setInterval(addWidgetContent, 5000);
 }
 
 function addWidgetContent(){
 	console.log("addWidgetContent run!");
 	//for .widgetDiv without child .widgetContent, add child .widgetContent
 	//<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>
-	$("div.widgetDiv:not(:has(>.widgetContent))").append("<h1>HEJ</h1>");
+	$(".widgetDiv:not(:has(>.widgetContent))").append("<div data-spklw-widget='widget-5591293a1ed53' class='widgetContent'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
