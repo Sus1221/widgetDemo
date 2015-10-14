@@ -58,6 +58,10 @@ function callbackForLoadjQueryUI() {
 	makeBodySelectable();
 }
 
+function callbackForLoadSprinkle(){
+	console.log("callbackForLoadSprinkle console.log");
+};
+
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	//console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
