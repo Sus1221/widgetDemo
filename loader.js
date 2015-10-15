@@ -90,12 +90,10 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000' class='widgetDiv'><h3 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;'>&#10006;</h3><div data-spklw-widget='widget-5591293a1ed53'></div></div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
-			loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 			$("body").prepend(divToAdd);
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
-			loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
