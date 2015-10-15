@@ -15,6 +15,13 @@ function loadFile(type, url, callback, async) {
 			console.log("async added!");
 			script.async = true;
 		}
+		//if sprinkle content script is loaded
+		if (url.indexOf("sprinklecontent") >= 0){
+			//add attribute
+			console.log("special att added");
+			var att = document.createAttribute("data-spklw-automatic-initialization");
+			script.setAttributeNode(att);
+		}
 		//Bind ev. callback function to events
 		if(callback){
 			script.onreadystatechange = callback;
