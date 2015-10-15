@@ -59,9 +59,8 @@ function callbackForLoadjQueryUI() {
 }
 
 function callbackForLoadSprinkle(){
-	console.log("callbackForLoadSprinkle console.log");
+	console.log("callbackForLoadSprinkle function console.log");
 	//Line under this made real widget content show at end of body!
-	$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
 //### Problem att lösa just nu: på rad 64 går det utmärkt att lägga till en fungerande widget, men när jag försöker lägga till den inuti divToAdd på rad 90 får den höjd 0
@@ -91,10 +90,12 @@ function calcDivMeasurements() {
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
+			loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
 			$(divToAdd).insertBefore(clickedElement);
+			loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
 	}else{
