@@ -147,6 +147,8 @@ function manageUserFunctions(event){
 		makeBodyUnselectable();
 		//make elements sortable
 		makeBodyContentSortable();
+	}else if($("#resizeElements").is(":checked")){
+		console.log("resize elements is checked!");
 	}
 }
 
