@@ -59,6 +59,8 @@ function callbackForLoadjQueryUI() {
 														"<input type='radio' name='chooseFunction' id='createElements' checked><br>" +
 														"<label for='sortElements'> Drag n drop</label>" +
 														"<input type='radio' name='chooseFunction' id='sortElements'><br>" +
+														"<label for='resizeElements'>Resize</label>" +
+														"<input type='radio' name='chooseFunction' id='resizeElements'" +
 												"</form>" +
 											"</div>");
 	//Make body selectable so user is able to create a widget div
