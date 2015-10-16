@@ -71,8 +71,6 @@ function callbackForLoadSprinkle(){
 	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
-//### Problem att lösa just nu: på rad 64 går det utmärkt att lägga till en fungerande widget, men när jag försöker lägga till den inuti divToAdd på rad 90 får den höjd 0
-
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	//console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
@@ -98,6 +96,7 @@ function calcDivMeasurements() {
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
+			$(".widgetDiv").resizable();
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
