@@ -181,7 +181,6 @@ function makeBodySelectable() {
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	console.log("body now sortable");
-	
 	$("html *").sortable({
 		placeholder: "placeholder",
 		forcePlaceholderSize: true,
@@ -191,28 +190,43 @@ function makeBodyContentSortable() {
 	});
 }
 
+//makes widget-<div> resizable
 function makeWidgetResizable() {
 	console.log("widget now resizable");
 	$(".widgetDiv").resizable();
 }
 
+//make <html> un-selectable
 function makeBodyUnselectable() {
 	console.log("body now NOT selectable");
-	//$( "body" ).selectable( "option", "disabled", true);
-	$("hmtl").selectable("destroy");
+	if ($("html").hasClass( "ui-selectable")) {
+		console.log("html has that class!!(selectable)");
+		$("hmtl").selectable("destroy");
+	}
 }
 
-//Makes <body> and some of its descendants NOT sortable
+//Makes <body> and all its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
-	//make everything made sortable in makeBodyContentSortable UNsortable
-	$("html *").sortable("destroy");
+	if ($("html").hasClass("ui-sortable")) {
+		console.log("html has that class(sortable)");
+		$("html *").sortable("destroy");
+	}
 }
 
+//makes widget-<div> un-resizable
 function makeWidgetUnresizable(){
 	console.log("widget now un-resizable");
-	$(".widgetDiv").resizable("destroy");
+	if($("widgetDiv").hasClass("ui-resizable")){
+		console.log("widgetDiv has that class!!(reszable)");
+		$(".widgetDiv").resizable("destroy");
+	}
 }
+
+//check if element has that specific jqueryui-function active
+
+
+
 
 //EXECUTION 
 /*****************************************************************/
