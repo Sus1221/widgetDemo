@@ -137,12 +137,6 @@ function whichElementClicked(event){
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
-	if(clickedElement.id == "floatR"){
-		console.log("float right clicked");
-	}
-	if(clickedElement.id == "floatL"){
-		console.log("float left clicked");
-	}
 }
 
 function manageUserFunctions(event){
@@ -174,6 +168,10 @@ function manageUserFunctions(event){
 		makeBodyContentUnsortable();
 		//make widget resizable
 		makeWidgetResizable();
+	}else if($("#floatR").is(":checked")){
+		console.log("float right is checked");
+	}else if($("#floatL").is(":checked")){
+		console.log("float left is checked");
 	}
 }
 
