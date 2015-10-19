@@ -94,7 +94,17 @@ function calcDivMeasurements() {
 	}
 	if(divHeight > 50 && divWidth > 50) {
 		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
-		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:"+ divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'><h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4><div data-spklw-widget='widget-5591293a1ed53'></div></div>";
+		var divToAdd = "<div style='position:relative; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
+							divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
+								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								"<div class='floatSettings' style='position:absolute;top:5px;left:5px;'>" +
+									"<label for='floatR'>Float right</label>" +
+									"<input type='radio' name='float' id='floatR'>" +
+									"<label for='floatL>Float left</label>'" +
+									"<input type='radio' name='float' id='floatL'>" +
+								"</div>" +
+								"<div data-spklw-widget='widget-5591293a1ed53'></div>" +
+							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
@@ -114,13 +124,12 @@ function calcDivMeasurements() {
 function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
-	//console.log("clickedElement", clickedElement);
+	console.log("clickedElement", clickedElement);
 	//console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "radio"){
 		console.log("it is a radiobutton");
 		setTimeout(function() { manageUserFunctions(event); }, 500);
 	}
-
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
@@ -128,6 +137,9 @@ function whichElementClicked(event){
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
+	/*if(clickedElement){
+
+	}*/
 }
 
 function manageUserFunctions(event){
