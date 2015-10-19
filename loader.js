@@ -133,22 +133,32 @@ function whichElementClicked(event){
 function manageUserFunctions(event){
 	console.log("start of manageUserFunctions function");
 	console.log("manageUserFunctions-function Event-inparameter: ", event);
-	//Make body selectable/unselectable/sortable/unsortable 
+	//Make body selectable/unselectable/sortable/unsortable/resizable/unresizable
 	//according to users choice in radiobuttons
 	if($("#createElements").is(':checked')){
 		console.log("createElements is checked");
 		//disable sortable
 		makeBodyContentUnsortable();
+		//disable resizable
+		makeWidgetUnresizable();
 		//make elements selectable
 		makeBodySelectable();
 	}else if($("#sortElements").is(":checked")){
 		console.log("sortElements is checked");
 		//disable selectable
 		makeBodyUnselectable();
+		//disable resizable
+		makeWidgetUnresizable();
 		//make elements sortable
 		makeBodyContentSortable();
 	}else if($("#resizeElements").is(":checked")){
 		console.log("resize elements is checked!");
+		//disable selectable
+		makeBodyUnselectable();
+		//disable sortable
+		makeBodyContentUnsortable();
+		//make widget resizable
+		makeWidgetResizable();
 	}
 }
 
@@ -168,12 +178,6 @@ function makeBodySelectable() {
 	});
 }
 
-function makeBodyUnselectable() {
-	console.log("body now NOT selectable");
-	//$( "body" ).selectable( "option", "disabled", true);
-	$("hmtl").selectable("destroy");
-}
-
 //Makes <body> and some of its descendants sortable
 function makeBodyContentSortable() {
 	console.log("body now sortable");
@@ -187,11 +191,27 @@ function makeBodyContentSortable() {
 	});
 }
 
+function makeWidgetResizable() {
+	console.log("widget now resizable");
+	$(".widgetDiv").resizable();
+}
+
+function makeBodyUnselectable() {
+	console.log("body now NOT selectable");
+	//$( "body" ).selectable( "option", "disabled", true);
+	$("hmtl").selectable("destroy");
+}
+
 //Makes <body> and some of its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	//make everything made sortable in makeBodyContentSortable UNsortable
 	$("html *").sortable("destroy");
+}
+
+function makeWidgetUnresizable(){
+	console.log("widget now un-resizable");
+	$(".widgetDiv").resizable("destroy");
 }
 
 //EXECUTION 
