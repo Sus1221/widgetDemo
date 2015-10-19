@@ -131,8 +131,8 @@ function whichElementClicked(event){
 }
 
 function manageUserFunctions(event){
-	console.log("start of manageUserFunctions function");
-	console.log("manageUserFunctions-function Event-inparameter: ", event);
+	//console.log("start of manageUserFunctions function");
+	//console.log("manageUserFunctions-function Event-inparameter: ", event);
 	//Make body selectable/unselectable/sortable/unsortable/resizable/unresizable
 	//according to users choice in radiobuttons
 	if($("#createElements").is(':checked')){
@@ -208,6 +208,7 @@ function makeBodyUnselectable() {
 //Makes <body> and all its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
+	console.log("First child of html:", $("html:first-child"));
 	if ($("html:first-child").hasClass("ui-sortable")) {
 		console.log("html has that class(sortable)");
 		$("html *").sortable("destroy");
@@ -218,7 +219,7 @@ function makeBodyContentUnsortable(){
 function makeWidgetUnresizable(){
 	console.log("widget now un-resizable");
 	if($("widgetDiv").hasClass("ui-resizable")){
-		console.log("widgetDiv has that class!!(reszable)");
+		console.log("widgetDiv has that class!!(resizable)");
 		$(".widgetDiv").resizable("destroy");
 	}
 }
