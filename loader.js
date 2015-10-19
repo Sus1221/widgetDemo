@@ -208,7 +208,7 @@ function makeBodyUnselectable() {
 //Makes <body> and all its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
-	console.log("First child of html:", $("html:first-child"));
+	console.log("First child of html:", $("html").children());
 	if ($("html:first-child").hasClass("ui-sortable")) {
 		console.log("html has that class(sortable)");
 		$("html *").sortable("destroy");
