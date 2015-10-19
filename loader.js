@@ -12,13 +12,13 @@ function loadFile(type, url, callback, async) {
 		script.type = 'text/javascript';
 		script.src = url;
 		if(async){
-			console.log("async added!");
+			//console.log("async added!");
 			script.async = true;
 		}
 		//if sprinkle content script is loaded
 		if (url.indexOf("sprinklecontent") >= 0){
 			//add attribute
-			console.log("special att added");
+			//console.log("special att added");
 			var att = document.createAttribute("data-spklw-automatic-initialization");
 			script.setAttributeNode(att);
 		}
@@ -68,7 +68,7 @@ function callbackForLoadjQueryUI() {
 }
 
 function callbackForLoadSprinkle(){
-	console.log("callbackForLoadSprinkle function console.log");
+	//console.log("callbackForLoadSprinkle function console.log");
 	//Line under this made real widget content show at end of body!
 	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
