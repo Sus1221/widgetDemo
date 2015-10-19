@@ -118,7 +118,7 @@ function whichElementClicked(event){
 	//console.log("clickedElement.type", clickedElement.type);
 	if(clickedElement.type == "radio"){
 		console.log("it is a radiobutton");
-		setTimeout(function() { manageUserFunctions(event); }, 1000);
+		setTimeout(function() { manageUserFunctions(event); }, 500);
 	}
 
 	//If X (remove) on widget is clicked
@@ -208,7 +208,7 @@ function makeBodyUnselectable() {
 //Makes <body> and all its descendants NOT sortable
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
-	console.log("First child of html:", $("html").children());
+	console.log("All children of html:", $("html").children());
 	if ($("body").hasClass( "ui-sortable")) {
 		console.log("body has that class(sortable)");
 		$("html *").sortable("destroy");
@@ -223,11 +223,6 @@ function makeWidgetUnresizable(){
 		$(".widgetDiv").resizable("destroy");
 	}
 }
-
-//check if element has that specific jqueryui-function active
-
-
-
 
 //EXECUTION 
 /*****************************************************************/
