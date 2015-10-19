@@ -209,8 +209,8 @@ function makeBodyUnselectable() {
 function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	console.log("First child of html:", $("html").children());
-	if ($("html:first-child").hasClass("ui-sortable")) {
-		console.log("html has that class(sortable)");
+	if ($("body").hasClass( "ui-sortable")) {
+		console.log("body has that class(sortable)");
 		$("html *").sortable("destroy");
 	}
 }
@@ -218,7 +218,7 @@ function makeBodyContentUnsortable(){
 //makes widget-<div> un-resizable
 function makeWidgetUnresizable(){
 	console.log("widget now un-resizable");
-	if($("widgetDiv").hasClass("ui-resizable")){
+	if($(".widgetDiv").hasClass("ui-resizable")){
 		console.log("widgetDiv has that class!!(resizable)");
 		$(".widgetDiv").resizable("destroy");
 	}
