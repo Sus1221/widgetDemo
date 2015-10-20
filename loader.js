@@ -90,6 +90,7 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:relative; float:left; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								"<span class='floatL'>L</span><span class='floatR'>R</span>" +
 								"<div data-spklw-widget='widget-5591293a1ed53'></div>" +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
@@ -120,10 +121,16 @@ function whichElementClicked(event){
 	}*/
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
-		console.log("It's the right class name, it is X");
+		console.log("you clicked X");
 		//remove widget div
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
+	}
+	if(clickedElement.className.indexOf("floatL") > -1){
+		console.log("you clicked floatL");
+	}
+	if(clickedElement.className.indexOf("floatR") > -1){
+		console.log("you clicked floatR");
 	}
 }
 
