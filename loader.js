@@ -54,7 +54,7 @@ var clickedElement;
 function callbackForLoadjQueryUI() {
 	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:100px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0'>" +
-										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height=40px'>"
+										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height=40px'>" +
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
