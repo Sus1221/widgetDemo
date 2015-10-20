@@ -87,7 +87,7 @@ function calcDivMeasurements() {
 	}
 	if(divHeight > 50 && divWidth > 50) {
 		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
-		var divToAdd = "<div style='position:relative; float:left; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
+		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								"<span class='floatL' style='font-size:20px;cursor:pointer;'> Left </span>" +
