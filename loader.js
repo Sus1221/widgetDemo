@@ -142,19 +142,19 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.className.indexOf("marginT") > -1){
 		console.log("marginTOP");
-		$(clickedElement).parent().css("margin-top", "+=10");
+		$(clickedElement).parent().css("margin-top", "+=20");
 	}
 	if(clickedElement.className.indexOf("marginR") > -1){
 		console.log("marginR");
-		$(clickedElement).parent().css("margin-right", "+=10");
+		$(clickedElement).parent().css("margin-right", "+=20");
 	}
 	if(clickedElement.className.indexOf("marginB") > -1){
 		console.log("marginB");
-		$(clickedElement).parent().css("margin-bottom", "+=10");
+		$(clickedElement).parent().css("margin-bottom", "+=20");
 	}
 	if(clickedElement.className.indexOf("marginL") > -1){
 		console.log("marginL");
-		$(clickedElement).parent().css("margin-left", "+=10");
+		$(clickedElement).parent().css("margin-left", "+=20");
 	}
 }
 
