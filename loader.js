@@ -132,6 +132,9 @@ function whichElementClicked(event){
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
+	if(clickedElement.type == "a"){
+		$(clickedElement).trigger("click");
+	}
 	if(clickedElement.className.indexOf("floatL") > -1){
 		console.log("you clicked floatL");
 		$(clickedElement).parent().css("float", "left");
