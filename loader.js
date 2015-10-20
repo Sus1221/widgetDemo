@@ -207,7 +207,7 @@ function makeBodySelectable() {
 function makeWidgetResizable() {
 	console.log("widget now resizable");
 	$(".widgetDiv").resizable({
-		handles: 'n, e, s, w'
+		handles: ' n, e, s, w, ne, se, sw, nw '
 	});
 }
 
