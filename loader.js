@@ -133,6 +133,7 @@ function whichElementClicked(event){
 		console.log("Element removed");
 	}
 	if(clickedElement.type == "a"){
+		makeBodyUnselectable();
 		$(clickedElement).trigger("click");
 	}
 	if(clickedElement.className.indexOf("floatL") > -1){
@@ -236,13 +237,13 @@ function makeWidgetResizable() {
 }
 
 //make <html> un-selectable
-/*function makeBodyUnselectable() {
+function makeBodyUnselectable() {
 	console.log("body now NOT selectable");
 	if ($("html").hasClass( "ui-selectable")) {
 		console.log("html has that class!!(selectable)");
 		$("hmtl").selectable("destroy");
 	}
-}*/
+}
 
 //Makes <body> and all its descendants NOT sortable
 /*function makeBodyContentUnsortable(){
