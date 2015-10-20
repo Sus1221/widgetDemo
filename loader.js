@@ -90,7 +90,7 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:relative; float:left; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								"<span class='floatL' style='font-size:20px;cursor:pointer;'>L </span><span class='floatR' style='font-size:20px;cursor:pointer;'> R</span>" +
+								"<span class='floatL' style='font-size:20px;cursor:pointer;'> FL </span><span class='floatR' style='font-size:20px;cursor:pointer;'> FR </span><span class='marginT'> T </span><span class='marginR'> R </span><span class='marginB'> B </span><span class='marginL'> L </span>" +
 								"<div data-spklw-widget='widget-5591293a1ed53'></div>" +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
@@ -133,6 +133,18 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("floatR") > -1){
 		console.log("you clicked floatR");
 		$(clickedElement).parent().css("float", "right");
+	}
+	if(clickedElement.className.indexOf("marginT") > -1){
+		console.log("marginTOP");
+	}
+	if(clickedElement.className.indexOf("marginR") > -1){
+		console.log("marginR");
+	}
+	if(clickedElement.className.indexOf("marginB") > -1){
+		console.log("marginB");
+	}
+	if(clickedElement.className.indexOf("marginL") > -1){
+		console.log("marginL");
 	}
 }
 
