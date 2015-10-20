@@ -128,9 +128,11 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.className.indexOf("floatL") > -1){
 		console.log("you clicked floatL");
+		$(clickedElement).parent().css("float", "left");
 	}
 	if(clickedElement.className.indexOf("floatR") > -1){
 		console.log("you clicked floatR");
+		$(clickedElement).parent().css("float", "right");
 	}
 }
 
