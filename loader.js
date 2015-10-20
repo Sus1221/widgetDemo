@@ -113,6 +113,8 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
+		makeBodySelectable();
+		makeWidgetResizable();
 	}else{
 		console.log("Div measurements too small!");
 	}
@@ -124,10 +126,10 @@ function whichElementClicked(event){
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
 	//console.log("clickedElement.type", clickedElement.type);
-	if(clickedElement.type == "radio"){
+	/*if(clickedElement.type == "radio"){
 		console.log("it is a radiobutton");
 		setTimeout(function() { manageUserFunctions(event); }, 500);
-	}
+	}*/
 	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("It's the right class name, it is X");
@@ -137,7 +139,7 @@ function whichElementClicked(event){
 	}
 }
 
-function manageUserFunctions(event){
+/*function manageUserFunctions(event){
 	//console.log("start of manageUserFunctions function");
 	//console.log("manageUserFunctions-function Event-inparameter: ", event);
 	//Make body selectable/unselectable/sortable/unsortable/resizable/unresizable
@@ -150,14 +152,14 @@ function manageUserFunctions(event){
 		makeWidgetUnresizable();
 		//make elements selectable
 		makeBodySelectable();
-	/*}else if($("#sortElements").is(":checked")){
+	}else if($("#sortElements").is(":checked")){
 		console.log("sortElements is checked");
 		//disable selectable
 		makeBodyUnselectable();
 		//disable resizable
 		makeWidgetUnresizable();
 		//make elements sortable
-		makeBodyContentSortable();*/
+		makeBodyContentSortable();
 	}else if($("#resizeElements").is(":checked")){
 		console.log("resize elements is checked!");
 		//disable selectable
@@ -171,7 +173,7 @@ function manageUserFunctions(event){
 	}else if($("#floatL").is(":checked")){
 		console.log("float left is checked");
 	}
-}
+}*/
 
 //##### nästa steg är att göra nåt vettigt(=gör clickat elements pappa/farfar right/left-floatat) i de 2 else-if-erna på rad 171 och 173
 
@@ -207,18 +209,18 @@ function makeBodySelectable() {
 function makeWidgetResizable() {
 	console.log("widget now resizable");
 	$(".widgetDiv").resizable({
-		handles: ' n, e, s, w, ne, se, sw, nw '
+		handles: ' n, e, s, w, ne, se, sw, nw'
 	});
 }
 
 //make <html> un-selectable
-function makeBodyUnselectable() {
+/*function makeBodyUnselectable() {
 	console.log("body now NOT selectable");
 	if ($("html").hasClass( "ui-selectable")) {
 		console.log("html has that class!!(selectable)");
 		$("hmtl").selectable("destroy");
 	}
-}
+}*/
 
 //Makes <body> and all its descendants NOT sortable
 /*function makeBodyContentUnsortable(){
@@ -231,13 +233,13 @@ function makeBodyUnselectable() {
 }*/
 
 //makes widget-<div> un-resizable
-function makeWidgetUnresizable(){
+/*function makeWidgetUnresizable(){
 	console.log("widget now un-resizable");
 	if($(".widgetDiv").hasClass("ui-resizable")){
 		console.log("widgetDiv has that class!!(resizable)");
 		$(".widgetDiv").resizable("destroy");
 	}
-}
+}*/
 
 //EXECUTION 
 /*****************************************************************/
