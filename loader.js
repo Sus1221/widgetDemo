@@ -90,13 +90,8 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:relative; float:left; border:1px solid black; outline:1px solid darkgray; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:5px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:5px;right:5px;cursor:pointer;font-size:30px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								"<span class='floatL' style='font-size:20px;cursor:pointer;'> FL </span>" +
-								"<span class='floatR' style='font-size:20px;cursor:pointer;'> FR </span>" +
-								"<span>     </span>" +
-								"<span class='marginT' style='cursor:pointer;'> To </span>" +
-								"<span class='marginR' style='cursor:pointer;'> Ri </span>" +
-								"<span class='marginB' style='cursor:pointer;'> Bo </span>" +
-								"<span class='marginL' style='cursor:pointer;'> Le </span>" +
+								"<span class='floatL' style='font-size:20px;cursor:pointer;'> Left </span>" +
+								"<span class='floatR' style='font-size:20px;cursor:pointer;'> Right </span>" +
 								"<div data-spklw-widget='widget-5591293a1ed53'></div>" +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
@@ -143,22 +138,6 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("floatR") > -1){
 		console.log("you clicked floatR");
 		$(clickedElement).parent().css("float", "right");
-	}
-	if(clickedElement.className.indexOf("marginT") > -1){
-		console.log("marginTOP");
-		$(clickedElement).parent().css("margin-top", "+=20");
-	}
-	if(clickedElement.className.indexOf("marginR") > -1){
-		console.log("marginR");
-		$(clickedElement).parent().css("margin-right", "+=20");
-	}
-	if(clickedElement.className.indexOf("marginB") > -1){
-		console.log("marginB");
-		$(clickedElement).parent().css("margin-bottom", "+=20");
-	}
-	if(clickedElement.className.indexOf("marginL") > -1){
-		console.log("marginL");
-		$(clickedElement).parent().css("margin-left", "+=20");
 	}
 }
 
