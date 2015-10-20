@@ -57,8 +57,6 @@ function callbackForLoadjQueryUI() {
 												"<form>" +
 														"<label for='createElements'> Create Elements</label>" +
 														"<input type='radio' name='chooseFunction' id='createElements' checked><br>" +
-														"<label for='sortElements'> Drag n drop</label>" +
-														"<input type='radio' name='chooseFunction' id='sortElements'><br>" +
 														"<label for='resizeElements'>Resize</label>" +
 														"<input type='radio' name='chooseFunction' id='resizeElements'>" +
 												"</form>" +
@@ -147,25 +145,25 @@ function manageUserFunctions(event){
 	if($("#createElements").is(':checked')){
 		console.log("createElements is checked");
 		//disable sortable
-		makeBodyContentUnsortable();
+		//makeBodyContentUnsortable();
 		//disable resizable
 		makeWidgetUnresizable();
 		//make elements selectable
 		makeBodySelectable();
-	}else if($("#sortElements").is(":checked")){
+	/*}else if($("#sortElements").is(":checked")){
 		console.log("sortElements is checked");
 		//disable selectable
 		makeBodyUnselectable();
 		//disable resizable
 		makeWidgetUnresizable();
 		//make elements sortable
-		makeBodyContentSortable();
+		makeBodyContentSortable();*/
 	}else if($("#resizeElements").is(":checked")){
 		console.log("resize elements is checked!");
 		//disable selectable
 		makeBodyUnselectable();
 		//disable sortable
-		makeBodyContentUnsortable();
+		//makeBodyContentUnsortable();
 		//make widget resizable
 		makeWidgetResizable();
 	}else if($("#floatR").is(":checked")){
@@ -174,6 +172,8 @@ function manageUserFunctions(event){
 		console.log("float left is checked");
 	}
 }
+
+//##### nästa steg är att göra nåt vettigt(=gör clickat elements pappa/farfar right/left-floatat) i de 2 else-if-erna på rad 171 och 173
 
 //Makes <body> "selectable" - makes it possible for  user to create custom <div>
 function makeBodySelectable() {
@@ -192,7 +192,7 @@ function makeBodySelectable() {
 }
 
 //Makes <body> and some of its descendants sortable
-function makeBodyContentSortable() {
+/*function makeBodyContentSortable() {
 	console.log("body now sortable");
 	$("html *").sortable({
 		placeholder: "placeholder",
@@ -201,12 +201,14 @@ function makeBodyContentSortable() {
 			ui.placeholder.css('background-color', 'blue');
 		}
 	});
-}
+}*/
 
 //makes widget-<div> resizable
 function makeWidgetResizable() {
 	console.log("widget now resizable");
-	$(".widgetDiv").resizable();
+	$(".widgetDiv").resizable({
+		handles: 'n, e, s, w'
+	});
 }
 
 //make <html> un-selectable
@@ -219,14 +221,14 @@ function makeBodyUnselectable() {
 }
 
 //Makes <body> and all its descendants NOT sortable
-function makeBodyContentUnsortable(){
+/*function makeBodyContentUnsortable(){
 	console.log("body now NOT sortable");
 	console.log("All children of html:", $("html").children());
 	if ($("body").hasClass( "ui-sortable")) {
 		console.log("body has that class(sortable)");
 		$("html *").sortable("destroy");
 	}
-}
+}*/
 
 //makes widget-<div> un-resizable
 function makeWidgetUnresizable(){
