@@ -60,17 +60,6 @@ function callbackForLoadjQueryUI() {
 										"<input type='radio' id='no-border' name='borderChoice'>" +
 										"<label for='borderChoice'>No borders</label>" +
 								"</div>");
-	//style radiobutton dot
-	$("input[type='radio']:checked:before").css({
-		"display": "block",
-		"position": "relative",
-		"top": "3px",
-		"left": "3px",
-		"width": "6px",
-		"height": "6px",
-		"border-radius": "50%",
-		"background": "red"
-   });
 
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
@@ -137,16 +126,22 @@ function whichElementClicked(event){
 		setTimeout(function() { manageUserFunctions(event); }, 500);
 	}*/
 	//If X (remove) on widget is clicked
+	if(clickedElement.id == "border"){
+		$(".widgetDiv").css("border", "0");
+	}
+	if(clickedElement.id == "no-border"){
+		$(".widgetDiv").css("border", "1px solid black");
+	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
 		//remove widget div
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
-	if(clickedElement.type == "a"){
+	/*if(clickedElement.type == "a"){
 		makeBodyUnselectable();
 		$(clickedElement).trigger("click");
-	}
+	}*/
 	if(clickedElement.className.indexOf("floatL") > -1){
 		console.log("you clicked floatL");
 		$(clickedElement).parent().css("float", "left");
