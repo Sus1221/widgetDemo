@@ -57,6 +57,10 @@ function callbackForLoadjQueryUI() {
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
 										"<input type='checkbox' id='border' name='border' checked>" +
 										"<label for='borderChoice'>Border</label><br>" +
+										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType'>" +
+										"<label for='standardWidget'>Standard widget</label>" +
+										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
+										"<label for='sidebarWidget'>Sidebar widget</label>" +
 								"</div>");
 
 	//Make body selectable so user is able to create a widget div
@@ -127,6 +131,9 @@ function whichElementClicked(event){
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
 		setTimeout(function(){manageDivBorder();}, 200);
+	}
+	if(clickedElement.className.indexOf("widgetType") > -1){
+		console.log("widgettype input class clicked");
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
