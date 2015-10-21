@@ -127,9 +127,11 @@ function whichElementClicked(event){
 	}*/
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
+		console.log("border radio clicked");
 		$(".widgetDiv").css("border", "0");
 	}
 	if(clickedElement.id == "no-border"){
+		console.log("no border radio clicked");
 		$(".widgetDiv").css("border", "1px solid black");
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
