@@ -126,6 +126,7 @@ function whichElementClicked(event){
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
+		setTimeout(function(){return;}, 1000);
 		if($("#border").is(":checked")){
 			console.log("is checked");
 		}else{
