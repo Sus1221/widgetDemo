@@ -49,6 +49,9 @@ var endX = 0;
 var startY = 0;
 var endY = 0;
 var clickedElement;
+//The default div is a standard widget
+var strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+//the correspondant div for sidebar is: "<div data-spklw-widget="widget-5524d25c249ad"></div>"
 
 //Callback after jqueryUI load
 function callbackForLoadjQueryUI() {
@@ -57,8 +60,8 @@ function callbackForLoadjQueryUI() {
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
 										"<input type='checkbox' id='border' name='border' checked>" +
 										"<label for='borderChoice'>Border</label><br>" +
-										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType'>" +
-										"<label for='standardWidget'>Standard widget</label>" +
+										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
+										"<label for='standardWidget'>Standard widget</label><br>" +
 										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
 										"<label for='sidebarWidget'>Sidebar widget</label>" +
 								"</div>");
@@ -99,7 +102,7 @@ function calcDivMeasurements() {
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								"<span class='floatL' style='font-size:15px;cursor:pointer;'> Left </span>" +
 								"<span class='floatR' style='font-size:15px;cursor:pointer;'> Right </span>" +
-								"<div data-spklw-widget='widget-5591293a1ed53'></div>" +
+								strossleWidgetLink +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
@@ -134,6 +137,7 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
+		setTimeout(function(){manageWidgetType();}, 200);
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
@@ -164,6 +168,20 @@ function manageDivBorder() {
 			console.log("is not checked");
 			$(".widgetDiv").css("border", "0");
 		}
+}
+
+function manageWidgetType() {
+	if($("#standardWidget").is(":checked")){
+		console.log("standard widget is checked");
+		strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+	}
+	if($("#sidebarWidget").is(":checked")){
+		console.log("sidebar widget is checked");
+		strossleWidgetLink = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+	}
+
+
+		
 }
 
 /*function manageUserFunctions(event){
