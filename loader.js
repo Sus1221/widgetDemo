@@ -126,12 +126,7 @@ function whichElementClicked(event){
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
-		setTimeout(function(){return;}, 5000);
-		if($("#border").is(":checked")){
-			console.log("is checked");
-		}else{
-			console.log("is not checked");
-		}
+		setTimeout(function(){manageDivBorder();}, 5000);
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
@@ -151,6 +146,15 @@ function whichElementClicked(event){
 		console.log("you clicked floatR");
 		$(clickedElement).parent().css("float", "right");
 	}
+}
+
+function manageDivBorder() {
+	console.log("manageDivBorder Function");
+	if($("#border").is(":checked")){
+			console.log("is checked");
+		}else{
+			console.log("is not checked");
+		}
 }
 
 /*function manageUserFunctions(event){
