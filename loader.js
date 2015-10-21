@@ -54,9 +54,9 @@ var clickedElement;
 function callbackForLoadjQueryUI() {
 	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0'>" +
-										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'>" +
+										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
 										"<label for='borderChoice'>Borders</label>" +
-										"<input type='radio' id='border' name='borderChoice'>" +
+										"<input type='radio' id='border' name='borderChoice'><br>" +
 										"<label for='borderChoice'>No borders</label>" +
 										"<input type='radio' id='no-border' name='borderChoice'>" +
 								"</div>");
