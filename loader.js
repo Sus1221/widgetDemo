@@ -55,10 +55,8 @@ function callbackForLoadjQueryUI() {
 	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
-										"<input type='radio' id='border' name='borderChoice' checked>" +
-										"<label for='borderChoice'>Borders</label><br>" +
-										"<input type='radio' id='no-border' name='borderChoice'>" +
-										"<label for='borderChoice'>No borders</label>" +
+										"<input type='checkbox' id='border' name='border' checked>" +
+										"<label for='borderChoice'>Border</label><br>" +
 								"</div>");
 
 	//Make body selectable so user is able to create a widget div
@@ -127,12 +125,7 @@ function whichElementClicked(event){
 	}*/
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
-		console.log("border radio clicked");
-		$(".widgetDiv").css("border", "0");
-	}
-	if(clickedElement.id == "no-border"){
-		console.log("no border radio clicked");
-		$(".widgetDiv").css("border", "1px solid black");
+		console.log("clicked element:", clickedElement);
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
