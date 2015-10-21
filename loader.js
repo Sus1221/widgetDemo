@@ -126,7 +126,7 @@ function whichElementClicked(event){
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
-		setTimeout(function(){manageDivBorder();}, 5000);
+		setTimeout(function(){manageDivBorder();}, 500);
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
