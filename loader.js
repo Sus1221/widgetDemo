@@ -55,11 +55,23 @@ function callbackForLoadjQueryUI() {
 	//Add controlBox for sortable()/selectable()
 	$("body").prepend("<div style='min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
-										"<input type='radio' id='border' name='borderChoice'>" +
+										"<input type='radio' id='border' name='borderChoice' checked>" +
 										"<label for='borderChoice'>Borders</label><br>" +
 										"<input type='radio' id='no-border' name='borderChoice'>" +
 										"<label for='borderChoice'>No borders</label>" +
 								"</div>");
+	//style radiobutton dot
+	$("input[type='radio']:checked:before").css({
+		"display": "block",
+		"position": "relative",
+		"top": "3px",
+		"left": "3px",
+		"width": "6px",
+		"height": "6px",
+		"border-radius": "50%",
+		"background": "red"
+   });
+
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
 }
