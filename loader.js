@@ -248,9 +248,9 @@ function makeBodySelectable() {
 //makes widget-<div> resizable
 function makeWidgetResizable() {
 	console.log("widget now resizable");
-	$(".widgetDiv").resizable({
+	/*$(".widgetDiv").resizable({
 		handles: ' n, e, s, w, ne, se, sw, nw'
-	});
+	});*/
 }
 
 //make <html> un-selectable
