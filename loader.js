@@ -251,6 +251,7 @@ function makeWidgetResizable() {
 	/*$(".widgetDiv").resizable({
 		handles: ' n, e, s, w, ne, se, sw, nw'
 	});*/
+	$(".widgetDiv").resizable();
 }
 
 //make <html> un-selectable
