@@ -109,12 +109,13 @@ function calcDivMeasurements() {
 			//prepend div to body
 			$("body").prepend(divToAdd);
 			console.log("clickedElement is body, div prepended to body");
+			makeWidgetResizable();
 		}else{
 			//insert div before the clickedElement
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
+			makeWidgetResizable();
 		}
-		makeWidgetResizable();
 	}else{
 		console.log("Div measurements too small!");
 	}
