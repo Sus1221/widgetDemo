@@ -126,6 +126,7 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
+		makeWidgetResizable();
 		makeWidgetDraggable();
 	}else{
 		console.log("Div measurements too small!");
