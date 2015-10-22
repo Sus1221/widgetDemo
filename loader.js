@@ -72,7 +72,9 @@ function callbackForLoadjQueryUI() {
 										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
 										"<label for='standardWidget'>Standard widget</label><br>" +
 										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
-										"<label for='sidebarWidget'>Sidebar widget</label>" +
+										"<label for='sidebarWidget'>Sidebar widget</label><br>" +
+										"<input type='checkbox' id='draggableCB' name='draggableCB'>" +
+										"<label for='draggableCB'>Page draggable</label>" +
 								"</div>");
 
 	//Make body selectable so user is able to create a widget div
@@ -146,6 +148,9 @@ function whichElementClicked(event){
 		console.log("clicked element:", clickedElement);
 		setTimeout(function(){manageDivBorder();}, 200);
 	}
+	if(clickedElement.id == "draggableCB"){
+		console.log("clicked elementis draggable CB!");
+	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
 		setTimeout(function(){manageWidgetType();}, 200);
@@ -156,18 +161,6 @@ function whichElementClicked(event){
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
-	/*if(clickedElement.type == "a"){
-		makeBodyUnselectable();
-		$(clickedElement).trigger("click");
-	}*/
-	/*if(clickedElement.className.indexOf("floatL") > -1){
-		console.log("you clicked floatL");
-		$(clickedElement).parent().css("float", "left");
-	}
-	if(clickedElement.className.indexOf("floatR") > -1){
-		console.log("you clicked floatR");
-		$(clickedElement).parent().css("float", "right");
-	}*/
 }
 
 function manageDivBorder() {
@@ -266,8 +259,7 @@ function makeWidgetResizable() {
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
-	//$(".widgetDiv").draggable();
-	$("body *").draggable();
+	$(".widgetDiv").draggable();
 }
 
 //make <html> un-selectable
