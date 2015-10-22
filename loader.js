@@ -109,13 +109,12 @@ function calcDivMeasurements() {
 			//prepend div to body
 			$("body").prepend(divToAdd);
 			console.log("clickedElement is body, div prepended to body");
-			makeWidgetResizable();
 		}else{
 			//insert div before the clickedElement
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
-			makeWidgetResizable();
 		}
+		makeWidgetDraggable();
 	}else{
 		console.log("Div measurements too small!");
 	}
@@ -252,6 +251,11 @@ function makeWidgetResizable() {
    $(".widgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
+}
+
+function makeWidgetDraggable() {
+	console.log("make widget draggable function");
+	$(".widgetDiv").draggable();
 }
 
 //make <html> un-selectable
