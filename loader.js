@@ -53,6 +53,10 @@ var clickedElement;
 var strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 //the correspondant div for sidebar is: "<div data-spklw-widget="widget-5524d25c249ad"></div>"
 
+function callbackForLoadjQuery() {
+	console.log("jquery loaded");
+}
+
 //Callback after jqueryUI load
 function callbackForLoadjQueryUI() {
 	console.log("callback for load jquery ui function");
@@ -71,8 +75,12 @@ function callbackForLoadjQueryUI() {
 	makeBodySelectable();
 }
 
+function callbackForLoadjQueryCSS(){
+	console.log("jquery css loaded");
+}
+
 function callbackForLoadSprinkle(){
-	//console.log("callbackForLoadSprinkle function console.log");
+	console.log("callbackForLoadSprinkle function console.log");
 	//Line under this made real widget content show at end of body!
 	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
@@ -289,11 +297,11 @@ function makeWidgetDraggable() {
 //EXECUTION 
 /*****************************************************************/
 //load jQuery to site
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js");
+loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
 //load jQueryUI script to site
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 //Load jquery ui's css to site
-loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css");
+loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadjQueryCSS);
 loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 
 //add clickevent to <body>
