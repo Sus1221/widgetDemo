@@ -68,7 +68,7 @@ function callbackForLoadjQueryUI() {
 								"</div>");
 
 	//Make body selectable so user is able to create a widget div
-	//makeBodySelectable();
+	makeBodySelectable();
 }
 
 function callbackForLoadSprinkle(){
