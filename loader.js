@@ -266,7 +266,8 @@ function makeWidgetResizable() {
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
-	$(".widgetDiv").draggable();
+	//$(".widgetDiv").draggable();
+	$("body *").draggable();
 }
 
 //make <html> un-selectable
