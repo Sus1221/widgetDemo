@@ -108,7 +108,6 @@ function calcDivMeasurements() {
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
-			$(".widgetDiv").resizable();
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
@@ -249,10 +248,9 @@ function makeBodySelectable() {
 //makes widget-<div> resizable
 function makeWidgetResizable() {
 	console.log("widget now resizable");
-	/*$(".widgetDiv").resizable({
+	$(".widgetDiv").resizable({
 		handles: ' n, e, s, w, ne, se, sw, nw'
-	});*/
-	$("a").resizable();
+	});
 }
 
 //make <html> un-selectable
