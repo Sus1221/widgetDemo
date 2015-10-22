@@ -50,7 +50,7 @@ var startY = 0;
 var endY = 0;
 var clickedElement;
 //The default div is a standard widget
-var strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 //the correspondant div for sidebar is: "<div data-spklw-widget="widget-5524d25c249ad"></div>"
 
 function callbackForLoadjQuery() {
@@ -113,9 +113,7 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:1px solid black; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								"<span class='floatL' style='font-size:15px;cursor:pointer;'> Left </span>" +
-								"<span class='floatR' style='font-size:15px;cursor:pointer;'> Right </span>" +
-								strossleWidgetLink +
+								strossleWidgetDiv +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
@@ -162,14 +160,14 @@ function whichElementClicked(event){
 		makeBodyUnselectable();
 		$(clickedElement).trigger("click");
 	}*/
-	if(clickedElement.className.indexOf("floatL") > -1){
+	/*if(clickedElement.className.indexOf("floatL") > -1){
 		console.log("you clicked floatL");
 		$(clickedElement).parent().css("float", "left");
 	}
 	if(clickedElement.className.indexOf("floatR") > -1){
 		console.log("you clicked floatR");
 		$(clickedElement).parent().css("float", "right");
-	}
+	}*/
 }
 
 function manageDivBorder() {
@@ -186,7 +184,7 @@ function manageDivBorder() {
 function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		console.log("standard widget is checked");
-		strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 	}
 	if($("#sidebarWidget").is(":checked")){
 		console.log("sidebar widget is checked");
