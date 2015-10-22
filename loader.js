@@ -108,6 +108,7 @@ function calcDivMeasurements() {
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//prepend div to body
 			$("body").prepend(divToAdd);
+			$(".widgetDiv").resizable();
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div before the clickedElement
