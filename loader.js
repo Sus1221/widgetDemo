@@ -55,6 +55,10 @@ var strossleWidgetLink = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 
 function callbackForLoadjQuery() {
 	console.log("jquery loaded");
+	//load jQueryUI script to site
+	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
+	//Load jquery ui's css to site
+	loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadjQueryCSS);
 }
 
 //Callback after jqueryUI load
@@ -298,10 +302,6 @@ function makeWidgetDraggable() {
 /*****************************************************************/
 //load jQuery to site
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-//load jQueryUI script to site
-loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
-//Load jquery ui's css to site
-loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadjQueryCSS);
 loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
 
 //add clickevent to <body>
