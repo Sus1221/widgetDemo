@@ -87,8 +87,6 @@ function callbackForLoadjQueryCSS(){
 
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle function console.log");
-	//Line under this made real widget content show at end of body!
-	//$("body").append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 }
 
 //Calculate users desired measurements for widget-<div>
@@ -138,11 +136,6 @@ function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
-	//console.log("clickedElement.type", clickedElement.type);
-	/*if(clickedElement.type == "radio"){
-		console.log("it is a radiobutton");
-		setTimeout(function() { manageUserFunctions(event); }, 500);
-	}*/
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
@@ -189,48 +182,17 @@ function manageWidgetType() {
 function manageWholePageDraggable() {
 	if($("#draggableCB").is(":checked")){
 		console.log("draggable CB is checked");
-		$("body *").draggable();
+		$("body > *").draggable();
+		$("body > * > * ").draggable();
 	}else{
 		console.log("draggable CB is not checked");
-		//if body har class X kör destroy
+		if($("body:first-child").hasClass("ui-draggable")){
+			console.log("first child of body has that class - now destroy");
+			$("body > *").draggable("destroy");
+			$("body > * > *").drggable("destroy");
+		}
 	}
 }
-
-/*function manageUserFunctions(event){
-	//console.log("start of manageUserFunctions function");
-	//console.log("manageUserFunctions-function Event-inparameter: ", event);
-	//Make body selectable/unselectable/sortable/unsortable/resizable/unresizable
-	//according to users choice in radiobuttons
-	if($("#createElements").is(':checked')){
-		console.log("createElements is checked");
-		//disable sortable
-		//makeBodyContentUnsortable();
-		//disable resizable
-		makeWidgetUnresizable();
-		//make elements selectable
-		makeBodySelectable();
-	}else if($("#sortElements").is(":checked")){
-		console.log("sortElements is checked");
-		//disable selectable
-		makeBodyUnselectable();
-		//disable resizable
-		makeWidgetUnresizable();
-		//make elements sortable
-		makeBodyContentSortable();
-	}else if($("#resizeElements").is(":checked")){
-		console.log("resize elements is checked!");
-		//disable selectable
-		makeBodyUnselectable();
-		//disable sortable
-		//makeBodyContentUnsortable();
-		//make widget resizable
-		makeWidgetResizable();
-	}else if($("#floatR").is(":checked")){
-		console.log("float right is checked");
-	}else if($("#floatL").is(":checked")){
-		console.log("float left is checked");
-	}
-}*/
 
 //Makes <body> "selectable" - makes it possible for user to create custom <div>
 function makeBodySelectable() {
@@ -248,18 +210,6 @@ function makeBodySelectable() {
 	});
 }
 
-//Makes <body> and some of its descendants sortable
-/*function makeBodyContentSortable() {
-	console.log("body now sortable");
-	$("html *").sortable({
-		placeholder: "placeholder",
-		forcePlaceholderSize: true,
-		start: function(event, ui) {
-			ui.placeholder.css('background-color', 'blue');
-		}
-	});
-}*/
-
 //makes widget-<div> resizable
 function makeWidgetResizable() {
    console.log("widget now resizable");
@@ -272,34 +222,6 @@ function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".widgetDiv").draggable();
 }
-
-//make <html> un-selectable
-/*function makeBodyUnselectable() {
-	console.log("body now NOT selectable");
-	if ($("html").hasClass( "ui-selectable")) {
-		console.log("html has that class!!(selectable)");
-		$("hmtl").selectable("destroy");
-	}
-}*/
-
-//Makes <body> and all its descendants NOT sortable
-/*function makeBodyContentUnsortable(){
-	console.log("body now NOT sortable");
-	console.log("All children of html:", $("html").children());
-	if ($("body").hasClass( "ui-sortable")) {
-		console.log("body has that class(sortable)");
-		$("html *").sortable("destroy");
-	}
-}*/
-
-//makes widget-<div> un-resizable
-/*function makeWidgetUnresizable(){
-	console.log("widget now un-resizable");
-	if($(".widgetDiv").hasClass("ui-resizable")){
-		console.log("widgetDiv has that class!!(resizable)");
-		$(".widgetDiv").resizable("destroy");
-	}
-}*/
 
 //EXECUTION 
 /*****************************************************************/
