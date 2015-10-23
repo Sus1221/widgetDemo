@@ -150,6 +150,7 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.id == "draggableCB"){
 		console.log("clicked elementis draggable CB!");
+		manageWholePageDraggable();
 	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
@@ -182,6 +183,14 @@ function manageWidgetType() {
 	if($("#sidebarWidget").is(":checked")){
 		console.log("sidebar widget is checked");
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+	}
+}
+
+function manageWholePageDraggable() {
+	if($("#draggableCB").is(":checked")){
+		console.log("draggable CB is checked");
+	}else{
+		console.log("draggable CB is not checked");
 	}
 }
 
