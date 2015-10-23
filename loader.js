@@ -189,8 +189,10 @@ function manageWidgetType() {
 function manageWholePageDraggable() {
 	if($("#draggableCB").is(":checked")){
 		console.log("draggable CB is checked");
+		$("body *").draggable();
 	}else{
 		console.log("draggable CB is not checked");
+		//if body har class X kör destroy
 	}
 }
 
