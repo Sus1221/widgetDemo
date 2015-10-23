@@ -146,15 +146,15 @@ function whichElementClicked(event){
 	//If X (remove) on widget is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
-		setTimeout(function(){manageDivBorder();}, 100);
+		setTimeout(function(){manageDivBorder();}, 200);
 	}
 	if(clickedElement.id == "draggableCB"){
 		console.log("clicked elementis draggable CB!");
-		setTimeout(function(){manageWholePageDraggable();}, 100);
+		setTimeout(function(){manageWholePageDraggable();}, 200);
 	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
-		setTimeout(function(){manageWidgetType();}, 100);
+		setTimeout(function(){manageWidgetType();}, 200);
 	}
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
