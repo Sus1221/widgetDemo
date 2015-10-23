@@ -181,7 +181,7 @@ function manageWidgetType() {
 	}
 	if($("#sidebarWidget").is(":checked")){
 		console.log("sidebar widget is checked");
-		strossleWidgetLink = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 	}
 }
 
