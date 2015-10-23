@@ -150,7 +150,7 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.id == "draggableCB"){
 		console.log("clicked elementis draggable CB!");
-		manageWholePageDraggable();
+		setTimoeout(function(){manageWholePageDraggable();}, 200);
 	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
