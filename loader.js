@@ -126,6 +126,8 @@ function calcDivMeasurements() {
 		}
 		makeWidgetResizable();
 		makeWidgetDraggable();
+		$(".ui-dialog, ui-resizable-se").css("background-image", "url('')");
+		//.ui-dialog .ui-resizable-se {background-image: url("");}
 	}else{
 		console.log("Div measurements too small!");
 	}
@@ -143,7 +145,7 @@ function whichElementClicked(event){
 	}
 	if(clickedElement.id == "draggableCB"){
 		console.log("clicked elementis draggable CB!");
-		setTimeout(function(){manageWholePageDraggable();}, 200);
+		setTimeout(function(){manageDraggable();}, 200);
 	}
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
@@ -179,7 +181,7 @@ function manageWidgetType() {
 	}
 }
 
-function manageWholePageDraggable() {
+function manageDraggable() {
 	if($("#draggableCB").is(":checked")){
 		console.log("draggable CB is checked");
 		$("body > *").draggable();
