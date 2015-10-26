@@ -189,7 +189,7 @@ function manageWholePageDraggable() {
 		if($("body:first-child").hasClass("ui-draggable")){
 			console.log("first child of body has that class - now destroy");
 			$("body > *").draggable("destroy");
-			$("body > * > *").drggable("destroy");
+			$("body > * > *").draggable("destroy");
 		}
 	}
 }
