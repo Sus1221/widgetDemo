@@ -51,7 +51,7 @@ var endY = 0;
 var clickedElement;
 //The default div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-//the correspondant div for sidebar is: "<div data-spklw-widget="widget-5524d25c249ad"></div>"
+var borderStyle = "1px solid black";
 
 function callbackForLoadjQuery() {
 	console.log("jquery loaded");
@@ -110,7 +110,7 @@ function calcDivMeasurements() {
 	}
 	if(divHeight > 200 && divWidth > 100) {
 		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
-		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:1px solid black; background:white; width:" + divWidth + "px;height:" +
+		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
@@ -162,12 +162,13 @@ function whichElementClicked(event){
 function manageDivBorder() {
 	console.log("manageDivBorder Function");
 	if($("#border").is(":checked")){
-			console.log("is checked");
-			$(".widgetDiv").css("border", "1px solid black");
+			//console.log("is checked");
+			borderStyle = "1px solid black";
 		}else{
-			console.log("is not checked");
-			$(".widgetDiv").css("border", "0");
+			//console.log("is not checked");
+			borderStyle = "0";
 		}
+	$(".widgetDiv").css("border", borderStyle);
 }
 
 function manageWidgetType() {
