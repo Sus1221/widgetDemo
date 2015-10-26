@@ -186,12 +186,14 @@ function manageDraggable() {
 		console.log("draggable CB is checked");
 		$("body > *").draggable();
 		$("body > * > * ").draggable();
+		$("body > * > * > *").draggable();
 	}else{
 		console.log("draggable CB is not checked");
 		if($("body > *:first-child").hasClass("ui-draggable")){
 			console.log("first child of body has that class - now destroy");
 			$("body > *").draggable("destroy");
 			$("body > * > *").draggable("destroy");
+			$("body > * > * > *").draggable("destroy");
 		}else{
 			console.log("body first child class'ui-draggable not found'");
 		}
