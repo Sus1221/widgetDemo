@@ -43,22 +43,23 @@ function loadFile(type, url, callback, async) {
 	}
 }
 
-//Stores measurements from selectable.stop function for widget-div
+//Default value variables
 var startX = 0;
 var endX = 0;
 var startY = 0;
 var endY = 0;
 var clickedElement;
-//The default div is a standard widget
+//The default/start div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var borderStyle = "1px solid black";
 
+//Callback after jQuery load
 function callbackForLoadjQuery() {
 	console.log("jquery loaded");
 	//load jQueryUI script to site
 	loadFile("js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", callbackForLoadjQueryUI);
 	//Load jquery ui's css to site
-	loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css", callbackForLoadjQueryCSS);
+	loadFile("css", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css");
 }
 
 //Callback after jqueryUI load
@@ -76,13 +77,8 @@ function callbackForLoadjQueryUI() {
 										"<input type='checkbox' id='draggableCB' name='draggableCB'>" +
 										"<label for='draggableCB'>Page draggable</label>" +
 								"</div>");
-
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
-}
-
-function callbackForLoadjQueryCSS(){
-	console.log("jquery css loaded");
 }
 
 function callbackForLoadSprinkle(){
@@ -91,9 +87,7 @@ function callbackForLoadSprinkle(){
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
-	//console.log("numbers sX, eX, sY, eY", startX, endX, startY, endY);
-	//Width: x
-	//Height: y
+	//Width: x, height: y
 	var divWidth = 0;
 	var divHeight = 0;
 	//Calculate divWidth
@@ -109,25 +103,25 @@ function calcDivMeasurements() {
 		divHeight = startY - endY;
 	}
 	if(divHeight > 200 && divWidth > 100) {
-		//As code is written 151012, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
+		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth + "px;height:" +
 							divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
-			//prepend div to body
+			//append div to body
 			$("body").append(divToAdd);
 			console.log("clickedElement is body, div prepended to body");
 		}else{
-			//insert div before the clickedElement
+			//insert div after the clickedElement
 			$(divToAdd).insertAfter(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
 		makeWidgetResizable();
 		makeWidgetDraggable();
+		//remove jQuery UI's default resizable icon
 		$(".ui-icon").css("background-image", "url('')");
-		//.ui-dialog .ui-resizable-se {background-image: url("");}
 	}else{
 		console.log("Div measurements too small!");
 	}
@@ -138,22 +132,25 @@ function whichElementClicked(event){
 	//clickedElement = clicked html element
 	clickedElement = event.target;
 	console.log("clickedElement", clickedElement);
-	//If X (remove) on widget is clicked
+	//If checkbox for border is clicked
 	if(clickedElement.id == "border"){
 		console.log("clicked element:", clickedElement);
 		setTimeout(function(){manageDivBorder();}, 200);
 	}
+	//If checkbox for draggable is clicked
 	if(clickedElement.id == "draggableCB"){
 		console.log("clicked elementis draggable CB!");
 		setTimeout(function(){manageDraggable();}, 200);
 	}
+	//if radio buttons for widgetType are clicked
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
+	//If X (remove) on widget is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
 		console.log("you clicked X");
-		//remove widget div
+		//remove that widget div
 		$(clickedElement).parent().remove();
 		console.log("Element removed");
 	}
@@ -174,10 +171,12 @@ function manageDivBorder() {
 function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		console.log("standard widget is checked");
+		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 	}
 	if($("#sidebarWidget").is(":checked")){
 		console.log("sidebar widget is checked");
+		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 	}
 }
@@ -217,7 +216,7 @@ function makeBodySelectable() {
 	});
 }
 
-//makes widget-<div> resizable
+//makes widget-<div>s resizable
 function makeWidgetResizable() {
    console.log("widget now resizable");
    $(".widgetDiv").resizable({
