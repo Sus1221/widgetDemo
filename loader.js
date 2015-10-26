@@ -126,7 +126,7 @@ function calcDivMeasurements() {
 		}
 		makeWidgetResizable();
 		makeWidgetDraggable();
-		$(".ui-dialog, ui-resizable-se").css("background-image", "url('')");
+		$(".ui-icon").css("background-image", "url('')");
 		//.ui-dialog .ui-resizable-se {background-image: url("");}
 	}else{
 		console.log("Div measurements too small!");
