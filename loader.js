@@ -92,7 +92,7 @@ function callbackForLoadjQueryUI() {
 
 function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
-	$("body *:last-child:not(script)").append(divToAdd);
+	$("body > *:last-child:not(script)").append(divToAdd);
 	//'tr:not(.table_vert_controls):last'
 }
 
