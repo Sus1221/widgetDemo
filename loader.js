@@ -49,6 +49,11 @@ var endX = 0;
 var startY = 0;
 var endY = 0;
 var clickedElement;
+var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
+								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								strossleWidgetDiv +
+							"</div>";
 //The default/start div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var borderStyle = "1px solid black";
@@ -79,6 +84,13 @@ function callbackForLoadjQueryUI() {
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
+	testToAddWidgetOnLoad();
+}
+
+function testToAddWidgetOnLoad(){
+	console.log("test to add widget on load function");
+	$("body *:last-child:not(script)").append(divToAdd);
+	//'tr:not(.table_vert_controls):last'
 }
 
 function callbackForLoadSprinkle(){
@@ -104,11 +116,6 @@ function calcDivMeasurements() {
 	}
 	if(divHeight > 200 && divWidth > 100) {
 		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
-		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth + "px;height:" +
-							divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
-								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								strossleWidgetDiv +
-							"</div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//append div to body
 			$("body").append(divToAdd);
