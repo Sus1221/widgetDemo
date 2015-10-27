@@ -216,6 +216,7 @@ function calcDivMeasurements() {
 		divHeight = startY - endY;
 	}
 	if(divHeight > 200 && divWidth > 101) {
+		console.log("divToAdd", divToAdd);
 		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//append div to body
