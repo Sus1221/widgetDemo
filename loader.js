@@ -92,8 +92,12 @@ function callbackForLoadjQueryUI() {
 
 function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
-	$("body > *:last-child:not(script)").append(divToAdd);
+	$("body > *:last-of-type:not(script):not(noscript)").last().append(divToAdd);
 	//'tr:not(.table_vert_controls):last'
+	//$("body > *:last-child");
+	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
+	//$("body > *:last-of-type:not(script):not(noscript)");        -> returnerar den sista av varje typ av element utom :nots
+	//$("body > *:last-of-type:not(script):not(noscript)").last();    -> returnerar den sista av "sista-elementen"
 }
 
 function callbackForLoadSprinkle(){
