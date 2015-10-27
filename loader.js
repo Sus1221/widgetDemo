@@ -188,11 +188,13 @@ function makeBodySelectable() {
 	console.log("body now selectable");
 	$("html").selectable({
 		start: function(event, ui){
+			console.log("event", event);
 			startX = event.clientX;
 			startY = event.clientY;
 			console.log("x, y:", startX, startY);
 		},
 		stop: function(event, ui){
+			console.log("event", event);
 			endX = event.clientX;
 			endY = event.clientY;
 			console.log("x, y:", endY, endY);
