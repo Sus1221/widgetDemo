@@ -95,7 +95,8 @@ function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
 	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
 	console.log("elementToAppendTo", elementToAppendTo);
-	elementToAppendTo.append("Hejsan!");
+	console.log("divToAdd", divToAdd);
+	$(divToAdd).insertAfter(elementToAppendTo);
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
 	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
