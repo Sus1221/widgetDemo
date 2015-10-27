@@ -195,7 +195,7 @@ function makeBodySelectable() {
 		stop: function(event, ui){
 			endX = event.clientX;
 			endY = event.clientY;
-			console.log("x, y:", startX, startY);
+			console.log("x, y:", endY, endY);
 			calcDivMeasurements();
 		}
 	});
@@ -203,6 +203,7 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
+	console.log("calcDivMeasurements start. startx, endx, starty, endy", startX, endX, startY, endY);
 	//Calculate divWidth
 	if(endX > startX){
 		divWidth = endX - startX;
@@ -216,6 +217,7 @@ function calcDivMeasurements() {
 		divHeight = startY - endY;
 	}
 	if(divHeight > 200 && divWidth > 101) {
+	//right now the width and height of this div in the log is 0!!!
 		console.log("divToAdd", divToAdd);
 		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
