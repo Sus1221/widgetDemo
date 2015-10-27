@@ -49,17 +49,18 @@ var startX = 0;
 var endX = 0;
 var startY = 0;
 var endY = 0;
-var divWidth = 0;
-var divHeight = 0;
+var divWidth = 500;
+var divHeight = 200;
 var clickedElement;
+//The default/start div is a standard widget
+var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var borderStyle = "1px solid black";
 var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div>";
-//The default/start div is a standard widget
-var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var borderStyle = "1px solid black";
+
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -94,7 +95,7 @@ function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
 	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
 	console.log("elementToAppendTo", elementToAppendTo);
-	elementToAppendTo.append(divToAdd);
+	elementToAppendTo.append("Hejsan!");
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
 	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
