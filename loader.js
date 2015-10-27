@@ -49,8 +49,8 @@ var startX = 0;
 var endX = 0;
 var startY = 0;
 var endY = 0;
-var divWidth = 500;
-var divHeight = 200;
+var divWidth = 0;
+var divHeight = 0;
 var clickedElement;
 //The default/start div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
@@ -93,10 +93,12 @@ function callbackForLoadjQueryUI() {
 
 function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
+	var divToAddOnLoad = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white;width:800px;height:300px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'><h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								strossleWidgetDiv + "</div>";
 	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
 	console.log("elementToAppendTo", elementToAppendTo);
 	console.log("divToAdd", divToAdd);
-	$(divToAdd).insertAfter(elementToAppendTo);
+	$(divToAddOnLoad).insertAfter(elementToAppendTo);
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
 	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
@@ -106,40 +108,6 @@ function testToAddWidgetOnLoad(){
 
 function callbackForLoadSprinkle(){
 	console.log("callbackForLoadSprinkle function console.log");
-}
-
-//Calculate users desired measurements for widget-<div>
-function calcDivMeasurements() {
-	//Calculate divWidth
-	if(endX > startX){
-		divWidth = endX - startX;
-	}else {
-		divWidth = startX - endX;
-	}
-	//Calculate divHeight
-	if(endY > startY){
-		divHeight = endY - startY;
-	}else {
-		divHeight = startY - endY;
-	}
-	if(divHeight > 200 && divWidth > 100) {
-		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
-		if(clickedElement.tagName.toUpperCase() == "BODY"){
-			//append div to body
-			$("body").append(divToAdd);
-			console.log("clickedElement is body, div prepended to body");
-		}else{
-			//insert div after the clickedElement
-			$(divToAdd).insertAfter(clickedElement);
-			console.log("clickedElement is NOT body, div inserted before clickedElement");
-		}
-		makeWidgetResizable();
-		makeWidgetDraggable();
-		//remove jQuery UI's default resizable icon
-		$(".ui-icon").css("background-image", "url('')");
-	}else{
-		console.log("Div measurements too small!");
-	}
 }
 
 //onmousedown for body
@@ -230,6 +198,41 @@ function makeBodySelectable() {
 		}
 	});
 }
+
+//Calculate users desired measurements for widget-<div>
+function calcDivMeasurements() {
+	//Calculate divWidth
+	if(endX > startX){
+		divWidth = endX - startX;
+	}else {
+		divWidth = startX - endX;
+	}
+	//Calculate divHeight
+	if(endY > startY){
+		divHeight = endY - startY;
+	}else {
+		divHeight = startY - endY;
+	}
+	if(divHeight > 200 && divWidth > 101) {
+		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
+		if(clickedElement.tagName.toUpperCase() == "BODY"){
+			//append div to body
+			$("body").append(divToAdd);
+			console.log("clickedElement is body, div prepended to body");
+		}else{
+			//insert div after the clickedElement
+			$(divToAdd).insertAfter(clickedElement);
+			console.log("clickedElement is NOT body, div inserted before clickedElement");
+		}
+		makeWidgetResizable();
+		makeWidgetDraggable();
+		//remove jQuery UI's default resizable icon
+		$(".ui-icon").css("background-image", "url('')");
+	}else{
+		console.log("Div measurements too small!");
+	}
+}
+
 
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
