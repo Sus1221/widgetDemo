@@ -92,7 +92,8 @@ function callbackForLoadjQueryUI() {
 
 function testToAddWidgetOnLoad(){
 	console.log("test to add widget on load function");
-	$("body > *:last-of-type:not(script):not(noscript)").last().append(divToAdd);
+	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
+	elementToAppendTo.append(divToAdd);
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
 	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
