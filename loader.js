@@ -190,10 +190,12 @@ function makeBodySelectable() {
 		start: function(event, ui){
 			startX = event.clientX;
 			startY = event.clientY;
+			console.log("x, y:", startX, startY);
 		},
 		stop: function(event, ui){
 			endX = event.clientX;
 			endY = event.clientY;
+			console.log("x, y:", startX, startY);
 			calcDivMeasurements();
 		}
 	});
