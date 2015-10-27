@@ -197,7 +197,7 @@ function makeBodySelectable() {
 			console.log("event", event);
 			endX = event.clientX;
 			endY = event.clientY;
-			console.log("x, y:", endY, endY);
+			console.log("x, y:", endX, endY);
 			calcDivMeasurements();
 		}
 	});
