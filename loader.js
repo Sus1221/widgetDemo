@@ -44,10 +44,13 @@ function loadFile(type, url, callback, async) {
 }
 
 //Default value variables
+//Width: x, height: y
 var startX = 0;
 var endX = 0;
 var startY = 0;
 var endY = 0;
+var divWidth = 0;
+var divHeight = 0;
 var clickedElement;
 var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
@@ -99,9 +102,6 @@ function callbackForLoadSprinkle(){
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
-	//Width: x, height: y
-	var divWidth = 0;
-	var divHeight = 0;
 	//Calculate divWidth
 	if(endX > startX){
 		divWidth = endX - startX;
