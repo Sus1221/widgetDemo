@@ -198,11 +198,6 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
-	var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
-					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
-								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								strossleWidgetDiv +
-							"</div>";
 	console.log("calcDivMeasurements start. startx, endx, starty, endy", startX, endX, startY, endY);
 	//Calculate divWidth
 	if(endX > startX){
@@ -218,7 +213,11 @@ function calcDivMeasurements() {
 	}
 	console.log("height, width", divHeight, divWidth); //korrekta mått här!
 	if(divHeight > 200 && divWidth > 101) {
-	//right now the width and height of this div in the log is 0!!!
+		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
+								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								strossleWidgetDiv +
+							"</div>";
 		console.log("divToAdd", divToAdd);
 		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
