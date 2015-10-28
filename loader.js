@@ -218,7 +218,7 @@ function calcDivMeasurements() {
 	}else {
 		divHeight = startY - endY;
 	}
-	console.log("height, width", divHeight, divWidth);
+	console.log("height, width", divHeight, divWidth); //#### kolla denna konsol logg!
 	if(divHeight > 200 && divWidth > 101) {
 	//right now the width and height of this div in the log is 0!!!
 		console.log("divToAdd", divToAdd);
