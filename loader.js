@@ -52,6 +52,7 @@ var endY = 0;
 var divWidth = 0;
 var divHeight = 0;
 var clickedElement;
+var divToAdd = "";
 //The default/start div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var borderStyle = "1px solid black";
@@ -82,7 +83,7 @@ function callbackForLoadjQueryUI() {
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
-	//testToAddWidgetOnLoad();
+	testToAddWidgetOnLoad();
 }
 
 function testToAddWidgetOnLoad(){
@@ -213,7 +214,7 @@ function calcDivMeasurements() {
 	}
 	console.log("height, width", divHeight, divWidth); //korrekta mått här!
 	if(divHeight > 200 && divWidth > 101) {
-		var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+		divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
