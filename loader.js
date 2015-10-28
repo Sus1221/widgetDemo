@@ -95,7 +95,7 @@ function testToAddWidgetOnLoad(){
 	//sidebar widget
 	var sidebarWidgetDiv = "<div style='display: inline-block; position:relative; float:right; border:"+ borderStyle +"; background:white;width:100px;height:500px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'><h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4><div data-spklw-widget='widget-5524d25c249ad'></div></div>";
 	var elementToPrependTo = $("body > *").first();
-	$(elementToPrependTo).prepend(sidebarWidgetDiv);
+	$(sidebarWidgetDiv).insertAfter(elementToPrependTo);
 	makeWidgetResizable();
 	makeWidgetDraggable();
 	//'tr:not(.table_vert_controls):last'
