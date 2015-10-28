@@ -93,6 +93,8 @@ function testToAddWidgetOnLoad(){
 	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
 	console.log("elementToAppendTo", elementToAppendTo);
 	$(divToAddOnLoad).insertAfter(elementToAppendTo);
+	makeWidgetResizable();
+	makeWidgetDraggable();
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
 	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
@@ -212,15 +214,13 @@ function calcDivMeasurements() {
 	}else {
 		divHeight = startY - endY;
 	}
-	console.log("height, width", divHeight, divWidth); //korrekta mått här!
 	if(divHeight > 200 && divWidth > 101) {
+		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
 		divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div>";
-		console.log("divToAdd", divToAdd);
-		//As code is written, the X sign must be a direct child of .XtoRemoveStrossleWidgetDiv
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//append div to body
 			$("body").append(divToAdd);
@@ -230,8 +230,8 @@ function calcDivMeasurements() {
 			$(divToAdd).insertAfter(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		makeWidgetResizable();
-		makeWidgetDraggable();
+		//makeWidgetResizable();
+		//makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
