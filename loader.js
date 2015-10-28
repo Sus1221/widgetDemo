@@ -55,12 +55,6 @@ var clickedElement;
 //The default/start div is a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var borderStyle = "1px solid black";
-var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
-					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
-								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								strossleWidgetDiv +
-							"</div>";
-
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -97,7 +91,6 @@ function testToAddWidgetOnLoad(){
 								strossleWidgetDiv + "</div>";
 	var elementToAppendTo = $("body > *:last-of-type:not(script):not(noscript)").last();
 	console.log("elementToAppendTo", elementToAppendTo);
-	console.log("divToAdd", divToAdd);
 	$(divToAddOnLoad).insertAfter(elementToAppendTo);
 	//'tr:not(.table_vert_controls):last'
 	//$("body > *:last-child");
@@ -205,6 +198,11 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
+	var divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
+								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								strossleWidgetDiv +
+							"</div>";
 	console.log("calcDivMeasurements start. startx, endx, starty, endy", startX, endX, startY, endY);
 	//Calculate divWidth
 	if(endX > startX){
@@ -218,7 +216,7 @@ function calcDivMeasurements() {
 	}else {
 		divHeight = startY - endY;
 	}
-	console.log("height, width", divHeight, divWidth); //#### kolla denna konsol logg!
+	console.log("height, width", divHeight, divWidth); //korrekta mått här!
 	if(divHeight > 200 && divWidth > 101) {
 	//right now the width and height of this div in the log is 0!!!
 		console.log("divToAdd", divToAdd);
