@@ -230,8 +230,8 @@ function calcDivMeasurements() {
 			$(divToAdd).insertAfter(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		//makeWidgetResizable();
-		//makeWidgetDraggable();
+		makeWidgetResizable();
+		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
