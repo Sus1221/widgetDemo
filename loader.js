@@ -206,26 +206,52 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
+	var leftToRight;
+	var topToBottom;
+	var positionRules = "";
 	console.log("calcDivMeasurements start. startx, endx, starty, endy", startX, endX, startY, endY);
 	//Calculate divWidth
 	if(endX > startX){
+		leftToRight = true;
 		divWidth = endX - startX;
 	}else {
+		leftToRight = false;
 		divWidth = startX - endX;
 	}
 	//Calculate divHeight
 	if(endY > startY){
+		topToBottom = true;
 		divHeight = endY - startY;
-	}else {
+	}else{
+		topToBottom = false;
 		divHeight = startY - endY;
 	}
-	if(divHeight > 200 && divWidth > 101) {
+	//if user "draws" widgetbox from left to right
+	if(leftToRight){
+		console.log("left to right!");
+		positionRules += "left:" + startX + "px;";
+	//if user "draws" widgetBox from right to left
+	}else{
+		console.log("right to left!");
+		positionRules += "left" + endX + "px;";
+	}
+	//if user "draws" widgetbox from top to bottom
+	if(topToBottom){
+		console.log("top to bottom!");
+		positionRules += "top" + startY + "px;";
+	//uf user "draws" widgetbox from bottom to top
+	}else{
+		console.log("bottom to top");
+		positionRules += "top" + endY + "px;";
+	}
+
+	if(divHeight > 200 && divWidth > 100) {
 		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
-		divToAdd = "<div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+		divToAdd = "<div style='position:fixed;"+ positionRules +"'><div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
-							"</div>";
+							"</div></div>";
 		if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//append div to body
 			$("body").append(divToAdd);
@@ -235,6 +261,7 @@ function calcDivMeasurements() {
 			$(divToAdd).insertAfter(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
+		//####eventuellt gör diven icke position fixed igen?!!
 		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon
@@ -266,8 +293,3 @@ loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForL
 
 //add clickevent to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
-
-
-
-
-
