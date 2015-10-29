@@ -54,7 +54,9 @@ var divHeight = 0;
 var clickedElement;
 var divToAdd = "";
 //The default/start div is a standard widget
-var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+//var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+//Testing to start with side bar widget instead
+var strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 var borderStyle = "1px solid black";
 
 //Callback after jQuery load
