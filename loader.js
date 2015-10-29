@@ -233,16 +233,16 @@ function calcDivMeasurements() {
 	//if user "draws" widgetBox from right to left
 	}else{
 		console.log("right to left!");
-		positionRules += "left" + endX + "px;";
+		positionRules += "left:" + endX + "px;";
 	}
 	//if user "draws" widgetbox from top to bottom
 	if(topToBottom){
 		console.log("top to bottom!");
-		positionRules += "top" + startY + "px;";
+		positionRules += "top:" + startY + "px;";
 	//uf user "draws" widgetbox from bottom to top
 	}else{
 		console.log("bottom to top");
-		positionRules += "top" + endY + "px;";
+		positionRules += "top:" + endY + "px;";
 	}
 
 	if(divHeight > 200 && divWidth > 100) {
