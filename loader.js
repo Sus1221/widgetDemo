@@ -149,7 +149,7 @@ function manageDivBorder() {
 			//console.log("is not checked");
 			borderStyle = "0";
 		}
-	$(".widgetDiv").css("border", borderStyle);
+	$(".outerWidgetDiv").css("border", borderStyle);
 }
 
 function manageWidgetType() {
@@ -248,7 +248,7 @@ function calcDivMeasurements() {
 	if(divHeight > 200 && divWidth > 100) {
 		console.log("positionRules", positionRules);
 		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
-		divToAdd = "<div style='position:fixed;"+ positionRules +"'><div style='display: inline-block; position:relative; float:left; border:"+ borderStyle +"; background:white; width:" + divWidth +
+		divToAdd = "<div style='position:fixed;"+ positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative; border:"+ borderStyle +"; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
@@ -263,10 +263,10 @@ function calcDivMeasurements() {
 			$(divToAdd).insertAfter(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		$(".widgetDiv").css("position", "static");
+		$(".outerWidgetDiv").css("position", "static");
 		makeWidgetResizable();
 		makeWidgetDraggable();
-		//remove jQuery UI's default resizable icon
+		//remove jQuery UI's default resizable icon in the down-right corner
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
 		console.log("Div measurements too small!");
@@ -277,14 +277,14 @@ function calcDivMeasurements() {
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
    console.log("widget now resizable");
-   $(".widgetDiv").resizable({
+   $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
 }
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
-	$(".widgetDiv").draggable();
+	$(".outerWidgetDiv").draggable();
 }
 
 //EXECUTION 
