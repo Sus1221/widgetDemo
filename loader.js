@@ -260,7 +260,7 @@ function calcDivMeasurements() {
 			console.log("clickedElement is body, div prepended to body");
 		}else{
 			//insert div after the clickedElement
-			$(divToAdd).insertAfter(clickedElement);
+			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
 		//$(".outerWidgetDiv").css("position", "static");
