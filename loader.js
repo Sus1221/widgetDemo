@@ -263,7 +263,11 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		$(".outerWidgetDiv").css("position","static");
+		$(".outerWidgetDiv").css({
+			"position": "static",
+			"top" : "auto",
+			"left": "auto"
+		});
 		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
