@@ -248,8 +248,8 @@ function calcDivMeasurements() {
 	if(divHeight > 200 && divWidth > 100) {
 		console.log("positionRules", positionRules);
 		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
-		divToAdd = "<div style='background:white;display:inline-block;position:fixed;overflow:hidden;border:"+ borderStyle + ";" + positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative; background:white; width:" + divWidth +
-					"px;height:" + divHeight + "px;z-index:200000000;overflow:hidden' class='widgetDiv'>" +
+		divToAdd = "<div style='z-index:200000000;background:white;display:inline-block;position:fixed;overflow:hidden;border:"+ borderStyle + ";" + positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative; background:white; width:" + divWidth +
+					"px;height:" + divHeight + "px;overflow:hidden' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
