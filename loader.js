@@ -281,7 +281,7 @@ function calcDivMeasurements() {
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
    console.log("widget now resizable");
-   $(".widgetDiv").resizable({
+   $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
 }
