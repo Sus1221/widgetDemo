@@ -289,6 +289,8 @@ function calcDivMeasurements() {
 });*/
 
 function notPosFixed(){
+	var offset = $(".outerWidgetDiv").offset();
+	console.log("offset", offset);
 	$(".outerWidgetDiv").css({
 			"position": "absolute"/*,
 			"top" : "auto",
