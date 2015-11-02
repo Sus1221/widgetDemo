@@ -78,8 +78,6 @@ function callbackForLoadjQueryUI() {
 										"<label for='standardWidget'>Standard widget</label><br>" +
 										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
 										"<label for='sidebarWidget'>Sidebar widget</label><br>" +
-										"<input type='checkbox' id='draggableCB' name='draggableCB'>" +
-										"<label for='draggableCB'>Page draggable</label>" +
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
@@ -121,11 +119,6 @@ function whichElementClicked(event){
 		console.log("clicked element:", clickedElement);
 		setTimeout(function(){manageDivBorder();}, 200);
 	}
-	//If checkbox for draggable is clicked
-	if(clickedElement.id == "draggableCB"){
-		console.log("clicked elementis draggable CB!");
-		setTimeout(function(){manageDraggable();}, 200);
-	}
 	//if radio buttons for widgetType are clicked
 	if(clickedElement.className.indexOf("widgetType") > -1){
 		console.log("widgettype input class clicked");
@@ -162,25 +155,6 @@ function manageWidgetType() {
 		console.log("sidebar widget is checked");
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-	}
-}
-
-function manageDraggable() {
-	if($("#draggableCB").is(":checked")){
-		console.log("draggable CB is checked");
-		$("body > *").draggable();
-		$("body > * > * ").draggable();
-		$("body > * > * > *").draggable();
-	}else{
-		console.log("draggable CB is not checked");
-		if($("body > *:first-child").hasClass("ui-draggable")){
-			console.log("first child of body has that class - now destroy");
-			$("body > *").draggable("destroy");
-			$("body > * > *").draggable("destroy");
-			$("body > * > * > *").draggable("destroy");
-		}else{
-			console.log("body first child class'ui-draggable not found'");
-		}
 	}
 }
 
