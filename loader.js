@@ -69,7 +69,7 @@ function callbackForLoadjQuery() {
 //Callback after jqueryUI load
 function callbackForLoadjQueryUI() {
 	console.log("callback for load jquery ui function");
-	//Add controlBox for sortable()/selectable()
+	//Add controlBox for widget-<div>'s
 	$("body").prepend("<div style='min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;left:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
 										"<input type='checkbox' id='border' name='border' checked>" +
@@ -81,10 +81,6 @@ function callbackForLoadjQueryUI() {
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
-}
-
-function callbackForLoadSprinkle(){
-	console.log("callbackForLoadSprinkle function console.log");
 }
 
 //onmousedown for body
@@ -246,7 +242,7 @@ function makeWidgetDraggable() {
 /*****************************************************************/
 //load jQuery to site
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
-loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", callbackForLoadSprinkle, true);
+loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", false, true);
 
 //add clickevent to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
