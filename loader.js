@@ -248,7 +248,7 @@ function calcDivMeasurements() {
 	if(divHeight > 200 && divWidth > 100) {
 		console.log("positionRules", positionRules);
 		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
-		divToAdd = "<div style='z-index:200000001;background:white;overflow:hidden;display:inline-block;position:fixed;border:"+ borderStyle + ";" + positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative;overflow:hidden; background:white; width:" + divWidth +
+		divToAdd = "<div style='z-index:200000001;background:white;overflow:hidden;display:inline-block;position:absolute;border:"+ borderStyle + ";" + positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative;overflow:hidden; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
@@ -263,7 +263,7 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		setTimeout(function(){ notPosFixed();}, 3000);
+		//setTimeout(function(){ notPosFixed();}, 3000);
 		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
@@ -272,14 +272,21 @@ function calcDivMeasurements() {
 		console.log("Div measurements too small!");
 	}
 }
-
-function notPosFixed(){
-	$(".outerWidgetDiv").css({
-			"position": "static"/*,
-			"top" : "auto",
-			"left": "auto"*/
-		});
-	}
+//from stach OF
+/*$(function(){
+    $(document).click(function(e){
+        var x = e.pageX + 'px';
+        var y = e.pageY + 'px';
+        var img = $('<img src="" alt="myimage" />');
+        var div = $('<div>').css({
+            "position": "absolute",                    
+            "left": x,
+            "top": y
+        });
+        div.append(img);
+        $(document.body).append(div);        
+    });
+});*/
 
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
