@@ -224,6 +224,10 @@ function makeWidgetResizable() {
       stop: function( event, ui ) {
 			console.log("stopped resizing");
 			$(".XtoRemoveStrossleWidgetDiv").css({
+				"top": "0",
+				"right": "0"
+			});
+			$(".XtoRemoveStrossleWidgetDiv").css({
 				"top": "1px",
 				"right": "5px"
 			});
