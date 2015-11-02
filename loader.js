@@ -204,13 +204,20 @@ function calcDivMeasurements() {
 								strossleWidgetDiv +
 							"</div></div>";
 		$("body").append(divToAdd);
-		//makeWidgetResizable();
+		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
 		console.log("Div measurements too small!");
 	}
+}
+
+function makeWidgetResizable() {
+   console.log("widget now resizable");
+   $(".outerWidgetDiv").resizable({
+      handles: ' n, e, s, w, ne, se, sw, nw'
+   });
 }
 
 function makeWidgetDraggable() {
