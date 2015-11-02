@@ -263,11 +263,7 @@ function calcDivMeasurements() {
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
 		}
-		$(".outerWidgetDiv").css({
-			"position": "static",
-			"top" : "auto",
-			"left": "auto"
-		});
+		setTimeout(function(){ notPosFixed();}, 3000);
 		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
@@ -277,6 +273,13 @@ function calcDivMeasurements() {
 	}
 }
 
+function notPosFixed(){
+	$(".outerWidgetDiv").css({
+			"position": "static",
+			"top" : "auto",
+			"left": "auto"
+		});
+	}
 
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
