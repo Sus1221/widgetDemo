@@ -190,14 +190,14 @@ function makeBodySelectable() {
 	$("html").selectable({
 		start: function(event, ui){
 			console.log("event", event);
-			startX = event.clientX;
-			startY = event.clientY;
+			startX = event.pageX;
+			startY = event.pageY;
 			console.log("x, y:", startX, startY);
 		},
 		stop: function(event, ui){
 			console.log("event", event);
-			endX = event.clientX;
-			endY = event.clientY;
+			endX = event.pageX;
+			endY = event.pageY;
 			console.log("x, y:", endX, endY);
 			calcDivMeasurements();
 		}
@@ -246,15 +246,13 @@ function calcDivMeasurements() {
 	}
 
 	if(divHeight > 200 && divWidth > 100) {
-		console.log("positionRules", positionRules);
 		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
 		divToAdd = "<div style='z-index:200000001;background:white;overflow:hidden;display:inline-block;border:"+ borderStyle + ";" + positionRules +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative;overflow:hidden; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
-							console.log("divToAdd", divToAdd);
-		if(clickedElement.tagName.toUpperCase() == "BODY"){
+		/*if(clickedElement.tagName.toUpperCase() == "BODY"){
 			//append div to body
 			$("body").append(divToAdd);
 			console.log("clickedElement is body, div prepended to body");
@@ -262,8 +260,8 @@ function calcDivMeasurements() {
 			//insert div after the clickedElement
 			$(divToAdd).insertBefore(clickedElement);
 			console.log("clickedElement is NOT body, div inserted before clickedElement");
-		}
-		setTimeout(function(){ notPosFixed();}, 3000);
+		}*/
+		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
@@ -288,16 +286,6 @@ function calcDivMeasurements() {
     });
 });*/
 
-function notPosFixed(){
-	var offset = $(".outerWidgetDiv").offset();
-	console.log("offset", offset);
-	$(".outerWidgetDiv").css({
-			"position": "absolute",
-			"top" : offset.top + "px",
-			"left": offset.left + "px"
-	});
-	console.log("outer widget div css now", $(".outerWidgetDiv").css());
-}
 
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
