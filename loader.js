@@ -199,14 +199,14 @@ function calcDivMeasurements() {
 
 	if(divHeight > 200 && divWidth > 100) {
 		console.log("position rules", positionRules);
-		//For remove functionality to work, the X sign (&#10006) must be a direct child of .XtoRemoveStrossleWidgetDiv
+		//For remove functionality to work, the X sign (&#10006) must be a grandchild of .XtoRemoveStrossleWidgetDiv
 		divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000001;background:white;overflow:hidden;display:inline-block;border:"+ borderStyle + ";" +"' class='outerWidgetDiv'><div style='display: inline-block; position:relative;overflow:hidden; background:white; width:" + divWidth +
 					"px;height:" + divHeight + "px;' class='widgetDiv'>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
 		$("body").append(divToAdd);
-		makeWidgetResizable();
+		//makeWidgetResizable();
 		makeWidgetDraggable();
 		//remove jQuery UI's default resizable icon in the down-right corner
 		$(".ui-icon").css("background-image", "url('')");
@@ -217,7 +217,7 @@ function calcDivMeasurements() {
 
 
 //makes widget-<div>s resizable
-function makeWidgetResizable() {
+/*function makeWidgetResizable() {
    console.log("widget now resizable");
    $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw',
@@ -233,7 +233,7 @@ function makeWidgetResizable() {
 			});
       }
    });
-}
+}*/
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
