@@ -81,28 +81,6 @@ function callbackForLoadjQueryUI() {
 								"</div>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
-	//testToAddWidgetOnLoad();
-}
-
-function testToAddWidgetOnLoad(){
-	//standard widget
-	var standardWidgetDiv = "<div style='display: inline-block; position:relative; margin: 0 auto; border:"+ borderStyle +"; background:white;width:1076px;height:310px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'><h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
-								strossleWidgetDiv + "</div>";
-	var elementToAddStdWiOn = $("body > *:last-of-type:not(script):not(noscript)").last();
-	$(standardWidgetDiv).insertAfter(elementToAddStdWiOn);
-	//sidebar widget
-	var sidebarWidgetDiv = "<div style='display:inline; position:relative; float:right; border:"+ borderStyle +"; background:white;width:100px;height:500px;margin:20px;z-index:200000000;overflow:hidden' class='widgetDiv'><h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4><div data-spklw-widget='widget-5524d25c249ad'></div></div>";
-	var elementToAddSideWiOn = $("body > *").get(2);
-	console.log("elementToAddSideWiOn", elementToAddSideWiOn);
-	$(sidebarWidgetDiv).insertAfter(elementToAddSideWiOn);
-	//####Experiment more with the row above - nu ser det knäppt ut!
-	makeWidgetResizable();
-	makeWidgetDraggable();
-	//'tr:not(.table_vert_controls):last'
-	//$("body > *:last-child");
-	//$("body > *:last-of-type:not(script)");        -> returnerar den sista av varje typ av element utom :not
-	//$("body > *:last-of-type:not(script):not(noscript)");        -> returnerar den sista av varje typ av element utom :nots
-	//$("body > *:last-of-type:not(script):not(noscript)").last();    -> returnerar den sista av "sista-elementen"
 }
 
 function callbackForLoadSprinkle(){
@@ -227,15 +205,6 @@ function calcDivMeasurements() {
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
-		/*if(clickedElement.tagName.toUpperCase() == "BODY"){
-			//append div to body
-			$("body").append(divToAdd);
-			console.log("clickedElement is body, div prepended to body");
-		}else{
-			//insert div after the clickedElement
-			$(divToAdd).insertBefore(clickedElement);
-			console.log("clickedElement is NOT body, div inserted before clickedElement");
-		}*/
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
@@ -245,28 +214,20 @@ function calcDivMeasurements() {
 		console.log("Div measurements too small!");
 	}
 }
-//from stack OF
-/*$(function(){
-    $(document).click(function(e){
-        var x = e.pageX + 'px';
-        var y = e.pageY + 'px';
-        var img = $('<img src="" alt="myimage" />');
-        var div = $('<div>').css({
-            "position": "absolute",                    
-            "left": x,
-            "top": y
-        });
-        div.append(img);
-        $(document.body).append(div);        
-    });
-});*/
 
 
 //makes widget-<div>s resizable
 function makeWidgetResizable() {
    console.log("widget now resizable");
    $(".outerWidgetDiv").resizable({
-      handles: ' n, e, s, w, ne, se, sw, nw'
+      handles: ' n, e, s, w, ne, se, sw, nw',
+      stop: function( event, ui ) {
+			console.log("stopped resizing");
+			$(".XtoRemoveStrossleWidgetDiv").css({
+				"top": "1px",
+				"right": "5px"
+			});
+      }
    });
 }
 
