@@ -107,18 +107,18 @@ function whichElementClicked(event){
 	}
 }
 
+//manage borderstyle of .outerWidgetDiv
 function manageDivBorder() {
 	console.log("manageDivBorder Function");
 	if($("#border").is(":checked")){
-			//console.log("is checked");
 			borderStyle = "1px solid black";
 		}else{
-			//console.log("is not checked");
 			borderStyle = "0";
 		}
 	$(".outerWidgetDiv").css("border", borderStyle);
 }
 
+//switches widget content source
 function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		console.log("standard widget is checked");
@@ -212,26 +212,6 @@ function calcDivMeasurements() {
 		console.log("Div measurements too small!");
 	}
 }
-
-
-//makes widget-<div>s resizable
-/*function makeWidgetResizable() {
-   console.log("widget now resizable");
-   $(".outerWidgetDiv").resizable({
-      handles: ' n, e, s, w, ne, se, sw, nw',
-      stop: function( event, ui ) {
-			console.log("stopped resizing");
-			$(".XtoRemoveStrossleWidgetDiv").css({
-				"top": "0",
-				"right": "0"
-			});
-			$(".XtoRemoveStrossleWidgetDiv").css({
-				"top": "1px",
-				"right": "5px"
-			});
-      }
-   });
-}*/
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
