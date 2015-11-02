@@ -275,9 +275,9 @@ function calcDivMeasurements() {
 
 function notPosFixed(){
 	$(".outerWidgetDiv").css({
-			"position": "static",
+			"position": "static"/*,
 			"top" : "auto",
-			"left": "auto"
+			"left": "auto"*/
 		});
 	}
 
