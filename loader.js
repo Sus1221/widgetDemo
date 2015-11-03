@@ -105,12 +105,17 @@ function whichElementClicked(event){
 		$(clickedElement).parent().parent().remove();
 		console.log("Element removed");
 	}
-	if(clickedElement.className.indexOf("emoji") > -1 && clickedElement.type == "img"){
-		console.log("you clicked X img");
-		console.log("2parent", clickedElement.parent().parent());
-		console.log("3parent", clickedElement.parent().parent().parent());
-		$(clickedElement).parent().parent().parent().remove();
-		console.log("Element removed");
+	console.log("2parent", clickedElement.parent().parent());
+	console.log("3parent", clickedElement.parent().parent().parent());
+	if(clickedElement.className.indexOf("emoji") > -1){
+		console.log("element has class emoju");
+		/*console.log("2parent", clickedElement.parent().parent());
+		console.log("3parent", clickedElement.parent().parent().parent());*/
+		//$(clickedElement).parent().parent().parent().remove();
+		//console.log("Element removed");
+	}
+	if(clickedElement.type == "img"){
+		console.log("element is type img");
 	}
 }
 
