@@ -70,7 +70,7 @@ function callbackForLoadjQuery() {
 function callbackForLoadjQueryUI() {
 	console.log("callback for load jquery ui function");
 	//Add controlBox for widget-<div>'s
-	$("body").prepend("<div style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;left:0'>" +
+	$("body").prepend("<div id ='controlBox' style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;left:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px'><br>" +
 										"<input type='checkbox' id='border' name='border' checked>" +
 										"<label for='border'>Border</label><br>" +
@@ -218,11 +218,15 @@ function makeWidgetResizable() {
    $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
+   $("#controlBox").resizable({
+      handles: ' n, e, s, w, ne, se, sw, nw'
+   });
 }
 
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
+	$("#controlBox").draggable();
 }
 
 //EXECUTION 
