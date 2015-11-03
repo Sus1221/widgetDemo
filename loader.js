@@ -99,10 +99,15 @@ function whichElementClicked(event){
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
 	//If X (remove) on widget is clicked
-	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1){
-		console.log("you clicked X");
+	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
+		console.log("you clicked XtoRemoveStrossleWidgetDiv");
 		//remove that widget div
 		$(clickedElement).parent().parent().remove();
+		console.log("Element removed");
+	}
+	if(clickedElement.className.indexOf("emoji") && clickedElement.type == "img"){
+		console.log("you clicked X img");
+		$(clickedElement).parent().parent().parent().remove();
 		console.log("Element removed");
 	}
 }
