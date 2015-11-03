@@ -114,6 +114,9 @@ function whichElementClicked(event){
 		//$(clickedElement).parent().parent().parent().remove();
 		//console.log("Element removed");
 	}
+	if($(clickedElement).hasClass("emoji")){
+		console.log("hasClass emoji");
+	}
 	if(clickedElement.type == "img"){
 		console.log("element is type img");
 	}
