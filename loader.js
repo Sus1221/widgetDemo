@@ -105,7 +105,7 @@ function whichElementClicked(event){
 		$(clickedElement).parent().parent().remove();
 		console.log("Element removed");
 	}
-	if(clickedElement.className.indexOf("emoji") && clickedElement.type == "img"){
+	if(clickedElement.className.indexOf("emoji") > -1 && clickedElement.type == "img"){
 		console.log("you clicked X img");
 		$(clickedElement).parent().parent().parent().remove();
 		console.log("Element removed");
