@@ -210,7 +210,7 @@ function calcDivMeasurements() {
 						"border:" + borderStyle + ";" +"' class='outerWidgetDiv'>" +
 							"<div style='display: inline-block; position:relative;overflow:hidden;" +
 							"background:white; width:" + divWidth +"px;height:" + divHeight + "px;' class='widgetDiv'>" +
-								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>&#10006;</h4>" +
+								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
 		$("body").append(divToAdd);
