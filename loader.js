@@ -131,8 +131,8 @@ function manageWidgetType() {
 	if($("#sidebarWidget").is(":checked")){
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 400;
-		minWidth = 200;
+		minHeight = 300;
+		minWidth = 100;
 	}
 	if($("#blackWhiteWidget").is(":checked")){
 		//use Strossle's black & white widget
@@ -211,6 +211,7 @@ function calcDivMeasurements() {
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
 		console.log("Div measurements too small!");
+		showTooShortMessage();
 	}
 }
 
@@ -230,6 +231,10 @@ function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
 	$("#controlBox").draggable();
+}
+
+function showTooShortMessage(){
+	console.log("The minimum measurements for the box are: ",minHeight, " px high and ", minWidth, " px wide.");
 }
 
 //load jQuery to site
