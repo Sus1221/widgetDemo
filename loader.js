@@ -159,6 +159,7 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
+	console.log("divHeight:", divHeight, "minHeight", minHeight, "divWidth", divWidth, "minWidth", minWidth);
 	//If userdrawn box have sufficient measurements
 	if(divHeight > minHeight && divWidth > minWidth) {
 		var leftToRight;
