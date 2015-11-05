@@ -83,7 +83,7 @@ function callbackForLoadjQueryUI() {
 										"<label for='blackWhiteWidget' class='strossleLabel'>Black & white widget</label><br>" +
 								"</div>");
 	$(".strossleLabel").css("display","inline");
-	$("<p id='lengthErrorMessage' style='background:white;'></p>").appendTo("#controlBox");
+	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
 }
@@ -236,7 +236,7 @@ function makeWidgetDraggable() {
 
 function showTooShortMessage(){
 	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
-	$("#lengthErrorMessage").html("The minimum measurements for the box are: <br>",minHeight, "px high and ", minWidth, " px wide.");
+	$("#lengthErrorMessage").html("<p>The minimum measurements for the box are: </p><br><p>",minHeight, "px high and </p><br><p>", minWidth, " px wide.</p>");
 	setTimeout(function(){$("#lengthErrorMessage").fadeOut(1000);}, 7000);
 }
 
