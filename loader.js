@@ -76,11 +76,11 @@ function callbackForLoadjQueryUI() {
 										"<input type='checkbox' id='border' name='border' checked>" +
 										"<label for='border' class='strossleLabel'>Border</label><br>" +
 										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
-										"<label for='standardWidget' class='strossleLabel'>Standard widget</label><br>" +
+										"<label for='standardWidget' class='strossleLabel'>1.Standard widget</label><br>" +
 										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
-										"<label for='sidebarWidget' class='strossleLabel'>Sidebar widget</label><br>" +
+										"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
 										"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
-										"<label for='blackWhiteWidget' class='strossleLabel'>Black & white widget</label><br>" +
+										"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
 								"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
@@ -202,6 +202,9 @@ function calcDivMeasurements() {
 		divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display: inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
+								"<p class='widget1'>1</p>" +
+								"<p class='widget2'>2</p>" +
+								"<p class='widget3'>3</p>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
