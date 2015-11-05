@@ -83,6 +83,7 @@ function callbackForLoadjQueryUI() {
 										"<label for='blackWhiteWidget' class='strossleLabel'>Black & white widget</label><br>" +
 								"</div>");
 	$(".strossleLabel").css("display","inline");
+	$("controlBox").insertAfter("<p id='lengthErrorMessage' style='background:white;'></p>");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
 }
@@ -234,7 +235,8 @@ function makeWidgetDraggable() {
 }
 
 function showTooShortMessage(){
-	console.log("The minimum measurements for the box are: ",minHeight, " px high and ", minWidth, " px wide.");
+	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
+	$("#lengthErrorMessage").html("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.").delay(5000).fadeOut();
 }
 
 //load jQuery to site
