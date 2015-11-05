@@ -125,7 +125,7 @@ function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 300;
+		minHeight = 250;
 		minWidth = 300;
 	}
 	//If sidebar widget is chosen
@@ -138,7 +138,7 @@ function manageWidgetType() {
 	if($("#blackWhiteWidget").is(":checked")){
 		//use Strossle's black & white widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		minHeight = 300;
+		minHeight = 250;
 		minWidth = 300;
 	}
 }
