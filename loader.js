@@ -1,6 +1,6 @@
 //Insert code on row below in bookmark url-field in browser to run this script on current url
 //javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
-
+//javascript:(function(){var script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
 //Load files to page
 function loadFile(type, url, callback, async) {
 	//"grab" the <head> in index.html of page
@@ -55,8 +55,10 @@ var divHeight = 0;
 var clickedElement;
 var divToAdd = "";
 //The default/start div, a standard widget
-var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 var borderStyle = "1px solid black";
+var minWidth = 200;
+var minHeight = 100;
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -120,11 +122,15 @@ function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		minHeight = 200;
+		minWidth = 100;
 	}
 	//If sidebar widget is chosen
 	if($("#sidebarWidget").is(":checked")){
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		minHeight = 0;
+		minWidth = 0;
 	}
 }
 
