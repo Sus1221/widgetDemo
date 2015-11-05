@@ -83,7 +83,7 @@ function callbackForLoadjQueryUI() {
 										"<label for='blackWhiteWidget' class='strossleLabel'>Black & white widget</label><br>" +
 								"</div>");
 	$(".strossleLabel").css("display","inline");
-	$("controlBox").insertAfter("<p id='lengthErrorMessage' style='background:white;'></p>");
+	$("<p id='lengthErrorMessage' style='background:white;'></p>").insertAfter("#controlBox");
 	//Make body selectable so user is able to create a widget div
 	makeBodySelectable();
 }
