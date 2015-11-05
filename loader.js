@@ -236,7 +236,7 @@ function makeWidgetDraggable() {
 
 function showTooShortMessage(){
 	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
-	$("#lengthErrorMessage").html("<p>The minimum measurements <br>for the box are: <br>" + minHeight + "px high and <br>" + minWidth + " px wide.</p>");
+	$("#lengthErrorMessage").html("<p>Minimum measurements <br>for this box are: <br>Height: " + minHeight + "px<br>Width: " + minWidth + " px.</p>");
 	//setTimeout(function(){$("#lengthErrorMessage").fadeOut(1000);}, 7000);
 }
 
