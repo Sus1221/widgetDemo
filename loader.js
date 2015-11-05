@@ -159,30 +159,30 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
+	var leftToRight;
+	var topToBottom;
+	var positionRules = "";
+	//If horizontal number is higher than on start
+	if(endX > startX){
+			leftToRight = true;
+			divWidth = endX - startX;
+	//If horizontal number is lower than on start
+	}else {
+		leftToRight = false;
+		divWidth = startX - endX;
+	}
+	//If vertical number is higher than on start
+	if(endY > startY){
+		topToBottom = true;
+		divHeight = endY - startY;
+	//If vertical number is lower than on start
+	}else{
+		topToBottom = false;
+		divHeight = startY - endY;
+	}
 	console.log("divHeight:", divHeight, "minHeight", minHeight, "divWidth", divWidth, "minWidth", minWidth);
 	//If userdrawn box have sufficient measurements
 	if(divHeight > minHeight && divWidth > minWidth) {
-		var leftToRight;
-		var topToBottom;
-		var positionRules = "";
-		//If horizontal number is higher than on start
-		if(endX > startX){
-			leftToRight = true;
-			divWidth = endX - startX;
-		//If horizontal number is lower than on start
-		}else {
-			leftToRight = false;
-			divWidth = startX - endX;
-		}
-		//If vertical number is higher than on start
-		if(endY > startY){
-			topToBottom = true;
-			divHeight = endY - startY;
-		//If vertical number is lower than on start
-		}else{
-			topToBottom = false;
-			divHeight = startY - endY;
-		}
 		//if user "draws" widgetbox from left to right
 		if(leftToRight){
 			positionRules += "left:" + startX + "px;";
