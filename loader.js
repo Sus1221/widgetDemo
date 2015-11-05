@@ -55,10 +55,10 @@ var divHeight = 0;
 var clickedElement;
 var divToAdd = "";
 //The default/start div, a standard widget
-var strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var borderStyle = "1px solid black";
-var minWidth = 200;
-var minHeight = 100;
+var minWidth = 300;
+var minHeight = 200;
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -79,6 +79,8 @@ function callbackForLoadjQueryUI() {
 										"<label for='standardWidget' class='strossleLabel'>Standard widget</label><br>" +
 										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
 										"<label for='sidebarWidget' class='strossleLabel'>Sidebar widget</label><br>" +
+										"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+										"<label for='blackWhiteWidget' class='strossleLabel'>Black & white widget</label><br>" +
 								"</div>");
 	$(".strossleLabel").css("display","inline");
 	//Make body selectable so user is able to create a widget div
@@ -122,15 +124,21 @@ function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 200;
-		minWidth = 100;
+		minHeight = 300;
+		minWidth = 300;
 	}
 	//If sidebar widget is chosen
 	if($("#sidebarWidget").is(":checked")){
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 0;
-		minWidth = 0;
+		minHeight = 400;
+		minWidth = 200;
+	}
+	if($("#blackWhiteWidget").is(":checked")){
+		//use Strossle's black & white widget
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		minHeight = 300;
+		minWidth = 300;
 	}
 }
 
@@ -151,44 +159,43 @@ function makeBodySelectable() {
 
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
-	var leftToRight;
-	var topToBottom;
-	var positionRules = "";
-	//If horizontal number is higher than on start
-	if(endX > startX){
-		leftToRight = true;
-		divWidth = endX - startX;
-	//If horizontal number is lower than on start
-	}else {
-		leftToRight = false;
-		divWidth = startX - endX;
-	}
-	//If vertical number is higher than on start
-	if(endY > startY){
-		topToBottom = true;
-		divHeight = endY - startY;
-	//If vertical number is lower than on start
-	}else{
-		topToBottom = false;
-		divHeight = startY - endY;
-	}
-	//if user "draws" widgetbox from left to right
-	if(leftToRight){
-		positionRules += "left:" + startX + "px;";
-	//if user "draws" widgetBox from right to left
-	}else{
-		positionRules += "left:" + endX + "px;";
-	}
-	//if user "draws" widgetbox from top to bottom
-	if(topToBottom){
-		positionRules += "top:" + startY + "px;";
-	//uf user "draws" widgetbox from bottom to top
-	}else{
-		positionRules += "top:" + endY + "px;";
-	}
 	//If userdrawn box have sufficient measurements
-	if(divHeight > 200 && divWidth > 100) {
-		console.log("position rules", positionRules);
+	if(divHeight > minHeight && divWidth > minWidth) {
+		var leftToRight;
+		var topToBottom;
+		var positionRules = "";
+		//If horizontal number is higher than on start
+		if(endX > startX){
+			leftToRight = true;
+			divWidth = endX - startX;
+		//If horizontal number is lower than on start
+		}else {
+			leftToRight = false;
+			divWidth = startX - endX;
+		}
+		//If vertical number is higher than on start
+		if(endY > startY){
+			topToBottom = true;
+			divHeight = endY - startY;
+		//If vertical number is lower than on start
+		}else{
+			topToBottom = false;
+			divHeight = startY - endY;
+		}
+		//if user "draws" widgetbox from left to right
+		if(leftToRight){
+			positionRules += "left:" + startX + "px;";
+		//if user "draws" widgetBox from right to left
+		}else{
+			positionRules += "left:" + endX + "px;";
+		}
+		//if user "draws" widgetbox from top to bottom
+		if(topToBottom){
+			positionRules += "top:" + startY + "px;";
+		//uf user "draws" widgetbox from bottom to top
+		}else{
+			positionRules += "top:" + endY + "px;";
+		}
 		//For the remove-functionality to work, the X sign must be a grandchild of .XtoRemoveStrossleWidgetDiv
 		divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
