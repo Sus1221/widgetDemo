@@ -239,8 +239,8 @@ function calcDivMeasurements() {
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display: inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
 								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px; font-weight:bold;'>1</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;'>2</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;'>3</h5>" +
+								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px; font-weight:normal;'>2</h5>" +
+								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px; font-weight:normal;'>3</h5>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
 								strossleWidgetDiv +
 							"</div></div>";
