@@ -1,6 +1,6 @@
 //Insert code on row below in bookmark url-field in browser to run this script on current url
 //javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
-//javascript:(function(){var script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
+
 //Load files to page
 function loadFile(type, url, callback, async) {
 	//"grab" the <head> in index.html of page
@@ -248,7 +248,7 @@ function makeWidgetDraggable() {
 
 function showTooShortMessage(){
 	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
-	$("#lengthErrorMessage").html("<hr><p>Minimum measurements <br>for chosen widget<br>type are: <br>height: " + minHeight + "px,<br>width: " + minWidth + " px.</p>").show();
+	$("#lengthErrorMessage").html("<p>Minimum measurements <br>for chosen widget<br>type are: <br>height: " + minHeight + "px,<br>width: " + minWidth + " px.</p>").show();
 	setTimeout(function(){$("#lengthErrorMessage").fadeOut(1000);}, 10000);
 }
 
