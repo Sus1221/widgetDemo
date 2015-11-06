@@ -106,6 +106,15 @@ function whichElementClicked(event){
 		//remove that widget-<div>
 		$(clickedElement).parent().parent().remove();
 	}
+	if(clickedElement.className.indexOf("widget1") > -1){
+		console.log("class widget1");
+	}
+	if(clickedElement.className.indexOf("widget2") > -1){
+		console.log("class widget2");
+	}
+	if(clickedElement.className.indexOf("widget3") > -1){
+		console.log("class widget3");
+	}
 }
 
 //manage borderstyle of .outerWidgetDiv
