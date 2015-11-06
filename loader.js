@@ -56,6 +56,7 @@ var clickedElement;
 var divToAdd = "";
 //The default/start div, a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var strossleWidgetDivNo = 1;
 var borderStyle = "1px solid black";
 var minWidth = 300;
 var minHeight = 200;
@@ -161,6 +162,7 @@ function manageWidgetType() {
 	if($("#standardWidget").is(":checked")){
 		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetDivNo = 1;
 		minHeight = 250;
 		minWidth = 300;
 	}
@@ -168,12 +170,14 @@ function manageWidgetType() {
 	if($("#sidebarWidget").is(":checked")){
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetDivNo = 2;
 		minHeight = 300;
 		minWidth = 100;
 	}
 	if($("#blackWhiteWidget").is(":checked")){
 		//use Strossle's black & white widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		strossleWidgetDiv = 2;
 		minHeight = 250;
 		minWidth = 300;
 	}
@@ -247,6 +251,19 @@ function calcDivMeasurements() {
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
+		if(strossleWidgetDivNo == 1){
+			$(".widget1").css("font-weight", "bold");
+			$(".widget2").css("font-weight", "normal");
+			$(".widget3").css("font-weight", "normal");
+		}else if(strossleWidgetDivNo == 2){
+			$(".widget1").css("font-weight", "normal");
+			$(".widget2").css("font-weight", "bold");
+			$(".widget3").css("font-weight", "normal");
+		}else if(strossleWidgetDivNo == 3){
+			$(".widget1").css("font-weight", "normal");
+			$(".widget2").css("font-weight", "normal");
+			$(".widget3").css("font-weight", "bold");
+		}
 		//remove jQuery UI's default resizable icon in the down-right corner
 		$(".ui-icon").css("background-image", "url('')");
 	}else{
