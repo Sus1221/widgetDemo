@@ -106,26 +106,41 @@ function whichElementClicked(event){
 		//remove that widget-<div>
 		$(clickedElement).parent().parent().remove();
 	}
+	//if #1 is clicked on a widget
 	if(clickedElement.className.indexOf("widget1") > -1){
 		console.log("class widget1");
-		//remove current widget div
+		//remove current inner widget div
 		$(clickedElement).siblings("div").remove();
-		//append new widget div as last sibling to clickedElement
+		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
+		//styling of numbers
+		$(".widget1").css("font-weight", "bold");
+		$(".widget2").css("font-weight", "normal");
+		$(".widget3").css("font-weight", "normal");
 	}
+	//if #2 is clicked on a widget
 	if(clickedElement.className.indexOf("widget2") > -1){
 		console.log("class widget2");
-		//remove current widget div
+		//remove current inner widget div
 		$(clickedElement).siblings("div").remove();
-		//append new widget div as last sibling to clickedElement
+		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().append("<div data-spklw-widget='widget-5524d25c249ad'></div>");
+		//styling of numbers
+		$(".widget1").css("font-weight", "normal");
+		$(".widget2").css("font-weight", "bold");
+		$(".widget3").css("font-weight", "normal");
 	}
+	//if #3 is clicked on a widget
 	if(clickedElement.className.indexOf("widget3") > -1){
 		console.log("class widget3");
-		//remove current widget div
+		//remove current inner widget div
 		$(clickedElement).siblings("div").remove();
-		//append new widget div as last sibling to clickedElement
+		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().append("<div data-spklw-widget='widget-5565c515580c0'></div>");
+		//styling of numbers
+		$(".widget1").css("font-weight", "normal");
+		$(".widget2").css("font-weight", "normal");
+		$(".widget3").css("font-weight", "bold");
 	}
 }
 
@@ -223,7 +238,7 @@ function calcDivMeasurements() {
 		divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display: inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin-right:10px;'>1</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin-right:10px; font-weight:bold;'>1</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin-right:10px;'>2</h5>" +
 								"<h5 class='widget3' style='cursor:pointer;display:inline;margin-right:10px;'>3</h5>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;top:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
