@@ -53,7 +53,6 @@ var endY = 0;
 var divWidth = 0;
 var divHeight = 0;
 var clickedElement;
-var divToAdd = "";
 //The default/start div, a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 var strossleWidgetDivNo = 1;
@@ -238,16 +237,17 @@ function calcDivMeasurements() {
 		}else{
 			positionRules += "top:" + endY + "px;";
 		}
-		//For the remove-functionality to work, the X sign must be a grandchild of .XtoRemoveStrossleWidgetDiv
-		divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
+		//For the remove-functionality to work, the X sign must be a grandchild of outer div
+		var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
-							"<div style='display: inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
+							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
 								strossleWidgetDiv +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px; font-weight:bold;'>1</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px; font-weight:normal;'>2</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px; font-weight:normal;'>3</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;'>1</h5>" +
+								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>2</h5>" +
+								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>3</h5>" +
 								"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
-							"</div></div>";
+							"</div>" +
+						"</div>";
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
