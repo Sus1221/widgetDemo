@@ -243,12 +243,12 @@ function calcDivMeasurements() {
 							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
 								strossleWidgetDiv +
 							"</div>" +
-							"<div style='position:absolute;bottom:1px;left:1px;z-index:2000000000;background:white;'>" +
+							"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
 								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;'>1</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>2</h5>" +
 								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>3</h5>" +
 							"</div>" +
-							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:1px;right:5px;cursor:pointer;font-size:15px;color:black;z-index:2000000000'>X</h4>" +
+							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;z-index:2000000000'>X</h4>" +
 						"</div>";
 		$("body").append(divToAdd);
 		makeWidgetResizable();
