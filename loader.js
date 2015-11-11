@@ -243,7 +243,7 @@ function calcDivMeasurements() {
 							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
 								strossleWidgetDiv +
 							"</div>" +
-							"<div style='position:absolute;bottom:1px;left:1px'>" +
+							"<div style='position:absolute;bottom:1px;left:1px;'>" +
 								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;'>1</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>2</h5>" +
 								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;'>3</h5>" +
