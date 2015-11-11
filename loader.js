@@ -110,9 +110,9 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("widget1") > -1){
 		console.log("class widget1");
 		//remove current inner widget div
-		$(clickedElement).siblings("div").remove();
+		$(clickedElement).parent().siblings("div").remove();
 		//append new inner widget div as last sibling to clickedElement
-		$(clickedElement).parent().append("<div data-spklw-widget='widget-5591293a1ed53'></div>");
+		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 		//styling of numbers
 		$(".widget1").css("font-weight", "bold");
 		$(".widget2").css("font-weight", "normal");
@@ -122,9 +122,9 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("widget2") > -1){
 		console.log("class widget2");
 		//remove current inner widget div
-		$(clickedElement).siblings("div").remove();
+		$(clickedElement).parent().siblings("div").remove();
 		//append new inner widget div as last sibling to clickedElement
-		$(clickedElement).parent().append("<div data-spklw-widget='widget-5524d25c249ad'></div>");
+		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
 		//styling of numbers
 		$(".widget1").css("font-weight", "normal");
 		$(".widget2").css("font-weight", "bold");
@@ -134,9 +134,9 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("widget3") > -1){
 		console.log("class widget3");
 		//remove current inner widget div
-		$(clickedElement).siblings("div").remove();
+		$(clickedElement).parent().siblings("div").remove();
 		//append new inner widget div as last sibling to clickedElement
-		$(clickedElement).parent().append("<div data-spklw-widget='widget-5565c515580c0'></div>");
+		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		//styling of numbers
 		$(".widget1").css("font-weight", "normal");
 		$(".widget2").css("font-weight", "normal");
