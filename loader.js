@@ -73,6 +73,7 @@ function callbackForLoadjQueryUI() {
 	//Add a 'controlbox' to page to control widget-<div>'s
 	$("body").prepend("<div id ='controlBox' style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;left:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:3px;display:inline-block;'><br>" +
+										"<p id='cancelWidget' style='float:left;cursor:pointer;'>Cancel</p>" +
 										"<input type='checkbox' id='border' name='border' checked>" +
 										"<label for='border' class='strossleLabel'>Border</label><br>" +
 										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
@@ -81,7 +82,7 @@ function callbackForLoadjQueryUI() {
 										"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
 										"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
 										"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
-								"</div>");
+							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
 	//Make body selectable so user is able to create a widget div
@@ -92,6 +93,10 @@ function callbackForLoadjQueryUI() {
 function whichElementClicked(event){
 	//clickedElement = the clicked html element
 	clickedElement = event.target;
+	//If cancel text in #controlBox is clicked
+	if(clickedElement.id == "cancelWidget"){
+		location.reload();
+	}
 	//If checkbox for border is clicked
 	if(clickedElement.id == "border"){
 		setTimeout(function(){manageDivBorder();}, 200);
