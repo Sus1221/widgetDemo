@@ -197,6 +197,7 @@ function makeBodySelectable() {
 	});
 }
 
+
 //Calculate users desired measurements for widget-<div>
 function calcDivMeasurements() {
 	var leftToRight;
@@ -282,6 +283,11 @@ function makeWidgetResizable() {
    $("#controlBox").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
+   //Widen click space for resizing   
+	$(".ui-resizable-s").css("height", "15px");
+	$(".ui-resizable-n").css("height", "15px");
+	$(".ui-resizable-w").css("width", "15px");
+	$(".ui-resizable-e").css("width", "15px");
 }
 
 //makes widge drag'n'droppable for user
