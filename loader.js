@@ -114,9 +114,9 @@ function whichElementClicked(event){
 		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
 		//styling of numbers
-		$(".widget1").css("font-weight", "bold");
-		$(".widget2").css("font-weight", "normal");
-		$(".widget3").css("font-weight", "normal");
+		$(clickedElement).css("font-weight", "bold");
+		$(clickedElement).siblings().css("font-weight", "normal");
+		$(clickedElement).siblings().css("font-weight", "normal");
 	}
 	//if #2 is clicked on a widget
 	if(clickedElement.className.indexOf("widget2") > -1){
@@ -297,6 +297,7 @@ function makeWidgetDraggable() {
 	$("#controlBox").draggable();
 }
 
+//Show message when users 'drawn' box is to small compared to minimum measurements
 function showTooShortMessage(){
 	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
 	$("#lengthErrorMessage").html("<p>Minimum measurements <br>for chosen widget<br>type are: <br>height: " + minHeight + "px,<br>width: " + minWidth + " px.</p>").show();
