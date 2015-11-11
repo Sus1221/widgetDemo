@@ -104,7 +104,7 @@ function whichElementClicked(event){
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
 		console.log("you clicked XtoRemoveStrossleWidgetDiv");
 		//remove that widget-<div>
-		$(clickedElement).parent().parent().remove();
+		$(clickedElement).parent().remove();
 	}
 	//if #1 is clicked on a widget
 	if(clickedElement.className.indexOf("widget1") > -1){
@@ -237,7 +237,6 @@ function calcDivMeasurements() {
 		}else{
 			positionRules += "top:" + endY + "px;";
 		}
-		//For the remove-functionality to work, the X sign must be a grandchild of outer div
 		var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
