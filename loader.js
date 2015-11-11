@@ -116,7 +116,6 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
-		$(clickedElement).siblings().css("font-weight", "normal");
 	}
 	//if #2 is clicked on a widget
 	if(clickedElement.className.indexOf("widget2") > -1){
@@ -126,9 +125,9 @@ function whichElementClicked(event){
 		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
 		//styling of numbers
-		$(".widget1").css("font-weight", "normal");
-		$(".widget2").css("font-weight", "bold");
-		$(".widget3").css("font-weight", "normal");
+		$(clickedElement).css("font-weight", "bold");
+		$(clickedElement).siblings().css("font-weight", "normal");
+		
 	}
 	//if #3 is clicked on a widget
 	if(clickedElement.className.indexOf("widget3") > -1){
@@ -138,9 +137,8 @@ function whichElementClicked(event){
 		//append new inner widget div as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		//styling of numbers
-		$(".widget1").css("font-weight", "normal");
-		$(".widget2").css("font-weight", "normal");
-		$(".widget3").css("font-weight", "bold");
+		$(clickedElement).css("font-weight", "bold");
+		$(clickedElement).siblings().css("font-weight", "normal");
 	}
 }
 
