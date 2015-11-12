@@ -121,6 +121,7 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		$(".outerWidgetDiv").resizable("destroy");
 		makeWidgetResizable();
 	}
 	//if #2 is clicked on a widget
