@@ -121,6 +121,7 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		makeWidgetResizable();
 	}
 	//if #2 is clicked on a widget
 	if(clickedElement.className.indexOf("widget2") > -1){
@@ -132,6 +133,7 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		makeWidgetResizable();
 		
 	}
 	//if #3 is clicked on a widget
@@ -144,6 +146,7 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		makeWidgetResizable();
 	}
 }
 
