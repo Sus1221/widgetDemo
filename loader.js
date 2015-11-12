@@ -280,8 +280,6 @@ function calcDivMeasurements() {
 			$(".widget2").css("font-weight", "normal");
 			$(".widget3").css("font-weight", "bold");
 		}
-		//remove jQuery UI's default resizable icon in the down-right corner
-		$(".ui-icon").css("background-image", "url('')");
 	}else{
 		console.log("Div measurements too small!");
 		showTooShortMessage();
@@ -299,6 +297,8 @@ function makeWidgetResizable() {
 	$(".ui-resizable-n").css("height", "15px");
 	$(".ui-resizable-w").css("width", "15px");
 	$(".ui-resizable-e").css("width", "15px");
+	//remove jQuery UI's default resizable icon in the down-right corner
+	$(".ui-icon").css("background-image", "url('')");
 }
 
 //makes widge drag'n'droppable for user
