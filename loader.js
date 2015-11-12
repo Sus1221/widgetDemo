@@ -179,7 +179,7 @@ function manageWidgetType() {
 	if($("#blackWhiteWidget").is(":checked")){
 		//use Strossle's black & white widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		strossleWidgetDivNo = 2;
+		strossleWidgetDivNo = 3;
 		minHeight = 250;
 		minWidth = 300;
 	}
