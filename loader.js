@@ -139,7 +139,7 @@ function whichElementClicked(event){
 		//Need to destroy resizable functionality and then...
 		$(".outerWidgetDiv").resizable("destroy");
 		//make it resizable again to get resizability to work after widget type change
-		makeWidgetResizable();		
+		makeWidgetResizable();
 	}
 	//if #3(widget type 3) is clicked on a widget
 	if(clickedElement.className.indexOf("widget3") > -1){
@@ -294,9 +294,6 @@ function makeWidgetResizable() {
    $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
-   $("#controlBox").resizable({
-      handles: ' n, e, s, w, ne, se, sw, nw'
-   });
    //Widen click space for resizing   
 	$(".ui-resizable-s").css("height", "15px");
 	$(".ui-resizable-n").css("height", "15px");
@@ -308,7 +305,6 @@ function makeWidgetResizable() {
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
-	$("#controlBox").draggable();
 }
 
 //Show message when users 'drawn' box is to small compared to minimum measurements
