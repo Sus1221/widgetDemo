@@ -111,7 +111,7 @@ function whichElementClicked(event){
 		//remove that widget-<div>
 		$(clickedElement).parent().delay(2000).remove();
 	}
-	//if #1 is clicked on a widget
+	//if #1(widget type 1) is clicked on a widget
 	if(clickedElement.className.indexOf("widget1") > -1){
 		console.log("class widget1");
 		//remove current inner widget div
@@ -121,10 +121,12 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		//Need to destroy resizable functionality and then...
 		$(".outerWidgetDiv").resizable("destroy");
+		//make it resizable again to get resizability to work after widget type change
 		makeWidgetResizable();
 	}
-	//if #2 is clicked on a widget
+	//if #2(widget type 2) is clicked on a widget
 	if(clickedElement.className.indexOf("widget2") > -1){
 		console.log("class widget2");
 		//remove current inner widget div
@@ -134,10 +136,12 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
-		makeWidgetResizable();
-		
+		//Need to destroy resizable functionality and then...
+		$(".outerWidgetDiv").resizable("destroy");
+		//make it resizable again to get resizability to work after widget type change
+		makeWidgetResizable();		
 	}
-	//if #3 is clicked on a widget
+	//if #3(widget type 3) is clicked on a widget
 	if(clickedElement.className.indexOf("widget3") > -1){
 		console.log("class widget3");
 		//remove current inner widget div
@@ -147,6 +151,9 @@ function whichElementClicked(event){
 		//styling of numbers
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
+		//Need to destroy resizable functionality and then...
+		$(".outerWidgetDiv").resizable("destroy");
+		//make it resizable again to get resizability to work after widget type change
 		makeWidgetResizable();
 	}
 }
