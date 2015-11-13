@@ -1,9 +1,9 @@
-//Insert code on row below in bookmark url-field in browser to run this script on current url
-//javascript:(function(){var%20script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
+//Insert code on row below in bookmark url-field in browser to run this script on your current url.
+//javascript:(function(){var script=document.createElement('script');script.type='text/javascript';script.src='https://rawgit.com/Sus1221/widgetDemo/master/loader.js';document.getElementsByTagName('head')[0].appendChild(script);})();
 
 //Load files to page
 function loadFile(type, url, callback, async) {
-	//"grab" the <head> in index.html of page
+	//put the <head> in index.html of page in variable
 	var head = document.getElementsByTagName('head')[0];
 	//If function call sends in type "js"
 	if(type == "js"){
@@ -14,6 +14,7 @@ function loadFile(type, url, callback, async) {
 		script.src = url;
 		//If the script should load asynchronously
 		if(async){
+			//put value to true
 			script.async = true;
 		}
 		//If sprinkle content script is being loaded
@@ -27,13 +28,13 @@ function loadFile(type, url, callback, async) {
 			script.onreadystatechange = callback;
 			script.onload = callback;
 		}
-		//Add <script> to <head>
+		//Add created <script> to <head>
 		head.appendChild(script);
 	//If function call sends in type "css"
 	}else if(type == "css"){
 		//Create a new <link>
 		var link = document.createElement('link');
-		//Assign attributes to link
+		//Assign attributes to the <link>
 		link.rel = 'stylesheet';
 		link.href = url;
 		//Bind eventual callback function to events
@@ -45,20 +46,24 @@ function loadFile(type, url, callback, async) {
 }
 
 //Default value variables
-//Width: x, height: y
+//Width: x
 var startX = 0;
 var endX = 0;
+var divWidth = 0;
+//Height: y
 var startY = 0;
 var endY = 0;
-var divWidth = 0;
 var divHeight = 0;
 var clickedElement;
 //The default/start div, a standard widget
 var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var strossleWidgetDivNo = 1;
-var borderStyle = "1px solid black";
+//The default/start minimum widget -<div> values
 var minWidth = 300;
 var minHeight = 200;
+//Keeps track of witch of the widget types is used when creating a widget -<div>. Used to style numbers 1,2,3 in widget -<div>
+var strossleWidgetDivNo = 1;
+//The default/start borderStyle of widget -<div>
+var borderStyle = "1px solid black";
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -85,7 +90,7 @@ function callbackForLoadjQueryUI() {
 							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
-	//Make body selectable so user is able to create a widget div
+	//Make body selectable so user is able to create a widget -<div>
 	makeBodySelectable();
 }
 
@@ -93,68 +98,71 @@ function callbackForLoadjQueryUI() {
 function whichElementClicked(event){
 	//clickedElement = the clicked html element
 	clickedElement = event.target;
-	//If cancel text in #controlBox is clicked
+	//If "cancel"-<span> in #controlBox is clicked
 	if(clickedElement.id == "cancelWidget"){
+		//reload page - whole bookmarklet cancelled
 		location.reload();
 	}
 	//If checkbox for border is clicked
 	if(clickedElement.id == "border"){
+		//Run function to manage borderstyling of divs
 		setTimeout(function(){manageDivBorder();}, 200);
 	}
-	//if radio buttons for widgetType choice are clicked
+	//if radio buttons for widgetTypes are clicked
 	if(clickedElement.className.indexOf("widgetType") > -1){
+		//Run function to manage widget type
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
-	//If X (remove) in a widget is clicked
-	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
-		console.log("you clicked XtoRemoveStrossleWidgetDiv");
-		//remove that widget-<div>
-		$(clickedElement).parent().delay(2000).remove();
-	}
-	//if #1(widget type 1) is clicked on a widget
+	//if #1(widget type 1) is clicked on in a widget -<div>
 	if(clickedElement.className.indexOf("widget1") > -1){
 		console.log("class widget1");
-		//remove current inner widget div
+		//remove current sprinkle-widget div
 		$(clickedElement).parent().siblings("div").remove();
-		//append new inner widget div as last sibling to clickedElement
+		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-		//styling of numbers
+		//styling of numbers 1 2 3
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
 		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget type change
+		//make it resizable again to get resizability to work after widget exchange just done
 		makeWidgetResizable();
 	}
-	//if #2(widget type 2) is clicked on a widget
+	//if #2(widget type 2) is clicked on a widget -<div>
 	if(clickedElement.className.indexOf("widget2") > -1){
 		console.log("class widget2");
-		//remove current inner widget div
+		//remove current sprinkle-widget-<div>
 		$(clickedElement).parent().siblings("div").remove();
-		//append new inner widget div as last sibling to clickedElement
+		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
-		//styling of numbers
+		//styling of numbers 1 2 3
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
 		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget type change
+		//make it resizable again to get resizability to work after widget exchange just done
 		makeWidgetResizable();
 	}
-	//if #3(widget type 3) is clicked on a widget
+	//if #3(widget type 3) is clicked on a widget -<div>
 	if(clickedElement.className.indexOf("widget3") > -1){
 		console.log("class widget3");
-		//remove current inner widget div
+		//remove current sprinkle-widget-<div>
 		$(clickedElement).parent().siblings("div").remove();
-		//append new inner widget div as last sibling to clickedElement
+		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
-		//styling of numbers
+		//styling of numbers 1 2 3
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
 		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget type change
+		//make it resizable again to get resizability to work after widget exchange just done
 		makeWidgetResizable();
+	}
+	//If X (remove) in a widget-<div> is clicked
+	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
+		console.log("you clicked XtoRemoveStrossleWidgetDiv");
+		//remove that whole widget-<div>
+		$(clickedElement).parent().delay(2000).remove();
 	}
 }
 
@@ -196,7 +204,7 @@ function manageWidgetType() {
 	}
 }
 
-//Makes <body> "selectable" - makes it possible for user to create custom <div>
+//Makes <body> "selectable" - makes it possible for user to create/draw custom <div>
 function makeBodySelectable() {
 	$("html").selectable({
 		start: function(event, ui){
@@ -206,52 +214,64 @@ function makeBodySelectable() {
 		stop: function(event, ui){
 			endX = event.pageX;
 			endY = event.pageY;
+			//At the end of every drawn box - run function
 			calcDivMeasurements();
 		}
 	});
 }
 
-
-//Calculate users desired measurements for widget-<div>
+//Calculate users desired measurements for widget-<div>, and add it to page
 function calcDivMeasurements() {
+	//boolean that tells if user drew box from left to right or not
 	var leftToRight;
+	//boolean that tells if user drew box from top to bottom or not
 	var topToBottom;
+	//Stores css rules for the widget div
 	var positionRules = "";
-	//If horizontal number is higher than on start
+	//If horizontal value is higher than on start
 	if(endX > startX){
 			leftToRight = true;
+			//Calc. width of div
 			divWidth = endX - startX;
-	//If horizontal number is lower than on start
+	//If horizontal value is lower than on start
 	}else {
 		leftToRight = false;
+		//Calc. width of div
 		divWidth = startX - endX;
 	}
-	//If vertical number is higher than on start
+	//If vertical value is higher than on start
 	if(endY > startY){
 		topToBottom = true;
+		//Calc. height of div
 		divHeight = endY - startY;
-	//If vertical number is lower than on start
+	//If vertical value is lower than on start
 	}else{
 		topToBottom = false;
+		//Calc. height of div
 		divHeight = startY - endY;
 	}
 	console.log("divHeight:", divHeight, "minHeight", minHeight, "divWidth", divWidth, "minWidth", minWidth);
-	//If userdrawn box have sufficient measurements
+	//If user drawn box have sufficient measurements
 	if(divHeight > minHeight && divWidth > minWidth) {
 		//if user "draws" widgetbox from left to right
 		if(leftToRight){
+			//add start X-value to "left:"
 			positionRules += "left:" + startX + "px;";
 		//if user "draws" widgetBox from right to left
 		}else{
+			//add end X-value to "left:"
 			positionRules += "left:" + endX + "px;";
 		}
 		//if user "draws" widgetbox from top to bottom
 		if(topToBottom){
+			//add start Y-value to "top:"
 			positionRules += "top:" + startY + "px;";
-		//uf user "draws" widgetbox from bottom to top
+		//if user "draws" widgetbox from bottom to top
 		}else{
+			//add end Y-value to "top:"
 			positionRules += "top:" + endY + "px;";
 		}
+		//div with widget to add to page
 		var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
@@ -264,9 +284,11 @@ function calcDivMeasurements() {
 							"</div>" +
 							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 						"</div>";
+						//append created div to <body>
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
+		//Styling of 1, 2, 3 in added widget div
 		if(strossleWidgetDivNo == 1){
 			$(".widget1").css("font-weight", "bold");
 			$(".widget2").css("font-weight", "normal");
@@ -280,19 +302,20 @@ function calcDivMeasurements() {
 			$(".widget2").css("font-weight", "normal");
 			$(".widget3").css("font-weight", "bold");
 		}
+	//User drawn box hasn't got sufficient measurements
 	}else{
 		console.log("Div measurements too small!");
 		showTooShortMessage();
 	}
 }
 
-//makes widget resizable for user
+//makes widget-div resizable for user
 function makeWidgetResizable() {
    console.log("widget now resizable");
    $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
-   //Widen click space for resizing   
+   //Widen handle space for resizing   
 	$(".ui-resizable-s").css("height", "15px");
 	$(".ui-resizable-n").css("height", "15px");
 	$(".ui-resizable-w").css("width", "15px");
@@ -301,7 +324,7 @@ function makeWidgetResizable() {
 	$(".ui-icon").css("background-image", "url('')");
 }
 
-//makes widge drag'n'droppable for user
+//makes widget div drag'n'droppable for user
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
@@ -310,15 +333,16 @@ function makeWidgetDraggable() {
 //Show message when users 'drawn' box is to small compared to minimum measurements
 function showTooShortMessage(){
 	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
+	//use .html to show error message
 	$("#lengthErrorMessage").html("<p>Minimum measurements <br>for chosen widget<br>type are: <br>height: " + minHeight + "px,<br>width: " + minWidth + " px.</p>").show();
+	//fadeOut message after some seconds
 	setTimeout(function(){$("#lengthErrorMessage").fadeOut(500);}, 7000);
 }
 
-
-
 //load jQuery to site
 loadFile("js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js", callbackForLoadjQuery);
+//load Strossle's script to site
 loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", false, true);
 
-//add clickevent to <body>
+//add click event to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
