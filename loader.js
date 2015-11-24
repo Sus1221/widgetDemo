@@ -92,6 +92,9 @@ function callbackForLoadjQueryUI() {
 							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
+	$("#controlBox").on("hover", function(){
+		console.log("hovered!");
+	});
 	//Make body selectable so user is able to create a widget -<div>
 	makeBodySelectable();
 }
@@ -166,10 +169,6 @@ function whichElementClicked(event){
 		//remove that whole widget-<div>
 		$(clickedElement).parent().delay(2000).remove();
 	}
-}
-
-function handleHoverOverControlBox(event){
-	console.log("event", event);
 }
 
 //manage borderstyle of .outerWidgetDiv
@@ -352,4 +351,3 @@ loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", false, true)
 
 //add click event to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
-document.getElementById("controlBox").setAttribute("onmouseover", "handleHoverOverControlBox(event)");
