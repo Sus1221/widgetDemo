@@ -77,9 +77,9 @@ function callbackForLoadjQuery() {
 function callbackForLoadjQueryUI() {
 	//Add a 'controlbox' to page to control widget-<div>'s
 	$("body").prepend("<div id ='controlBox' style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;right:0'>" +
+										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:2px;display:inline-block;'>" +
+										"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>Cancel</span><br>" +
 										"<div id='controlBoxContent' style='display:none;'>" +
-											"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:2px;display:inline-block;'>" +
-											"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>Cancel</span><br>" +
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
 											"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
