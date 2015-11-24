@@ -77,16 +77,18 @@ function callbackForLoadjQuery() {
 function callbackForLoadjQueryUI() {
 	//Add a 'controlbox' to page to control widget-<div>'s
 	$("body").prepend("<div id ='controlBox' style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;right:0'>" +
-										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:2px;display:inline-block;'>" +
-										"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>Cancel</span><br>" +
-										"<input type='checkbox' id='border' name='border' checked>" +
-										"<label for='border' class='strossleLabel'>Border</label><br>" +
-										"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
-										"<label for='standardWidget' class='strossleLabel'>1.Standard widget</label><br>" +
-										"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
-										"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
-										"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
-										"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
+										"<div id='controlBoxContent' style='display:none;'>" +
+											"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:2px;display:inline-block;'>" +
+											"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>Cancel</span><br>" +
+											"<input type='checkbox' id='border' name='border' checked>" +
+											"<label for='border' class='strossleLabel'>Border</label><br>" +
+											"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<label for='standardWidget' class='strossleLabel'>1.Standard widget</label><br>" +
+											"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
+											"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
+										"</div>" +
 							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
@@ -164,6 +166,10 @@ function whichElementClicked(event){
 		//remove that whole widget-<div>
 		$(clickedElement).parent().delay(2000).remove();
 	}
+}
+
+function handleHoverOverControlBox(event){
+	console.log("event", event);
 }
 
 //manage borderstyle of .outerWidgetDiv
@@ -346,3 +352,4 @@ loadFile("js", "http://widgets.sprinklecontent.com/v2/sprinkle.js", false, true)
 
 //add click event to <body>
 document.getElementsByTagName("body")[0].setAttribute("onmousedown", "whichElementClicked(event)");
+document.getElementById("controlBox").setAttribute("onmouseover", "handleHoverOverControlBox(event)");
