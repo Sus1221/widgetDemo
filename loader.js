@@ -78,20 +78,20 @@ function callbackForLoadjQueryUI() {
 	//Add a 'controlbox' to page to control widget-<div>'s
 	$("body").prepend("<div id ='controlBox' style='text-align:left;min-width:30px;min-height:30px;background-color:white;border:1px solid black;padding:5px;z-index: 200000001;position:fixed;top:0;right:0'>" +
 										"<img src='https://pbs.twimg.com/profile_images/641610044036018176/OQzkinPw.png' style='height:40px;width:auto;margin:2px;display:inline-block;'>" +
-										"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>Cancel</span><br>" +
+										"<span id='cancelWidget' style='float:right;cursor:pointer;font-size:60%'>X</span><br>" +
 										"<div id='controlBoxContent' style='display:none;'>" +
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
-											"<h3>Type 1</h3>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<h3>Category 1</h3>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'checked>" +
 											"<label for='standardWidget' class='strossleLabel'>1a</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
 											"<label for='standardWidget' class='strossleLabel'>1b</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
 											"<label for='standardWidget' class='strossleLabel'>1c</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
 											"<label for='standardWidget' class='strossleLabel'>1d</label><br>" +
-											"<h3>Type 2</h3>" +
+											"<h3>Category 2</h3>" +
 											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2a</label><br>" +
 											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
@@ -100,7 +100,7 @@ function callbackForLoadjQueryUI() {
 											"<label for='sidebarWidget' class='strossleLabel'>2c</label><br>" +
 											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2d</label><br>" +
-											"<h3>Type 3</h3>" +
+											"<h3>Category 3</h3>" +
 											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3a</label><br>" +
 											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
