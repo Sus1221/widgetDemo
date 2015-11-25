@@ -95,6 +95,9 @@ function callbackForLoadjQueryUI() {
 	$("#controlBox").on("hover", function(){
 		console.log("hovered!");
 	});
+	$("#controlBox").on("click", function(){
+		console.log("clicked");
+	})
 	//Make body selectable so user is able to create a widget -<div>
 	makeBodySelectable();
 }
