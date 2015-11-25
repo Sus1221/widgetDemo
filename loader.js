@@ -82,15 +82,33 @@ function callbackForLoadjQueryUI() {
 										"<div id='controlBoxContent' style='display:none;'>" +
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
-											"<h3>Heading 1</h3>" +
-											"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
-											"<label for='standardWidget' class='strossleLabel'>1.Standard widget</label><br>" +
-											"<h3>Heading 2</h3>" +
-											"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
-											"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
-											"<h3>Heading 3</h3>" +
-											"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
-											"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
+											"<h3>Type 1</h3>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<label for='standardWidget' class='strossleLabel'>1a</label><br>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<label for='standardWidget' class='strossleLabel'>1b</label><br>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<label for='standardWidget' class='strossleLabel'>1c</label><br>" +
+											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType' checked>" +
+											"<label for='standardWidget' class='strossleLabel'>1d</label><br>" +
+											"<h3>Type 2</h3>" +
+											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<label for='sidebarWidget' class='strossleLabel'>2a</label><br>" +
+											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<label for='sidebarWidget' class='strossleLabel'>2b</label><br>" +
+											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<label for='sidebarWidget' class='strossleLabel'>2c</label><br>" +
+											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<label for='sidebarWidget' class='strossleLabel'>2d</label><br>" +
+											"<h3>Type 3</h3>" +
+											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<label for='blackWhiteWidget' class='strossleLabel'>3a</label><br>" +
+											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<label for='blackWhiteWidget' class='strossleLabel'>3b</label><br>" +
+											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<label for='blackWhiteWidget' class='strossleLabel'>3c</label><br>" +
+											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<label for='blackWhiteWidget' class='strossleLabel'>3d</label><br>" +
 										"</div>" +
 							"</div>");
 	$(".strossleLabel").css("display","inline");
@@ -191,7 +209,7 @@ function manageDivBorder() {
 //switches widget content source
 function manageWidgetType() {
 	//If standard widget is chosen
-	if($("#standardWidget").is(":checked")){
+	if($(".standardWidget").is(":checked")){
 		//use Strossle's standard widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		strossleWidgetDivNo = 1;
@@ -199,14 +217,14 @@ function manageWidgetType() {
 		minWidth = 300;
 	}
 	//If sidebar widget is chosen
-	if($("#sidebarWidget").is(":checked")){
+	if($(".sidebarWidget").is(":checked")){
 		//use Strossle's sidebar widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		strossleWidgetDivNo = 2;
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($("#blackWhiteWidget").is(":checked")){
+	if($(".blackWhiteWidget").is(":checked")){
 		//use Strossle's black & white widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		strossleWidgetDivNo = 3;
