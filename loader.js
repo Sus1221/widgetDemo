@@ -92,10 +92,10 @@ function callbackForLoadjQueryUI() {
 							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
-	$("#controlBox").mouseEnter(function(){
+	$("#controlBox").mouseenter(function(){
 		$("#controlBoxContent").fadeIn();
 	});
-	$("#controlBox").mouseLeave(function(){
+	$("#controlBox").mouseleave(function(){
 		$("#controlBoxContent").fadeOut();
 	});
 	//Make body selectable so user is able to create a widget -<div>
