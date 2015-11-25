@@ -92,12 +92,10 @@ function callbackForLoadjQueryUI() {
 							"</div>");
 	$(".strossleLabel").css("display","inline");
 	$("<div id='lengthErrorMessage' style='background:white;display:inline;'></div>").appendTo("#controlBox");
-	$("#controlBox").on("hover", function(){
-		console.log("hovered!");
+	$("#controlBox").hover(function(){
+		$("#controlBoxContent").fadeIn();
 	});
-	$("#controlBox").on("click", function(){
-		console.log("clicked");
-	})
+	/*setInterval(function(){hoverFunctionality();}, 200);*/
 	//Make body selectable so user is able to create a widget -<div>
 	makeBodySelectable();
 }
@@ -211,6 +209,14 @@ function manageWidgetType() {
 		minWidth = 300;
 	}
 }
+
+/*function hoverFunctionality(){
+	console.log("hoverFunctionality start");
+	$("#controlBox").on("hover", function(){
+		$("#controlBoxContent").fadeIn();
+	})
+
+}*/
 
 //Makes <body> "selectable" - makes it possible for user to create/draw custom <div>
 function makeBodySelectable() {
