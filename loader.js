@@ -82,13 +82,13 @@ function callbackForLoadjQueryUI() {
 										"<div id='controlBoxContent' style='display:none;'>" +
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
-											"<h4>Heading 1</h4>" + 
+											"<h3>Heading 1</h3>" +
 											"<input type='radio' id='standardWidget' class='widgetType' name='widgetType' checked>" +
 											"<label for='standardWidget' class='strossleLabel'>1.Standard widget</label><br>" +
-											"<h4>Heading 2</h4>" +
+											"<h3>Heading 2</h3>" +
 											"<input type='radio' id='sidebarWidget' class='widgetType' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2.Sidebar widget</label><br>" +
-											"<h4>Heading 3</h4>" +
+											"<h3>Heading 3</h3>" +
 											"<input type='radio' id='blackWhiteWidget' class='widgetType' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3.Black & white widget</label><br>" +
 										"</div>" +
