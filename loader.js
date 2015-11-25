@@ -83,31 +83,31 @@ function callbackForLoadjQueryUI() {
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
 											"<h3>Category 1</h3>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'checked>" +
-											"<label for='standardWidget' class='strossleLabel'>1a</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
-											"<label for='standardWidget' class='strossleLabel'>1b</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
-											"<label for='standardWidget' class='strossleLabel'>1c</label><br>" +
-											"<input type='radio' class='standardWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, standardWidget' id='w1a' name='widgetType'checked>" +
+											"<label for='w1a' class='strossleLabel'>1a</label><br>" +
+											"<input type='radio' class='widgetType,standardWidget' id='w1b' name='widgetType'>" +
+											"<label for='w1b' class='strossleLabel'>1b</label><br>" +
+											"<input type='radio' class='widgetType, standardWidget' id='w1c' name='widgetType'>" +
+											"<label for='w1c' class='strossleLabel'>1c</label><br>" +
+											"<input type='radio' class='widgetType, standardWidget' id='w1d' name='widgetType'>" +
 											"<label for='standardWidget' class='strossleLabel'>1d</label><br>" +
 											"<h3>Category 2</h3>" +
-											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='w2a' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2a</label><br>" +
-											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='w2b' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2b</label><br>" +
-											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='w2c' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2c</label><br>" +
-											"<input type='radio' class='sidebarWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='w2d' name='widgetType'>" +
 											"<label for='sidebarWidget' class='strossleLabel'>2d</label><br>" +
 											"<h3>Category 3</h3>" +
-											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3a' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3a</label><br>" +
-											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3b' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3b</label><br>" +
-											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3c' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3c</label><br>" +
-											"<input type='radio' class='blackWhiteWidget' class='widgetType' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3d' name='widgetType'>" +
 											"<label for='blackWhiteWidget' class='strossleLabel'>3d</label><br>" +
 										"</div>" +
 							"</div>");
