@@ -147,7 +147,7 @@ function whichElementClicked(event){
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-		//styling of numbers 1 2 3
+		//styling of numbers in widget
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
@@ -162,7 +162,7 @@ function whichElementClicked(event){
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
-		//styling of numbers 1 2 3
+		//styling of numbers in widget
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
@@ -177,7 +177,7 @@ function whichElementClicked(event){
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
-		//styling of numbers 1 2 3
+		//styling of numbers in widget
 		$(clickedElement).css("font-weight", "bold");
 		$(clickedElement).siblings().css("font-weight", "normal");
 		//Need to destroy resizable functionality and then...
@@ -358,20 +358,21 @@ function calcDivMeasurements() {
 							"</div>" +
 							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 						"</div>";
-						//append created div to <body>
-		$("body").append(divToAdd);
-		makeWidgetResizable();
-		makeWidgetDraggable();
+		//Make the right <h5> bold
 		//Grab the checked radiobutton
 		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
 		console.log("radiobuttonChecked", radiobuttonChecked);
 		//grab radiobutton's second class
 		var rbClass = radiobuttonChecked[0].classList[2];
 		console.log("rbClass", rbClass);
-		var elementToBoldify = $(divToAdd + " ." + rbClass);
-		console.log("elementToBoldify", elementToBoldify);
-		elementToBoldify.css('font-weight', 'bold');
-
+		console.log("divToAdd", divToAdd);
+		//var elementToBoldify = $(divToAdd + " ." + rbClass);
+		//console.log("elementToBoldify", elementToBoldify);
+		//elementToBoldify.css('font-weight', 'bold');
+		//append created div to <body>
+		$("body").append(divToAdd);
+		makeWidgetResizable();
+		makeWidgetDraggable();
 	//User drawn box hasn't got sufficient measurements
 	}else{
 		console.log("Div measurements too small!");
