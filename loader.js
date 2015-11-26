@@ -60,8 +60,6 @@ var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 //The default/start minimum widget -<div> values
 var minWidth = 300;
 var minHeight = 200;
-//Keeps track of witch of the widget types is used when creating a widget -<div>. Used to style numbers 1,2,3 in widget -<div>
-var strossleWidgetDivNo = 1;
 //The default/start borderStyle of widget -<div>
 var borderStyle = "1px solid black";
 
@@ -83,32 +81,32 @@ function callbackForLoadjQueryUI() {
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
 											"<h3>Category 1</h3>" +
-											"<input type='radio' class='widgetType, standardWidget' id='w1a' name='widgetType'checked>" +
-											"<label for='w1a' class='strossleLabel'>1a</label><br>" +
-											"<input type='radio' class='widgetType,standardWidget' id='w1b' name='widgetType'>" +
-											"<label for='w1b' class='strossleLabel'>1b</label><br>" +
-											"<input type='radio' class='widgetType, standardWidget' id='w1c' name='widgetType'>" +
-											"<label for='w1c' class='strossleLabel'>1c</label><br>" +
-											"<input type='radio' class='widgetType, standardWidget' id='w1d' name='widgetType'>" +
-											"<label for='standardWidget' class='strossleLabel'>1d</label><br>" +
+											"<input type='radio' class='widgetType, standardWidget' id='rb1' name='widgetType'checked>" +
+											"<label for='rb1' class='strossleLabel'>1a</label><br>" +
+											"<input type='radio' class='widgetType,standardWidget' id='rb2' name='widgetType'>" +
+											"<label for='rb2' class='strossleLabel'>1b</label><br>" +
+											"<input type='radio' class='widgetType, standardWidget' id='rb3' name='widgetType'>" +
+											"<label for='rb3' class='strossleLabel'>1c</label><br>" +
+											"<input type='radio' class='widgetType, standardWidget' id='rb4' name='widgetType'>" +
+											"<label for='rb4' class='strossleLabel'>1d</label><br>" +
 											"<h3>Category 2</h3>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='w2a' name='widgetType'>" +
-											"<label for='sidebarWidget' class='strossleLabel'>2a</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='w2b' name='widgetType'>" +
-											"<label for='sidebarWidget' class='strossleLabel'>2b</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='w2c' name='widgetType'>" +
-											"<label for='sidebarWidget' class='strossleLabel'>2c</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='w2d' name='widgetType'>" +
-											"<label for='sidebarWidget' class='strossleLabel'>2d</label><br>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='rb5' name='widgetType'>" +
+											"<label for='rb5' class='strossleLabel'>2a</label><br>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='rb6' name='widgetType'>" +
+											"<label for='rb6' class='strossleLabel'>2b</label><br>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='rb7' name='widgetType'>" +
+											"<label for='rb7' class='strossleLabel'>2c</label><br>" +
+											"<input type='radio' class='widgetType, sidebarWidget' id='rb8' name='widgetType'>" +
+											"<label for='rb8' class='strossleLabel'>2d</label><br>" +
 											"<h3>Category 3</h3>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3a' name='widgetType'>" +
-											"<label for='blackWhiteWidget' class='strossleLabel'>3a</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3b' name='widgetType'>" +
-											"<label for='blackWhiteWidget' class='strossleLabel'>3b</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3c' name='widgetType'>" +
-											"<label for='blackWhiteWidget' class='strossleLabel'>3c</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='w3d' name='widgetType'>" +
-											"<label for='blackWhiteWidget' class='strossleLabel'>3d</label><br>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb9' name='widgetType'>" +
+											"<label for='rb9' class='strossleLabel'>3a</label><br>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb10' name='widgetType'>" +
+											"<label for='rb10' class='strossleLabel'>3b</label><br>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb11' name='widgetType'>" +
+											"<label for='rb11' class='strossleLabel'>3c</label><br>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb12' name='widgetType'>" +
+											"<label for='rb12' class='strossleLabel'>3d</label><br>" +
 										"</div>" +
 							"</div>");
 	$(".strossleLabel").css("display","inline");
@@ -208,30 +206,72 @@ function manageDivBorder() {
 
 //switches widget content source
 function manageWidgetType() {
-	//If standard widget is chosen
-	if($(".standardWidget").is(":checked")){
-		//use Strossle's standard widget
+	if($("#rb1").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		strossleWidgetDivNo = 1;
 		minHeight = 250;
 		minWidth = 300;
 	}
-	//If sidebar widget is chosen
-	if($(".sidebarWidget").is(":checked")){
-		//use Strossle's sidebar widget
+	if($("#rb2").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb3").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb4").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb5").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		strossleWidgetDivNo = 2;
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($(".blackWhiteWidget").is(":checked")){
+	if($("#rb6").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		minHeight = 300;
+		minWidth = 100;
+	}
+	if($("#rb7").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		minHeight = 300;
+		minWidth = 100;
+	}
+	if($("#rb8").is(":checked")){
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		minHeight = 300;
+		minWidth = 100;
+	}
+	if($("#rb9").is(":checked")){
 		//use Strossle's black & white widget
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		strossleWidgetDivNo = 3;
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb10").is(":checked")){
+		//use Strossle's black & white widget
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb11").is(":checked")){
+		//use Strossle's black & white widget
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		minHeight = 250;
+		minWidth = 300;
+	}
+	if($("#rb12").is(":checked")){
+		//use Strossle's black & white widget
+		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 }
+
 
 //Makes <body> "selectable" - makes it possible for user to create/draw custom <div>
 function makeBodySelectable() {
@@ -307,10 +347,10 @@ function calcDivMeasurements() {
 								strossleWidgetDiv +
 							"</div>" +
 							"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;line-height:normal;'>1a</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;line-height:normal;'>1b</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;line-height:normal;'>1c</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:bold;line-height:normal;'>1d</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
+								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
 								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
@@ -326,20 +366,11 @@ function calcDivMeasurements() {
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
-		//Styling of 1, 2, 3 in added widget div
-		if(strossleWidgetDivNo == 1){
-			$(".widget1").css("font-weight", "bold");
-			$(".widget2").css("font-weight", "normal");
-			$(".widget3").css("font-weight", "normal");
-		}else if(strossleWidgetDivNo == 2){
-			$(".widget1").css("font-weight", "normal");
-			$(".widget2").css("font-weight", "bold");
-			$(".widget3").css("font-weight", "normal");
-		}else if(strossleWidgetDivNo == 3){
-			$(".widget1").css("font-weight", "normal");
-			$(".widget2").css("font-weight", "normal");
-			$(".widget3").css("font-weight", "bold");
-		}
+		//Add code to style the right number in widget directly after creation!
+		//if( $("#rb1").is("checked") ) -> $(".widget1").css("font-weight", "bold");
+		var radiobuttonChecked = $("'#controlBoxContent input[type=radio]:checked'");
+		console.log("radiobuttonChecked", radiobuttonChecked);
+
 	//User drawn box hasn't got sufficient measurements
 	}else{
 		console.log("Div measurements too small!");
