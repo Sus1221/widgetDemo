@@ -362,14 +362,13 @@ function calcDivMeasurements() {
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
-		//Get wich radiobutton was selected
+		//Grab the checked radiobutton
 		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
 		console.log("radiobuttonChecked", radiobuttonChecked);
 		//grab radiobutton's second class
 		var rbClass = radiobuttonChecked[0].classList[2];
 		console.log("rbClass", rbClass);
-		//make h5 with rbCLass class bold
-		var elementToBoldify = $("."+rbClass);
+		var elementToBoldify = $(divToAdd + " ." + rbClass);
 		console.log("elementToBoldify", elementToBoldify);
 		elementToBoldify.css('font-weight', 'bold');
 
