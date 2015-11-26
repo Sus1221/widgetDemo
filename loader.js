@@ -366,6 +366,7 @@ function calcDivMeasurements() {
 		var rbClass = radiobuttonChecked[0].classList[2];
 		console.log("rbClass", rbClass);
 		console.log("divToAdd", divToAdd);
+		console.log("$divToAdd", $(divToAdd));
 		//var elementToBoldify = $(divToAdd + " ." + rbClass);
 		//console.log("elementToBoldify", elementToBoldify);
 		//elementToBoldify.css('font-weight', 'bold');
