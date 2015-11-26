@@ -364,11 +364,12 @@ function calcDivMeasurements() {
 		makeWidgetDraggable();
 		//Get wich radiobutton was selected
 		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
+		console.log("radiobuttonChecked", radiobuttonChecked);
 		//grab radiobutton's second class
-		var rbClass = radiobuttonChecked[0].class[1];
+		//var rbClass = radiobuttonChecked[0].class[1];
 		console.log("rbClass", rbClass);
-		//make h5 with that class bold
-		$(divToAdd + " ." + rbClass).css('font-weight', 'bold');
+		//make h5 with rbCLass class bold
+		//$(divToAdd + " ." + rbClass).css('font-weight', 'bold');
 
 	//User drawn box hasn't got sufficient measurements
 	}else{
