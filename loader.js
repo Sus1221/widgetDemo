@@ -368,7 +368,7 @@ function calcDivMeasurements() {
 		makeWidgetDraggable();
 		//Add code to style the right number in widget directly after creation!
 		//if( $("#rb1").is("checked") ) -> $(".widget1").css("font-weight", "bold");
-		var radiobuttonChecked = $("'#controlBoxContent input[type=radio]:checked'");
+		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
 		console.log("radiobuttonChecked", radiobuttonChecked);
 
 	//User drawn box hasn't got sufficient measurements
