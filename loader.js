@@ -368,7 +368,7 @@ function calcDivMeasurements() {
 		console.log("$divToAdd", $(divToAdd));
 		var elementToBoldify = $(divToAdd).children().eq(1).children("." + rbClass).first();
 		console.log("elementToBoldify", elementToBoldify);
-		elementToBoldify.css('font-weight', 'bold');
+		$(elementToBoldify).css('font-weight', 'bold');
 		//append created div to <body>
 		$("body").append(divToAdd);
 		makeWidgetResizable();
