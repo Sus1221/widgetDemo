@@ -353,11 +353,10 @@ function calcDivMeasurements() {
 		console.log("radiobuttonChecked", radiobuttonChecked);
 		//grab radiobutton's second class
 		var rbClass = radiobuttonChecked[0].classList[2];
-		console.log("rbClass", rbClass);
-		console.log("$divToAdd", $(divToAdd));
-		var elementToBoldify = $(divToAdd).children().eq(1).children("." + rbClass).first();
+		var rbClassEndNo = parseInt(rbClass.match(/\d+/g), 10);
+		var elementToBoldify = $(divToAdd).children().eq(rbClassEndNo -1);
 		console.log("elementToBoldify", elementToBoldify);
-		$(elementToBoldify).css('font-weight', 'bold');
+
 		//append created div to <body>
 		$("body").append(divToAdd);
 		makeWidgetResizable();
