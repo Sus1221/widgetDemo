@@ -369,7 +369,9 @@ function calcDivMeasurements() {
 		var rbClass = radiobuttonChecked[0].classList[2];
 		console.log("rbClass", rbClass);
 		//make h5 with rbCLass class bold
-		$(divToAdd + " ." + rbClass).css('font-weight', 'bold');
+		var elementToBoldify = $(divToAdd + " ." + rbClass);
+		console.log("elementToBoldify", elementToBoldify);
+		elementToBoldify.css('font-weight', 'bold');
 
 	//User drawn box hasn't got sufficient measurements
 	}else{
