@@ -81,31 +81,31 @@ function callbackForLoadjQueryUI() {
 											"<input type='checkbox' id='border' name='border' checked>" +
 											"<label for='border' class='strossleLabel'>Border</label><br>" +
 											"<h3>Category 1</h3>" +
-											"<input type='radio' class='widgetType, standardWidget' id='rb1' name='widgetType'checked>" +
+											"<input type='radio' class='widgetType, standardWidget, rb1' name='widgetType'checked>" +
 											"<label for='rb1' class='strossleLabel'>1a</label><br>" +
-											"<input type='radio' class='widgetType,standardWidget' id='rb2' name='widgetType'>" +
+											"<input type='radio' class='widgetType,standardWidget, rb2' name='widgetType'>" +
 											"<label for='rb2' class='strossleLabel'>1b</label><br>" +
-											"<input type='radio' class='widgetType, standardWidget' id='rb3' name='widgetType'>" +
+											"<input type='radio' class='widgetType, standardWidget, rb3' name='widgetType'>" +
 											"<label for='rb3' class='strossleLabel'>1c</label><br>" +
-											"<input type='radio' class='widgetType, standardWidget' id='rb4' name='widgetType'>" +
+											"<input type='radio' class='widgetType, standardWidget, rb4' name='widgetType'>" +
 											"<label for='rb4' class='strossleLabel'>1d</label><br>" +
 											"<h3>Category 2</h3>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='rb5' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget, rb5' name='widgetType'>" +
 											"<label for='rb5' class='strossleLabel'>2a</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='rb6' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget, rb6' name='widgetType'>" +
 											"<label for='rb6' class='strossleLabel'>2b</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='rb7' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget, rb7' name='widgetType'>" +
 											"<label for='rb7' class='strossleLabel'>2c</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget' id='rb8' name='widgetType'>" +
+											"<input type='radio' class='widgetType, sidebarWidget, rb8' name='widgetType'>" +
 											"<label for='rb8' class='strossleLabel'>2d</label><br>" +
 											"<h3>Category 3</h3>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb9' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget, rb9' name='widgetType'>" +
 											"<label for='rb9' class='strossleLabel'>3a</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb10' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget, rb10' name='widgetType'>" +
 											"<label for='rb10' class='strossleLabel'>3b</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb11' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget, rb11' name='widgetType'>" +
 											"<label for='rb11' class='strossleLabel'>3c</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget' id='rb12' name='widgetType'>" +
+											"<input type='radio' class='widgetType, blackWhiteWidget, rb12' name='widgetType'>" +
 											"<label for='rb12' class='strossleLabel'>3d</label><br>" +
 										"</div>" +
 							"</div>");
@@ -206,66 +206,62 @@ function manageDivBorder() {
 
 //switches widget content source
 function manageWidgetType() {
-	if($("#rb1").is(":checked")){
+	if($(".rb1").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb2").is(":checked")){
+	if($(".rb2").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb3").is(":checked")){
+	if($(".rb3").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb4").is(":checked")){
+	if($(".rb4").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb5").is(":checked")){
+	if($(".rb5").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($("#rb6").is(":checked")){
+	if($(".rb6").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($("#rb7").is(":checked")){
+	if($(".rb7").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($("#rb8").is(":checked")){
+	if($(".rb8").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
-	if($("#rb9").is(":checked")){
-		//use Strossle's black & white widget
+	if($(".rb9").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb10").is(":checked")){
-		//use Strossle's black & white widget
+	if($(".rb10").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb11").is(":checked")){
-		//use Strossle's black & white widget
+	if($(".rb11").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
-	if($("#rb12").is(":checked")){
-		//use Strossle's black & white widget
+	if($(".rb12").is(":checked")){
 		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
@@ -347,18 +343,18 @@ function calcDivMeasurements() {
 								strossleWidgetDiv +
 							"</div>" +
 							"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
-								"<h5 class='widget1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
-								"<h5 class='widget2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
-								"<h5 class='widget3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3d</h5>" +
+								"<h5 class='widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
+								"<h5 class='widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
+								"<h5 class='widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
+								"<h5 class='widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
+								"<h5 class='widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
+								"<h5 class='widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
+								"<h5 class='widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
+								"<h5 class='widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
+								"<h5 class='widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
+								"<h5 class='widget3, rb10' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
+								"<h5 class='widget3, rb11' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
+								"<h5 class='widget3, rb12' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3d</h5>" +
 							"</div>" +
 							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 						"</div>";
@@ -366,14 +362,13 @@ function calcDivMeasurements() {
 		$("body").append(divToAdd);
 		makeWidgetResizable();
 		makeWidgetDraggable();
-		//Add code to style the right number in widget directly after creation!
-		//if( $("#rb1").is("checked") ) -> $(".widget1").css("font-weight", "bold");
+		//Get wich radiobutton was selected
 		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
-		console.log("radiobuttonChecked", radiobuttonChecked);
-		var rbId = radiobuttonChecked[0].id;
-		console.log("cbId", rbId);
-		var rbIdEndNo = rbId.match(/\d+/g);
-		console.log("rbIdEndNo", rbIdEndNo);
+		//grab radiobutton's second class
+		var rbClass = radiobuttonChecked[0].class[1];
+		console.log("rbClass", rbClass);
+		//make h5 with that class bold
+		$(divToAdd + " ." + rbClass).css('font-weight', 'bold');
 
 	//User drawn box hasn't got sufficient measurements
 	}else{
