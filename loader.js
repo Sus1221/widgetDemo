@@ -370,8 +370,10 @@ function calcDivMeasurements() {
 		//if( $("#rb1").is("checked") ) -> $(".widget1").css("font-weight", "bold");
 		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
 		console.log("radiobuttonChecked", radiobuttonChecked);
-		var cbIdNo = radiobuttonChecked[0].id;
-		console.log("cbIdNo", cbIdNo);
+		var rbId = radiobuttonChecked[0].id;
+		console.log("cbId", rbId);
+		var rbIdEndNo = rbId.match(/\d+/g);
+		console.log("rbIdEndNo", rbIdEndNo);
 
 	//User drawn box hasn't got sufficient measurements
 	}else{
