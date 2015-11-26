@@ -142,48 +142,27 @@ function whichElementClicked(event){
 	}
 	//if #1(widget type 1) is clicked on in a widget -<div>
 	if(clickedElement.className.indexOf("widget1") > -1){
-		console.log("class widget1");
 		//remove current sprinkle-widget div
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-		//styling of numbers in widget
-		$(clickedElement).css("font-weight", "bold");
-		$(clickedElement).siblings().css("font-weight", "normal");
-		//Need to destroy resizable functionality and then...
-		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget exchange just done
-		makeWidgetResizable();
+		afterWidgetChange(clickedElement);
 	}
 	//if #2(widget type 2) is clicked on a widget -<div>
 	if(clickedElement.className.indexOf("widget2") > -1){
-		console.log("class widget2");
 		//remove current sprinkle-widget-<div>
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
-		//styling of numbers in widget
-		$(clickedElement).css("font-weight", "bold");
-		$(clickedElement).siblings().css("font-weight", "normal");
-		//Need to destroy resizable functionality and then...
-		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget exchange just done
-		makeWidgetResizable();
+		afterWidgetChange(clickedElement);
 	}
 	//if #3(widget type 3) is clicked on a widget -<div>
 	if(clickedElement.className.indexOf("widget3") > -1){
-		console.log("class widget3");
 		//remove current sprinkle-widget-<div>
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
-		//styling of numbers in widget
-		$(clickedElement).css("font-weight", "bold");
-		$(clickedElement).siblings().css("font-weight", "normal");
-		//Need to destroy resizable functionality and then...
-		$(".outerWidgetDiv").resizable("destroy");
-		//make it resizable again to get resizability to work after widget exchange just done
-		makeWidgetResizable();
+		afterWidgetChange(clickedElement);
 	}
 	//If X (remove) in a widget-<div> is clicked
 	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
@@ -191,6 +170,16 @@ function whichElementClicked(event){
 		//remove that whole widget-<div>
 		$(clickedElement).parent().remove();
 	}
+}
+
+function afterWidgetChange(clickedElement){
+	//styling of numbers in widget
+	$(clickedElement).css("font-weight", "bold");
+	$(clickedElement).siblings().css("font-weight", "normal");
+	//Need to destroy resizable functionality and then...
+	$(".outerWidgetDiv").resizable("destroy");
+	//make it resizable again to get resizability to work after widget exchange just done
+	makeWidgetResizable();
 }
 
 //manage borderstyle of .outerWidgetDiv
