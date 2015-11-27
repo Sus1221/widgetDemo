@@ -59,7 +59,6 @@ var clickedElement;
 var strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 //The default/start borderStyle of widget -<div>
 var borderStyle = "1px solid black";
-
 var widgetSources = {
 	widgetToChangeTo1 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
 	widgetToChangeTo2 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
@@ -98,18 +97,18 @@ function callbackForLoadjQueryUI() {
 											"<label for='rb3' class='strossleLabel'>1c</label><br>" +
 											"<h3>Category 2</h3>" +
 											"<input type='radio' class='widgetType, standardWidget, rb4' name='widgetType'>" +
-											"<label for='rb4' class='strossleLabel'>1d</label><br>" +
+											"<label for='rb4' class='strossleLabel'>2a</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb5' name='widgetType'>" +
-											"<label for='rb5' class='strossleLabel'>2a</label><br>" +
+											"<label for='rb5' class='strossleLabel'>2b</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb6' name='widgetType'>" +
-											"<label for='rb6' class='strossleLabel'>2b</label><br>" +
+											"<label for='rb6' class='strossleLabel'>2c</label><br>" +
 											"<h3>Category 3</h3>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb7' name='widgetType'>" +
-											"<label for='rb7' class='strossleLabel'>2c</label><br>" +
+											"<label for='rb7' class='strossleLabel'>3a</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb8' name='widgetType'>" +
-											"<label for='rb8' class='strossleLabel'>2d</label><br>" +
+											"<label for='rb8' class='strossleLabel'>3b</label><br>" +
 											"<input type='radio' class='widgetType, blackWhiteWidget, rb9' name='widgetType'>" +
-											"<label for='rb9' class='strossleLabel'>3a</label><br>" +
+											"<label for='rb9' class='strossleLabel'>3c</label><br>" +
 										"</div>" +
 							"</div>");
 	$(".strossleLabel").css("display","inline");
