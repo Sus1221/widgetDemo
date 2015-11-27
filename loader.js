@@ -143,6 +143,11 @@ function whichElementClicked(event){
 		//Run function to manage widget type
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
+	if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
+		console.log("you clicked XtoRemovestrossleWidgetToBeCreated");
+		//remove that whole widget-<div>
+		$(clickedElement).parent().remove();
+	}
 	//if a widget style is chosen inside of the widget box
 	if(clickedElement.className.indexOf("wTypeChange") > -1){
 		console.log("wTypeChange clicked");
