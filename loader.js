@@ -160,7 +160,7 @@ function whichElementClicked(event){
 		$(clickedElement).parent().remove();
 	}
 	//if #1(widget type 1) is clicked on in a widget -<div>
-	/*if(clickedElement.className.indexOf("widget1") > -1){
+	if(clickedElement.className.indexOf("widget1") > -1){
 		//remove current sprinkle-widget div
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
@@ -182,14 +182,15 @@ function whichElementClicked(event){
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		afterWidgetChange(clickedElement);
-	}*/
+	}
 	//trying a generic way ---- if any of the 12 widget change choices is clicked
-	if(clickedElement.className.indexOf("wTypeChange") > -1){
+	/*if(clickedElement.className.indexOf("wTypeChange") > -1){
 		console.log("wTypeChange clicked");
 		changeWidgetType(clickedElement);
-	}
+	}*/
 }
 
+//Not run right now
 function changeWidgetType(clickedElement) {
 	console.log("changeWidgetType function");
 	//Grab third class of clicked element
