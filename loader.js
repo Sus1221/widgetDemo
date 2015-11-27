@@ -329,7 +329,7 @@ function calcDivMeasurements() {
 	//OLD VERSION 
 	//var elementToBoldify = $("divToAdd").children().eq(1).children().filter("." + rbClass);
 	//NEW VERSION
-	var elementToBoldify = $("body div:last-child > *").filter("." + rbClass);
+	var elementToBoldify = $("body div:last-child > div:last-child > h5").hasClass(rbClass);
 	console.log("elementToBoldify", elementToBoldify);
 	//make that element bold
 	elementToBoldify.css("font-weight", "bold");
