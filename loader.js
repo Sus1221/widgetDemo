@@ -159,11 +159,6 @@ function whichElementClicked(event){
 		//remove that whole widget-<div>
 		$(clickedElement).parent().remove();
 	}
-	//if any of the 12 widget change choices is clicked
-	if(clickedElement.className.indexOf("wTypeChange") > -1){
-		console.log("wTypeChange clicked");
-		changeWidgetType(clickedElement);
-	}
 	//if #1(widget type 1) is clicked on in a widget -<div>
 	/*if(clickedElement.className.indexOf("widget1") > -1){
 		//remove current sprinkle-widget div
@@ -188,8 +183,12 @@ function whichElementClicked(event){
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		afterWidgetChange(clickedElement);
 	}*/
+	//trying a generic way ---- if any of the 12 widget change choices is clicked
+	if(clickedElement.className.indexOf("wTypeChange") > -1){
+		console.log("wTypeChange clicked");
+		changeWidgetType(clickedElement);
+	}
 }
-//widgetToChangeTo1 and so on is the strings containing widget div tag
 
 function changeWidgetType(clickedElement) {
 	console.log("changeWidgetType function");
@@ -197,12 +196,15 @@ function changeWidgetType(clickedElement) {
 	var clickedElSecondClass = clickedElement.classList[2];
 	console.log("clickedElSecondClass", clickedElSecondClass);
 	//Extract numbers from classname
-	var noInClassName = clickedElSecondClass.match(/\d+/g);
+	var noInClassName = parseInt(clickedElSecondClass.match(/\d+/g), 10);
 	console.log("noInClassName", noInClassName);
 	//remove current sprinkle-widget-<div>
 	$(clickedElement).parent().siblings("div").remove();
+	//Grab right widget to change to
+	var newOne = JSON.parse("widgetToChangeTo" + noInClassName);
+	console.log("newOne", newOne);
 	//append new strossle-widget-<div> as last sibling to clickedElement
-	$(clickedElement).parent().parent().prepend("widgetToChangeTo" + noInClassName);
+	$(clickedElement).parent().parent().prepend(newOne);
 	afterWidgetChange(clickedElement);
 
 }
