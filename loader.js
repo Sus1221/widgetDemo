@@ -63,18 +63,20 @@ var minHeight = 200;
 //The default/start borderStyle of widget -<div>
 var borderStyle = "1px solid black";
 
-var widgetToChangeTo1 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var widgetToChangeTo2 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var widgetToChangeTo3 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var widgetToChangeTo4 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-var widgetToChangeTo5 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-var widgetToChangeTo6 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-var widgetToChangeTo7 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-var widgetToChangeTo8 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-var widgetToChangeTo9 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-var widgetToChangeTo10 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-var widgetToChangeTo11 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-var widgetToChangeTo12 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+var widgetSources = {
+	widgetToChangeTo1 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
+	widgetToChangeTo2 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
+	widgetToChangeTo3 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
+	widgetToChangeTo4 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
+	widgetToChangeTo5 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
+	widgetToChangeTo6 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
+	widgetToChangeTo7 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
+	widgetToChangeTo8 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
+	widgetToChangeTo9 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
+	widgetToChangeTo10 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
+	widgetToChangeTo11 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
+	widgetToChangeTo12 : "<div data-spklw-widget='widget-5565c515580c0'></div>"
+};
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -190,25 +192,28 @@ function whichElementClicked(event){
 	}
 }
 
-//Not run right now
 function changeWidgetType(clickedElement) {
 	console.log("changeWidgetType function");
+	//remove current sprinkle-widget-<div>
+	$(clickedElement).parent().siblings("div").remove();
 	//Grab third class of clicked element
 	var clickedElSecondClass = clickedElement.classList[2];
 	console.log("clickedElSecondClass", clickedElSecondClass);
-	//Extract numbers from classname
+	//Extract numbers from classname - tex 8
 	var noInClassName = parseInt(clickedElSecondClass.match(/\d+/g), 10);
 	console.log("noInClassName", noInClassName);
-	//remove current sprinkle-widget-<div>
-	$(clickedElement).parent().siblings("div").remove();
-	//Grab right widget to change to
-	var newOne = "widgetToChangeTo" + noInClassName;
-	console.log("newOne", newOne);
+	//Grab right widgetvariable to change to
+	var keyNameInWidgetSourcesObj = "widgetToChangeTo" + noInClassName;
+	var newWidgetSource = widgetSources[keyNameInWidgetSourcesObj];
+	console.log("newOne", newWidgetSource);
 	//append new strossle-widget-<div> as last sibling to clickedElement
-	$(clickedElement).parent().parent().prepend(newOne);
+	$(clickedElement).parent().parent().prepend(newWidgetSource);
 	afterWidgetChange(clickedElement);
-
 }
+
+mystring = 'myVar';
+window[mystring] = 1;
+alert(myVar);
 
 //Styling of the 12 numbers in clicked widget and managing rezisable()
 function afterWidgetChange(clickedElement){
