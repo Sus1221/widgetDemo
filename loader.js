@@ -154,7 +154,7 @@ function whichElementClicked(event){
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
 	//If X (remove) in a widget-<div> is clicked
-	if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
+	/*if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
 		console.log("you clicked XtoRemovestrossleWidgetToBeCreated");
 		//remove that whole widget-<div>
 		$(clickedElement).parent().remove();
@@ -182,12 +182,12 @@ function whichElementClicked(event){
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		afterWidgetChange(clickedElement);
-	}
+	}*/
 	//trying a generic way ---- if any of the 12 widget change choices is clicked
-	/*if(clickedElement.className.indexOf("wTypeChange") > -1){
+	if(clickedElement.className.indexOf("wTypeChange") > -1){
 		console.log("wTypeChange clicked");
 		changeWidgetType(clickedElement);
-	}*/
+	}
 }
 
 //Not run right now
