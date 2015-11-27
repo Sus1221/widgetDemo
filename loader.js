@@ -318,21 +318,6 @@ function calcDivMeasurements() {
 					"</div>";
 	//append created div to <body>
 	$("body").append(divToAdd);
-	//Make the right <h5> bold
-	//1.Grab the checked radiobutton
-	var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
-	console.log("radiobuttonChecked", radiobuttonChecked);
-	//2.grab radiobutton's third class
-	var rbClass = radiobuttonChecked[0].classList[2];
-	console.log("rbClass", rbClass);
-	//grab <h5> with that class
-	//OLD VERSION 
-	//var elementToBoldify = $("divToAdd").children().eq(1).children().filter("." + rbClass);
-	//NEW VERSION
-	var elementToBoldify = $("body div:last-child > div:last-child > h5").hasClass(rbClass);
-	console.log("elementToBoldify", elementToBoldify);
-	//make that element bold
-	$(elementToBoldify).css("font-weight", "bold");
 	makeWidgetResizable();
 	makeWidgetDraggable();
 }
