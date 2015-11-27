@@ -57,9 +57,6 @@ var divHeight = 0;
 var clickedElement;
 //The default/start div, a standard widget
 var strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-//The default/start minimum widget -<div> values
-var minWidth = 300;
-var minHeight = 200;
 //The default/start borderStyle of widget -<div>
 var borderStyle = "1px solid black";
 
@@ -72,10 +69,7 @@ var widgetSources = {
 	widgetToChangeTo6 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
 	widgetToChangeTo7 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
 	widgetToChangeTo8 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
-	widgetToChangeTo9 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
-	widgetToChangeTo10 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
-	widgetToChangeTo11 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
-	widgetToChangeTo12 : "<div data-spklw-widget='widget-5565c515580c0'></div>"
+	widgetToChangeTo9 : "<div data-spklw-widget='widget-5565c515580c0'></div>"
 };
 
 //Callback after jQuery load
@@ -102,26 +96,20 @@ function callbackForLoadjQueryUI() {
 											"<label for='rb2' class='strossleLabel'>1b</label><br>" +
 											"<input type='radio' class='widgetType, standardWidget, rb3' name='widgetType'>" +
 											"<label for='rb3' class='strossleLabel'>1c</label><br>" +
+											"<h3>Category 2</h3>" +
 											"<input type='radio' class='widgetType, standardWidget, rb4' name='widgetType'>" +
 											"<label for='rb4' class='strossleLabel'>1d</label><br>" +
-											"<h3>Category 2</h3>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb5' name='widgetType'>" +
 											"<label for='rb5' class='strossleLabel'>2a</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb6' name='widgetType'>" +
 											"<label for='rb6' class='strossleLabel'>2b</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb7' name='widgetType'>" +
+											"<h3>Category 3</h3>" +
 											"<label for='rb7' class='strossleLabel'>2c</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb8' name='widgetType'>" +
 											"<label for='rb8' class='strossleLabel'>2d</label><br>" +
-											"<h3>Category 3</h3>" +
 											"<input type='radio' class='widgetType, blackWhiteWidget, rb9' name='widgetType'>" +
 											"<label for='rb9' class='strossleLabel'>3a</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget, rb10' name='widgetType'>" +
-											"<label for='rb10' class='strossleLabel'>3b</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget, rb11' name='widgetType'>" +
-											"<label for='rb11' class='strossleLabel'>3c</label><br>" +
-											"<input type='radio' class='widgetType, blackWhiteWidget, rb12' name='widgetType'>" +
-											"<label for='rb12' class='strossleLabel'>3d</label><br>" +
 										"</div>" +
 							"</div>");
 	$(".strossleLabel").css("display","inline");
@@ -155,37 +143,7 @@ function whichElementClicked(event){
 		//Run function to manage widget type
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
-	//If X (remove) in a widget-<div> is clicked
-	/*if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
-		console.log("you clicked XtoRemovestrossleWidgetToBeCreated");
-		//remove that whole widget-<div>
-		$(clickedElement).parent().remove();
-	}
-	//if #1(widget type 1) is clicked on in a widget -<div>
-	if(clickedElement.className.indexOf("widget1") > -1){
-		//remove current sprinkle-widget div
-		$(clickedElement).parent().siblings("div").remove();
-		//append new strossle-widget-<div> as last sibling to clickedElement
-		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5591293a1ed53'></div>");
-		afterWidgetChange(clickedElement);
-	}
-	//if #2(widget type 2) is clicked on a widget -<div>
-	if(clickedElement.className.indexOf("widget2") > -1){
-		//remove current sprinkle-widget-<div>
-		$(clickedElement).parent().siblings("div").remove();
-		//append new strossle-widget-<div> as last sibling to clickedElement
-		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5524d25c249ad'></div>");
-		afterWidgetChange(clickedElement);
-	}
-	//if #3(widget type 3) is clicked on a widget -<div>
-	if(clickedElement.className.indexOf("widget3") > -1){
-		//remove current sprinkle-widget-<div>
-		$(clickedElement).parent().siblings("div").remove();
-		//append new strossle-widget-<div> as last sibling to clickedElement
-		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
-		afterWidgetChange(clickedElement);
-	}*/
-	//trying a generic way ---- if any of the 12 widget change choices is clicked
+	//if a widget style is chosen inside of the widget box
 	if(clickedElement.className.indexOf("wTypeChange") > -1){
 		console.log("wTypeChange clicked");
 		changeWidgetType(clickedElement);
@@ -232,63 +190,30 @@ function manageDivBorder() {
 function manageWidgetType() {
 	if($(".rb1").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 250;
-		minWidth = 300;
 	}
 	if($(".rb2").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 250;
-		minWidth = 300;
 	}
 	if($(".rb3").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 250;
-		minWidth = 300;
 	}
 	if($(".rb4").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
-		minHeight = 250;
-		minWidth = 300;
 	}
 	if($(".rb5").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 300;
-		minWidth = 100;
 	}
 	if($(".rb6").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 300;
-		minWidth = 100;
 	}
 	if($(".rb7").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 300;
-		minWidth = 100;
 	}
 	if($(".rb8").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
-		minHeight = 300;
-		minWidth = 100;
 	}
 	if($(".rb9").is(":checked")){
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		minHeight = 250;
-		minWidth = 300;
-	}
-	if($(".rb10").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		minHeight = 250;
-		minWidth = 300;
-	}
-	if($(".rb11").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		minHeight = 250;
-		minWidth = 300;
-	}
-	if($(".rb12").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
-		minHeight = 250;
-		minWidth = 300;
 	}
 }
 
@@ -339,70 +264,58 @@ function calcDivMeasurements() {
 		//Calc. height of div
 		divHeight = startY - endY;
 	}
-	console.log("divHeight:", divHeight, "minHeight", minHeight, "divWidth", divWidth, "minWidth", minWidth);
-	//If user drawn box have sufficient measurements
-	if(divHeight > minHeight && divWidth > minWidth) {
-		//if user "draws" widgetbox from left to right
-		if(leftToRight){
-			//add start X-value to "left:"
-			positionRules += "left:" + startX + "px;";
-		//if user "draws" widgetBox from right to left
-		}else{
-			//add end X-value to "left:"
-			positionRules += "left:" + endX + "px;";
-		}
-		//if user "draws" widgetbox from top to bottom
-		if(topToBottom){
-			//add start Y-value to "top:"
-			positionRules += "top:" + startY + "px;";
-		//if user "draws" widgetbox from bottom to top
-		}else{
-			//add end Y-value to "top:"
-			positionRules += "top:" + endY + "px;";
-		}
-		//div with widget to add to page
-		var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
-						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
-							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
-								strossleWidgetToBeCreated +
-							"</div>" +
-							"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
-								"<h5 class='wTypeChange, widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
-								"<h5 class='wTypeChange, widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
-								"<h5 class='wTypeChange, widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
-								"<h5 class='wTypeChange, widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
-								"<h5 class='wTypeChange, widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
-								"<h5 class='wTypeChange, widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
-								"<h5 class='wTypeChange, widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
-								"<h5 class='wTypeChange, widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
-								"<h5 class='wTypeChange, widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
-								"<h5 class='wTypeChange, widget3, rb10' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
-								"<h5 class='wTypeChange, widget3, rb11' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
-								"<h5 class='wTypeChange, widget3, rb12' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3d</h5>" +
-							"</div>" +
-							"<h4 class='XtoRemovestrossleWidgetToBeCreated' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
-						"</div>";
-		//Make the right <h5> bold
-		//Grab the checked radiobutton
-		var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
-		console.log("radiobuttonChecked", radiobuttonChecked);
-		//grab radiobutton's second class
-		var rbClass = radiobuttonChecked[0].classList[2];
-		console.log("rbClass", rbClass);
-		var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
-		console.log("elementToBoldify", elementToBoldify);
-		//Please observe - the line below does NOT work as wanted as of now.
-		elementToBoldify.css("font-weight", "bold");
-
-		//append created div to <body>
-		$("body").append(divToAdd);
-		makeWidgetResizable();
-		makeWidgetDraggable();
-	//User drawn box hasn't got sufficient measurements
+	//if user "draws" widgetbox from left to right
+	if(leftToRight){
+		//add start X-value to "left:"
+		positionRules += "left:" + startX + "px;";
+	//if user "draws" widgetBox from right to left
 	}else{
-		console.log("Div measurements too small!");
-		showTooShortMessage();
+		//add end X-value to "left:"
+		positionRules += "left:" + endX + "px;";
 	}
+	//if user "draws" widgetbox from top to bottom
+	if(topToBottom){
+		//add start Y-value to "top:"
+		positionRules += "top:" + startY + "px;";
+	//if user "draws" widgetbox from bottom to top
+	}else{
+		//add end Y-value to "top:"
+		positionRules += "top:" + endY + "px;";
+	}
+	//div with widget to add to page
+	var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
+					"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
+						"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
+							strossleWidgetToBeCreated +
+						"</div>" +
+						"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
+							"<h5 class='wTypeChange, widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
+							"<h5 class='wTypeChange, widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
+							"<h5 class='wTypeChange, widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
+							"<h5 class='wTypeChange, widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
+							"<h5 class='wTypeChange, widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
+							"<h5 class='wTypeChange, widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
+							"<h5 class='wTypeChange, widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
+							"<h5 class='wTypeChange, widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
+							"<h5 class='wTypeChange, widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
+						"</div>" +
+						"<h4 class='XtoRemovestrossleWidgetToBeCreated' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
+					"</div>";
+	//Make the right <h5> bold
+	//Grab the checked radiobutton
+	var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
+	console.log("radiobuttonChecked", radiobuttonChecked);
+	//grab radiobutton's second class
+	var rbClass = radiobuttonChecked[0].classList[2];
+	console.log("rbClass", rbClass);
+	var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
+	console.log("elementToBoldify", elementToBoldify);
+	//Please observe - the line below does NOT work as wanted as of now.
+	elementToBoldify.css("font-weight", "bold");
+	//append created div to <body>
+	$("body").append(divToAdd);
+	makeWidgetResizable();
+	makeWidgetDraggable();
 }
 
 //makes widget-div resizable for user
@@ -424,15 +337,6 @@ function makeWidgetResizable() {
 function makeWidgetDraggable() {
 	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
-}
-
-//Show message when users 'drawn' box is to small compared to minimum measurements
-function showTooShortMessage(){
-	console.log("The minimum measurements for the box are: ",minHeight, "px high and ", minWidth, " px wide.");
-	//use .html to show error message
-	$("#lengthErrorMessage").html("<p>Minimum measurements <br>for chosen widget<br>type are: <br>height: " + minHeight + "px,<br>width: " + minWidth + " px.</p>").show();
-	//fadeOut message after some seconds
-	setTimeout(function(){$("#lengthErrorMessage").fadeOut(500);}, 7000);
 }
 
 //load jQuery to site
