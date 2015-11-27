@@ -103,8 +103,8 @@ function callbackForLoadjQueryUI() {
 											"<label for='rb5' class='strossleLabel'>2a</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb6' name='widgetType'>" +
 											"<label for='rb6' class='strossleLabel'>2b</label><br>" +
-											"<input type='radio' class='widgetType, sidebarWidget, rb7' name='widgetType'>" +
 											"<h3>Category 3</h3>" +
+											"<input type='radio' class='widgetType, sidebarWidget, rb7' name='widgetType'>" +
 											"<label for='rb7' class='strossleLabel'>2c</label><br>" +
 											"<input type='radio' class='widgetType, sidebarWidget, rb8' name='widgetType'>" +
 											"<label for='rb8' class='strossleLabel'>2d</label><br>" +
