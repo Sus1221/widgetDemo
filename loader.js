@@ -155,7 +155,7 @@ function changeWidgetType(clickedElement) {
 	//remove current sprinkle-widget-<div>
 	$(clickedElement).parent().siblings("div").remove();
 	//Grab third class of clicked element
-	var clickedElSecondClass = clickedElement.classList[2];
+	var clickedElSecondClass = clickedElement.classList[1];
 	console.log("clickedElSecondClass", clickedElSecondClass);
 	//Extract numbers from classname - tex 8
 	var noInClassName = parseInt(clickedElSecondClass.match(/\d+/g), 10);
@@ -297,6 +297,7 @@ function calcDivMeasurements() {
 						"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
 							strossleWidgetToBeCreated +
 						"</div>" +
+						//Classes rbX must be #2 in order for var clickedElSecondClass to get the right value
 						"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
 							"<h5 class='wTypeChange, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
 							"<h5 class='wTypeChange, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
