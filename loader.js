@@ -144,31 +144,25 @@ function whichElementClicked(event){
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
 	if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
-		console.log("you clicked XtoRemovestrossleWidgetToBeCreated");
 		//remove that whole widget-<div>
 		$(clickedElement).parent().remove();
 	}
 	//if a widget style is chosen inside of the widget box
 	if(clickedElement.className.indexOf("wTypeChange") > -1){
-		console.log("wTypeChange clicked");
 		changeWidgetType(clickedElement);
 	}
 }
 
 function changeWidgetType(clickedElement) {
-	console.log("changeWidgetType function");
 	//remove current sprinkle-widget-<div>
 	$(clickedElement).parent().siblings("div").remove();
 	//Grab third class of clicked element
 	var clickedElSecondClass = clickedElement.classList[1];
-	console.log("clickedElSecondClass", clickedElSecondClass);
 	//Extract numbers from classname - tex 8
 	var noInClassName = parseInt(clickedElSecondClass.match(/\d+/g), 10);
-	console.log("noInClassName", noInClassName);
 	//Grab right widgetvariable to change to
 	var keyNameInWidgetSourcesObj = "widgetToChangeTo" + noInClassName;
 	var newWidgetSource = widgetSources[keyNameInWidgetSourcesObj];
-	console.log("newOne", newWidgetSource);
 	//append new strossle-widget-<div> as last sibling to clickedElement
 	$(clickedElement).parent().parent().prepend(newWidgetSource);
 	//styling of numbers in widget
@@ -324,7 +318,6 @@ function calcDivMeasurements() {
 
 //makes widget-div resizable for user
 function makeWidgetResizable() {
-   console.log("widget now resizable");
    $(".outerWidgetDiv").resizable({
       handles: ' n, e, s, w, ne, se, sw, nw'
    });
@@ -339,7 +332,6 @@ function makeWidgetResizable() {
 
 //makes widget div drag'n'droppable for user
 function makeWidgetDraggable() {
-	console.log("make widget draggable function");
 	$(".outerWidgetDiv").draggable();
 }
 
