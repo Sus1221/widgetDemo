@@ -332,7 +332,7 @@ function calcDivMeasurements() {
 	var elementToBoldify = $("body div:last-child > div:last-child > h5").hasClass(rbClass);
 	console.log("elementToBoldify", elementToBoldify);
 	//make that element bold
-	elementToBoldify.css("font-weight", "bold");
+	$(elementToBoldify).css("font-weight", "bold");
 	makeWidgetResizable();
 	makeWidgetDraggable();
 }
