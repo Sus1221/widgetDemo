@@ -56,12 +56,25 @@ var endY = 0;
 var divHeight = 0;
 var clickedElement;
 //The default/start div, a standard widget
-var strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 //The default/start minimum widget -<div> values
 var minWidth = 300;
 var minHeight = 200;
 //The default/start borderStyle of widget -<div>
 var borderStyle = "1px solid black";
+
+var widgetToChangeTo1 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var widgetToChangeTo2 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var widgetToChangeTo3 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var widgetToChangeTo4 = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+var widgetToChangeTo5 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+var widgetToChangeTo6 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+var widgetToChangeTo7 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+var widgetToChangeTo8 = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+var widgetToChangeTo9 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+var widgetToChangeTo10 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+var widgetToChangeTo11 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+var widgetToChangeTo12 = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 
 //Callback after jQuery load
 function callbackForLoadjQuery() {
@@ -140,8 +153,19 @@ function whichElementClicked(event){
 		//Run function to manage widget type
 		setTimeout(function(){manageWidgetType();}, 200);
 	}
+	//If X (remove) in a widget-<div> is clicked
+	if(clickedElement.className.indexOf("XtoRemovestrossleWidgetToBeCreated") > -1 ){
+		console.log("you clicked XtoRemovestrossleWidgetToBeCreated");
+		//remove that whole widget-<div>
+		$(clickedElement).parent().remove();
+	}
+	//if any of the 12 widget change choices is clicked
+	if(clickedElement.className.indexOf("wTypeChange") > -1){
+		console.log("wTypeChange clicked");
+		changeWidgetType(clickedElement);
+	}
 	//if #1(widget type 1) is clicked on in a widget -<div>
-	if(clickedElement.className.indexOf("widget1") > -1){
+	/*if(clickedElement.className.indexOf("widget1") > -1){
 		//remove current sprinkle-widget div
 		$(clickedElement).parent().siblings("div").remove();
 		//append new strossle-widget-<div> as last sibling to clickedElement
@@ -163,15 +187,27 @@ function whichElementClicked(event){
 		//append new strossle-widget-<div> as last sibling to clickedElement
 		$(clickedElement).parent().parent().prepend("<div data-spklw-widget='widget-5565c515580c0'></div>");
 		afterWidgetChange(clickedElement);
-	}
-	//If X (remove) in a widget-<div> is clicked
-	if(clickedElement.className.indexOf("XtoRemoveStrossleWidgetDiv") > -1 ){
-		console.log("you clicked XtoRemoveStrossleWidgetDiv");
-		//remove that whole widget-<div>
-		$(clickedElement).parent().remove();
-	}
+	}*/
+}
+//widgetToChangeTo1 and so on is the strings containing widget div tag
+
+function changeWidgetType(clickedElement) {
+	console.log("changeWidgetType function");
+	//Grab third class of clicked element
+	var clickedElSecondClass = clickedElement.classList[2];
+	console.log("clickedElSecondClass", clickedElSecondClass);
+	//Extract numbers from classname
+	var noInClassName = clickedElSecondClass.match(/\d+/g);
+	console.log("noInClassName", noInClassName);
+	//remove current sprinkle-widget-<div>
+	$(clickedElement).parent().siblings("div").remove();
+	//append new strossle-widget-<div> as last sibling to clickedElement
+	$(clickedElement).parent().parent().prepend("widgetToChangeTo" + noInClassName);
+	afterWidgetChange(clickedElement);
+
 }
 
+//Styling of the 12 numbers in clicked widget and managing rezisable()
 function afterWidgetChange(clickedElement){
 	//styling of numbers in widget
 	$(clickedElement).css("font-weight", "bold");
@@ -196,62 +232,62 @@ function manageDivBorder() {
 //switches widget content source
 function manageWidgetType() {
 	if($(".rb1").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb2").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb3").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb4").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb5").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
 	if($(".rb6").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
 	if($(".rb7").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
 	if($(".rb8").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 		minHeight = 300;
 		minWidth = 100;
 	}
 	if($(".rb9").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb10").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb11").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
 	if($(".rb12").is(":checked")){
-		strossleWidgetDiv = "<div data-spklw-widget='widget-5565c515580c0'></div>";
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 		minHeight = 250;
 		minWidth = 300;
 	}
@@ -329,23 +365,23 @@ function calcDivMeasurements() {
 		var divToAdd = "<div style='position:absolute;"+ positionRules + "z-index:200000000;background:white;overflow:hidden;display:inline-block;" +
 						"border:" + borderStyle + ";width:" + divWidth + "px;height:" + divHeight + "px;' class='outerWidgetDiv'>" +
 							"<div style='display:inline-block; position:relative;width:100%;background:white;' class='widgetDiv'>" +
-								strossleWidgetDiv +
+								strossleWidgetToBeCreated +
 							"</div>" +
 							"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
-								"<h5 class='widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
-								"<h5 class='widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
-								"<h5 class='widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
-								"<h5 class='widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
-								"<h5 class='widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
-								"<h5 class='widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
-								"<h5 class='widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
-								"<h5 class='widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
-								"<h5 class='widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
-								"<h5 class='widget3, rb10' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
-								"<h5 class='widget3, rb11' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
-								"<h5 class='widget3, rb12' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3d</h5>" +
+								"<h5 class='wTypeChange, widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
+								"<h5 class='wTypeChange, widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
+								"<h5 class='wTypeChange, widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
+								"<h5 class='wTypeChange, widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
+								"<h5 class='wTypeChange, widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
+								"<h5 class='wTypeChange, widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
+								"<h5 class='wTypeChange, widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
+								"<h5 class='wTypeChange, widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
+								"<h5 class='wTypeChange, widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
+								"<h5 class='wTypeChange, widget3, rb10' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
+								"<h5 class='wTypeChange, widget3, rb11' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
+								"<h5 class='wTypeChange, widget3, rb12' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3d</h5>" +
 							"</div>" +
-							"<h4 class='XtoRemoveStrossleWidgetDiv' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
+							"<h4 class='XtoRemovestrossleWidgetToBeCreated' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 						"</div>";
 		//Make the right <h5> bold
 		//Grab the checked radiobutton
@@ -356,6 +392,7 @@ function calcDivMeasurements() {
 		console.log("rbClass", rbClass);
 		var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
 		console.log("elementToBoldify", elementToBoldify);
+		//Please observe - the line below does NOT work as wanted as of now.
 		elementToBoldify.css("font-weight", "bold");
 
 		//append created div to <body>
