@@ -353,8 +353,8 @@ function calcDivMeasurements() {
 		console.log("radiobuttonChecked", radiobuttonChecked);
 		//grab radiobutton's second class
 		var rbClass = radiobuttonChecked[0].classList[2];
-		var rbClassEndNo = parseInt(rbClass.match(/\d+/g), 10);
-		var elementToBoldify = $(divToAdd).children().eq(rbClassEndNo -1);
+		console.log("rbClass", rbCLass);
+		var elementToBoldify = $(divToAdd).children().eq(1).children().eq(rbClassEndNo -1);
 		console.log("elementToBoldify", elementToBoldify);
 
 		//append created div to <body>
