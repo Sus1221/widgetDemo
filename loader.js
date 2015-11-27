@@ -356,6 +356,7 @@ function calcDivMeasurements() {
 		console.log("rbClass", rbClass);
 		var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
 		console.log("elementToBoldify", elementToBoldify);
+		elementToBoldify.css("font-weight", "bold");
 
 		//append created div to <body>
 		$("body").append(divToAdd);
