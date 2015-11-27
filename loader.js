@@ -201,7 +201,7 @@ function changeWidgetType(clickedElement) {
 	//remove current sprinkle-widget-<div>
 	$(clickedElement).parent().siblings("div").remove();
 	//Grab right widget to change to
-	var newOne = JSON.parse("widgetToChangeTo" + noInClassName);
+	var newOne = "widgetToChangeTo" + noInClassName;
 	console.log("newOne", newOne);
 	//append new strossle-widget-<div> as last sibling to clickedElement
 	$(clickedElement).parent().parent().prepend(newOne);
