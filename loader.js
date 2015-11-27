@@ -208,15 +208,6 @@ function changeWidgetType(clickedElement) {
 	console.log("newOne", newWidgetSource);
 	//append new strossle-widget-<div> as last sibling to clickedElement
 	$(clickedElement).parent().parent().prepend(newWidgetSource);
-	afterWidgetChange(clickedElement);
-}
-
-mystring = 'myVar';
-window[mystring] = 1;
-alert(myVar);
-
-//Styling of the 12 numbers in clicked widget and managing rezisable()
-function afterWidgetChange(clickedElement){
 	//styling of numbers in widget
 	$(clickedElement).css("font-weight", "bold");
 	$(clickedElement).siblings().css("font-weight", "normal");
