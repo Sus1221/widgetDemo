@@ -64,11 +64,11 @@ var widgetSources = {
 	widgetToChangeTo1 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
 	widgetToChangeTo2 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
 	widgetToChangeTo3 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
-	widgetToChangeTo4 : "<div data-spklw-widget='widget-5591293a1ed53'></div>",
+	widgetToChangeTo4 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
 	widgetToChangeTo5 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
 	widgetToChangeTo6 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
-	widgetToChangeTo7 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
-	widgetToChangeTo8 : "<div data-spklw-widget='widget-5524d25c249ad'></div>",
+	widgetToChangeTo7 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
+	widgetToChangeTo8 : "<div data-spklw-widget='widget-5565c515580c0'></div>",
 	widgetToChangeTo9 : "<div data-spklw-widget='widget-5565c515580c0'></div>"
 };
 
@@ -189,30 +189,39 @@ function manageDivBorder() {
 //switches widget content source
 function manageWidgetType() {
 	if($(".rb1").is(":checked")){
+		//Number 1
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 	}
 	if($(".rb2").is(":checked")){
+		//Number 2
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 	}
 	if($(".rb3").is(":checked")){
+		//Number 3
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
 	}
 	if($(".rb4").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5591293a1ed53'></div>";
+		//Number 4
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 	}
 	if($(".rb5").is(":checked")){
+		//Number 5
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 	}
 	if($(".rb6").is(":checked")){
+		//Number 6
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
 	}
 	if($(".rb7").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		//Number 7
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 	}
 	if($(".rb8").is(":checked")){
-		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5524d25c249ad'></div>";
+		//Number 8
+		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 	}
 	if($(".rb9").is(":checked")){
+		//Number 9
 		strossleWidgetToBeCreated = "<div data-spklw-widget='widget-5565c515580c0'></div>";
 	}
 }
@@ -289,15 +298,15 @@ function calcDivMeasurements() {
 							strossleWidgetToBeCreated +
 						"</div>" +
 						"<div style='position:absolute;bottom:0;left:0;z-index:2000000000;background:white;'>" +
-							"<h5 class='wTypeChange, widget1, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
-							"<h5 class='wTypeChange, widget1, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
-							"<h5 class='wTypeChange, widget1, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
-							"<h5 class='wTypeChange, widget1, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1d</h5>" +
-							"<h5 class='wTypeChange, widget2, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
-							"<h5 class='wTypeChange, widget2, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
-							"<h5 class='wTypeChange, widget2, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
-							"<h5 class='wTypeChange, widget2, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2d</h5>" +
-							"<h5 class='wTypeChange, widget3, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
+							"<h5 class='wTypeChange, rb1' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1a</h5>" +
+							"<h5 class='wTypeChange, rb2' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1b</h5>" +
+							"<h5 class='wTypeChange, rb3' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>1c</h5>" +
+							"<h5 class='wTypeChange, rb4' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2a</h5>" +
+							"<h5 class='wTypeChange, rb5' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2b</h5>" +
+							"<h5 class='wTypeChange, rb6' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>2c</h5>" +
+							"<h5 class='wTypeChange, rb7' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3a</h5>" +
+							"<h5 class='wTypeChange, rb8' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3b</h5>" +
+							"<h5 class='wTypeChange, rb9' style='cursor:pointer;display:inline;margin:7px;font-weight:normal;line-height:normal;'>3c</h5>" +
 						"</div>" +
 						"<h4 class='XtoRemovestrossleWidgetToBeCreated' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 					"</div>";
