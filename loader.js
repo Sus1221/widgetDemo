@@ -311,19 +311,20 @@ function calcDivMeasurements() {
 						"</div>" +
 						"<h4 class='XtoRemovestrossleWidgetToBeCreated' style='position:absolute;bottom:0;right:0;cursor:pointer;font-size:15px;color:black;background:white;margin:0;z-index:2000000000'>X</h4>" +
 					"</div>";
-	//Make the right <h5> bold
-	//Grab the checked radiobutton
-	var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
-	console.log("radiobuttonChecked", radiobuttonChecked);
-	//grab radiobutton's second class
-	var rbClass = radiobuttonChecked[0].classList[2];
-	console.log("rbClass", rbClass);
-	var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
-	console.log("elementToBoldify", elementToBoldify);
-	//Please observe - the line below does NOT work as wanted as of now.
-	elementToBoldify.css("font-weight", "bold");
 	//append created div to <body>
 	$("body").append(divToAdd);
+	//Make the right <h5> bold
+	//1.Grab the checked radiobutton
+	var radiobuttonChecked = $('#controlBoxContent input[type=radio]:checked');
+	console.log("radiobuttonChecked", radiobuttonChecked);
+	//2.grab radiobutton's third class
+	var rbClass = radiobuttonChecked[0].classList[2];
+	console.log("rbClass", rbClass);
+	//grab <h5> with that class
+	var elementToBoldify = $(divToAdd).children().eq(1).children().filter("." + rbClass);
+	console.log("elementToBoldify", elementToBoldify);
+	//make that element bold
+	elementToBoldify.css("font-weight", "bold");
 	makeWidgetResizable();
 	makeWidgetDraggable();
 }
